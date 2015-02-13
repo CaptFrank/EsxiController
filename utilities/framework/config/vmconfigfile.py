@@ -72,7 +72,7 @@ class VmConfigFile(VmConfigBase):
         self.__filename = filename
         self.__parser = ConfigParser()
         self.__table = ConfigParser()
-        self.__logger = logging.getLogger("ESXiController - config_parser")
+        self.__logger = logging.getLogger("ESXiController - VmConfigFile")
 
         # log the setup
         self.__logger.setLevel(log_level)

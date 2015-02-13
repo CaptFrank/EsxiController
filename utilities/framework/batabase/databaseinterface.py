@@ -3,6 +3,9 @@
 # Imports
 # =============================================================
 
+import logging
+
+from subprocess import call
 from pprintpp import pprint
 from pymongo import MongoClient
 
@@ -41,25 +44,42 @@ class DatabaseInterface(object):
     # The database handle
     __database = None
 
-    def __init__(self, config):
+    # The logger
+    __logger = None
+
+    def __init__(self, data, log_level=logging.INFO):
         """
         This is the initial constructor for the class.
         We use this constructor to set the connection.
         We also read the database storing the tables and their sizes.
 
-        :param config:      the config file that has the attributes
+        :param data:      the data file
         :return:
         """
 
+        self.__logger.setLevel(log_level)
+        self.__logger = logging.getLogger("ESXiController - DatabaseInterface")
+        self.__logger.info("Starting the mongdb daemon.")
+
+        # Start the server
+        call(['mongod', '--dbpath "%s"' % data])
+        self.__logger.info("The mongdb daemon started.")
+
+
         # Set the internal reference
         self.__connection = MongoClient()
+        self.__logger.info("Connected to the localhost server.")
+
 
         # Set the database name
         self.__database = self.__connection['esxiControllerConfigs']
+        self.__logger.info("Added a database: esxiControllerConfigs")
+
 
         # Add the collections
         for item in self.__collections.keys():
             self.__collections[item] = self.__database.create_collection(item)
+            self.__logger.info("Added a collection: " + item)
         return
 
     def get_collection(self, collection):
@@ -96,6 +116,7 @@ class DatabaseInterface(object):
         :return:
         """
         if self.filter(collection, config):
+            self.__logger.info("The name < %s > already exists, choose another." % config)
             return None
         else:
             return self.get_collection(collection).insert(dictionary)
@@ -109,6 +130,7 @@ class DatabaseInterface(object):
         :param collection:    the collection to address
         :return:
         """
+        self.__logger.info("Removing config: " + config)
         return self.get_collection(collection).remove({'name' : config})
 
 
