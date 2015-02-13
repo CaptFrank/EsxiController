@@ -56,6 +56,8 @@ class VmConfigDatabase(VmConfigBase):
 
             self.__logger.info("Getting config: %s from collection: %s" % (config, collection))
             self.__db_object = self.get_configs(config, collection)
+            self.print_configs()
+            self.__logger.info("Favorite set to: %s"  % DatabaseInterface.instance().get_all_records(DatabaseInterface.FAVORITE))
         else:
             self.__logger.info("Cannot get configs...")
             return
