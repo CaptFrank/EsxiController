@@ -40,23 +40,11 @@ class VmConfigFile(VmConfigBase):
     # The favorite config
     __favorite = None
 
-    # The configs
-    __configs = None
-
     # The filename
     __filename = ""
 
-    # The config parser
-    __parser = None
-
     # The talbe
     __table = None
-
-    # The internal logger
-    __logger = None
-
-    # The current config
-    __current_config = None
 
     def __init__(self, filename=None, log_level=logging.INFO):
         """
@@ -121,7 +109,7 @@ class VmConfigFile(VmConfigBase):
             self.__logger.info("Section read: %s" % section)
         return
 
-    def save_configs(self):
+    def save_configs(self, config=None):
         """
         This saves the configs to the store folder.
 
@@ -295,11 +283,11 @@ class VmConfigFile(VmConfigBase):
         for item_key, item_value in zip(self.__configs.keys(),
                                         self.__configs.values()):
 
-            log = "\n ============================ \n"
+            log = "\n ========================================================== \n"
             log += "[+] name:" .ljust(20, ' ') + "%s\n" % item_key
             for item in item_value:
                 log += ("[+] %s" % item).ljust(20, ' ') + "%s\n" % item_value[item]
-            log += " ============================ "
+            log += "\n ========================================================== \n"
             self.__logger.info(log)
         return
 
@@ -312,11 +300,11 @@ class VmConfigFile(VmConfigBase):
 
         for item_key, item_value in zip(self.__possible.keys(),
                                         self.__possible.values()):
-            log = "\n ============================ \n"
+            log = "\n ========================================================== \n"
             log += "[+] name:" .ljust(20, ' ') + "%s\n" % item_key
             log += "[+] created:" .ljust(20, ' ') + "%s\n" % item_value['created']
             log += "[+] location:" .ljust(20, ' ') + "%s\n" % item_value['location']
-            log += " ============================ "
+            log += "\n ========================================================== \n"
             self.__logger.info(log)
         return
 

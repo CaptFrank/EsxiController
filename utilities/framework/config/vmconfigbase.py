@@ -3,6 +3,7 @@
 # Imports
 # =============================================================
 
+from pprintpp import pprint
 from abc import abstractmethod
 
 # =============================================================
@@ -14,13 +15,16 @@ class VmConfigBase(object):
     """
     This is the vm configuration base class that is inherited
     with all the used methods of importing and exporting configs
+
+    Indexes:
+        - {
+            name        : <name>,
+            collection  : <collection>,
+            }
     """
 
     # The configs
     __configs = None
-
-    # The filename
-    __filename = ""
 
     # The config parser
     __parser = None
@@ -28,9 +32,14 @@ class VmConfigBase(object):
     # The internal logger
     __logger = None
 
+    # The log level
+    __log_level = None
+
+    # The current config
+    __current_config = None
 
     @abstractmethod
-    def load_configs(self):
+    def load_configs(self, config=None):
         """
         This is the load method for the configuration.
 
@@ -39,7 +48,7 @@ class VmConfigBase(object):
         raise NotImplemented
 
     @abstractmethod
-    def save_configs(self):
+    def save_configs(self, config=None):
         """
         This method saves the configs
 
@@ -67,7 +76,7 @@ class VmConfigBase(object):
         raise NotImplemented
 
     @abstractmethod
-    def set_favorite(self):
+    def set_favorite(self, config=None):
         """
         This sets the config passed to be the favorite.
 
@@ -104,7 +113,7 @@ class VmConfigBase(object):
         raise NotImplemented
 
     @abstractmethod
-    def diff_configs(self, file1, file2=None):
+    def diff_configs(self, file1, file2):
         """
         This is a wrapper around the system vimdiff command.
         We use this to diff the 2 configs and check what was changed.
