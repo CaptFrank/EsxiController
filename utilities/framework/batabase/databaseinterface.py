@@ -3,13 +3,21 @@
 # Imports
 # =============================================================
 
+import time
 import logging
 
-from subprocess import call
+from subprocess import call, Popen
 from pprintpp import pprint
 from pymongo import MongoClient
 
 from databasesingleton import DatabaseSingleton
+
+# =============================================================
+# Constants
+# =============================================================
+
+SERVERLOG = 'log/serverlog.log'
+
 # =============================================================
 # Source
 # =============================================================
@@ -59,6 +67,9 @@ class DatabaseInterface(object):
     # The logger
     __logger = None
 
+    # Server handle
+    __handle = None
+
     def __init__(self):
         """
         This is the default constructor, nothing is done here.
@@ -81,9 +92,14 @@ class DatabaseInterface(object):
         self.__logger.info("Starting the mongdb daemon.")
 
         # Start the server
-        call(['mongod', '--dbpath "%s"' % data])
+        call(['killall', 'mongod'])
+        log = open(SERVERLOG, 'w')
+        self.__handle = Popen(['mongod', '--dbpath', '%s' % data], stdout=log)
+
         self.__logger.info("The mongdb daemon started.")
 
+        # Wait for server to start
+        time.sleep(2)
 
         # Set the internal reference
         self.__connection = MongoClient()
@@ -181,9 +197,6 @@ class DatabaseInterface(object):
             self.__logger.info("Removing collection: " + collection)
             return self.get_db().drop_collection(collection)
 
-    def update(self, collection, config, dictionary):
-
-        return
 
     def get_collection_stats(self, collection):
         """
