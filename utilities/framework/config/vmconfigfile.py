@@ -337,3 +337,11 @@ class VmConfigFile(VmConfigBase):
         file = open(CONFIGURATION_STORE, "w+")
         self.__table.write(file)
         return
+
+    def get_configs(self):
+        """
+        Gets the configs structure
+
+        :return:
+        """
+        return self.__configs

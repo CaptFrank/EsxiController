@@ -6,9 +6,8 @@
 import logging
 
 from datadiff import diff
-from pprintpp import pprint
 from vmconfigbase import VmConfigBase
-from utilities.framework.batabase.databaseinterface import DatabaseInterface
+from utilities.framework.batabase.databaseinterface import *
 
 # =============================================================
 # Source
@@ -33,8 +32,8 @@ class VmConfigDatabase(VmConfigBase):
         :return:
         """
 
-        self.__logger.setLevel(log_level)
         self.__logger = logging.getLogger("ESXiController - VmConfigDatabase")
+        self.__logger.setLevel(log_level)
         self.__logger.info("Connecting to the mongoDB instance.")
 
         # We connect to the database
@@ -85,13 +84,13 @@ class VmConfigDatabase(VmConfigBase):
 
             # Set a reference
             reference = {config['attributes']['name'] : collection}
-            DatabaseInterface.instance().set(config['attributes']['name'],
+            res = DatabaseInterface.instance().set(config['attributes']['name'],
                                              collection, config)
-            DatabaseInterface.instance().set(config['attributes']['name'],
-                                             DatabaseInterface.INDEXES,
-                                             reference)
-            self.__logger.info("Created a new entry: %s in collection: %s" % (config['attributes']['name'],
-                                                                                collection))
+            if res:
+                self.__logger.info("Created a new entry: %s in collection: %s" % (config['attributes']['name'],
+                                                                                    collection))
+            else:
+                self.__logger.info("Duplicate entry...")
         else:
             self.__logger.info("No valid collection of config...")
             return None
@@ -224,3 +223,24 @@ class VmConfigDatabase(VmConfigBase):
 
         diff(temp1, temp2)
         return
+
+    @staticmethod
+    def get_db_handle():
+        """
+        Returns the internal db object
+
+        :return:
+        """
+
+        return DatabaseInterface.instance()
+
+    @staticmethod
+    def filter(collection, config):
+        """
+        This method filters the collection for a specific config.
+
+        :param collection:     the collection to filter through
+        :param config:         the config to look for
+        :return:
+        """
+        return DatabaseInterface.instance().filter(collection, config)

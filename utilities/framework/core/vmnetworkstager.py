@@ -192,3 +192,4 @@ class VmNetworkStager(object):
                 self.__logger.info("Successfully powered on machine.")
         except:
             self.__logger.error("Timeout !")
+        return

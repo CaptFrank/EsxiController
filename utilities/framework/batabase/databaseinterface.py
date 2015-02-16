@@ -18,6 +18,13 @@ from databasesingleton import DatabaseSingleton
 
 SERVERLOG = 'log/serverlog.log'
 
+# The constants
+HOME = 'home-configs'
+INDEXES = 'config-indexes'
+ATTACK = 'attack-configs'
+FAVORITE = 'favorite-config'
+ANALYSIS = 'analysis-configs'
+
 # =============================================================
 # Source
 # =============================================================
@@ -37,17 +44,10 @@ class DatabaseInterface(object):
         - {config : collection}
 
     Configs:
-        - { _id : config
+        - { name : config
             ...
             }
     """
-
-    # The constants
-    HOME = 'home-configs'
-    INDEXES = 'config-indexes'
-    ATTACK = 'attack-configs'
-    FAVORITE = 'favorite-config'
-    ANALYSIS = 'analysis-configs'
 
     # Databases to house our configs
     __collections = {
@@ -113,8 +113,12 @@ class DatabaseInterface(object):
 
         # Add the collections
         for item in self.__collections.keys():
-            self.__collections[item] = self.__database.create_collection(item)
-            self.__logger.info("Added a collection: " + item)
+            try :
+                self.__collections[item] = self.__database.create_collection(item)
+                self.__logger.info("Added a collection: " + item)
+            except:
+                self.__collections[item] = self.__database[item]
+                pass
         return
 
     def get_collection(self, collection):
@@ -159,20 +163,26 @@ class DatabaseInterface(object):
         :param collection:   the collection to set the object to.
         :return:
         """
-        if collection == DatabaseInterface.FAVORITE:
+        if collection == FAVORITE:
             self.__logger.info("Setting favorite config to: " + config)
             return self.get_collection(collection).update({'$set':{'favorite': config}})
 
-        elif self.filter(collection, config):
+        elif not self.filter(collection, config):
             self.__logger.info("The name < %s > already exists, choose another." % config)
             return None
         else:
-            # Set the internal name
-            dictionary['_id'] = config
+            try:
 
-            # Add the title in the indexes collection
-            self.get_collection(DatabaseInterface.INDEXES).insert(config)
-            return self.get_collection(collection).insert(dictionary)
+                # Set the internal name
+                dictionary['id'] = config
+
+                # Add the title in the indexes collection
+                self.get_collection(INDEXES).insert({'id' : config})
+                self.get_collection(collection).insert(dictionary)
+
+            except:
+                self.__logger.info("Duplicate entry...")
+        return
 
     def remove(self, collection, config=None):
         """
@@ -189,8 +199,8 @@ class DatabaseInterface(object):
             self.__logger.info("Removing config: " + config)
 
             # Remove from index
-            self.get_collection(DatabaseInterface.INDEXES).remove(config)
-            return self.get_collection(collection).remove({'name' : config})
+            self.get_collection(INDEXES).remove({'id' : config})
+            return self.get_collection(collection).remove({'id' : config})
 
         # if we need to remove a collection
         else:
@@ -241,4 +251,4 @@ class DatabaseInterface(object):
         :param config:         the config to look for
         :return:
         """
-        return self.get_collection(collection).find_one({'_id' : config})
+        return self.get_collection(collection).find_one({ 'id'  : config })

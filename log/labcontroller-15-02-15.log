@@ -1,0 +1,505 @@
+[02-15 15:33:57]: ESXiController - VmConnection INFO                 Connection unsuccessful...
+[02-15 15:36:33]: requests.packages.urllib3.connectionpool INFO                 Starting new HTTPS connection (1): 10.0.1.12
+[02-15 15:36:33]: requests.packages.urllib3.connectionpool DEBUG                "GET //sdk/vimServiceVersions.xml HTTP/1.1" 200 530
+[02-15 15:36:33]: ESXiController - VmConnection INFO                 Connection successful...
+[02-15 15:39:52]: requests.packages.urllib3.connectionpool INFO                 Starting new HTTPS connection (1): 10.0.1.12
+[02-15 15:39:52]: requests.packages.urllib3.connectionpool DEBUG                "GET //sdk/vimServiceVersions.xml HTTP/1.1" 200 530
+[02-15 15:39:53]: ESXiController - VmConnection INFO                 Connection successful...
+[02-15 16:07:20]: requests.packages.urllib3.connectionpool INFO                 Starting new HTTPS connection (1): 10.0.1.12
+[02-15 16:07:20]: requests.packages.urllib3.connectionpool DEBUG                "GET //sdk/vimServiceVersions.xml HTTP/1.1" 200 530
+[02-15 16:07:21]: ESXiController - VmConnection INFO                 Connection successful...
+[02-15 17:46:59]: requests.packages.urllib3.connectionpool INFO                 Starting new HTTPS connection (1): 10.0.1.12
+[02-15 17:46:59]: requests.packages.urllib3.connectionpool DEBUG                "GET //sdk/vimServiceVersions.xml HTTP/1.1" 200 530
+[02-15 17:46:59]: ESXiController - VmConnection INFO                 Connection successful...
+[02-15 18:18:00]: ESXiController - VmConnection INFO                 Connection successful...
+[02-15 18:19:39]: ESXiController - VmConnection INFO                 Connection successful...
+[02-15 18:54:20]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 18:54:20]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 18:54:20]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 18:54:22]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 18:54:22]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 18:56:11]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 18:56:11]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 18:56:11]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 18:56:11]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 18:56:11]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 18:56:26]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 18:58:29]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 18:58:29]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 18:58:29]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 18:58:31]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 18:58:31]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 18:58:42]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 18:58:42]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 18:58:42]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 18:58:42]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 18:58:42]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 18:58:47]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 18:59:58]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 18:59:58]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 18:59:58]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:00:00]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:00:00]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:00:06]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:00:06]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:00:06]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:00:06]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:00:06]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:00:15]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:00:15]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:00:15]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:00:15]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:00:15]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:00:20]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:04:33]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:04:33]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:04:33]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:04:35]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:04:35]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:04:46]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:04:46]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:04:46]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:04:46]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:04:46]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:04:52]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:09:47]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:09:47]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:09:47]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:09:49]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:09:49]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:09:55]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:09:55]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:09:55]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:09:55]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:09:55]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:10:02]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:13:58]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:13:58]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:13:58]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:14:00]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:14:00]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:14:04]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:14:04]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:14:05]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:14:05]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:14:05]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:14:09]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:16:32]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:16:32]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:16:32]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:16:34]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:16:34]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:16:39]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:16:39]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:16:39]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:16:39]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:16:39]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:16:43]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:19:23]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:19:23]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:19:23]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:19:25]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:19:25]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:19:26]: ESXiController - DatabaseInterface INFO                 Added a collection: favorite-config
+[02-15 19:19:26]: ESXiController - DatabaseInterface INFO                 Added a collection: config-indexes
+[02-15 19:19:26]: ESXiController - DatabaseInterface INFO                 Added a collection: attack-configs
+[02-15 19:19:26]: ESXiController - DatabaseInterface INFO                 Added a collection: analysis-configs
+[02-15 19:19:26]: ESXiController - DatabaseInterface INFO                 Added a collection: home-configs
+[02-15 19:19:33]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:19:33]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:19:33]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:19:33]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:19:33]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:19:39]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:19:51]: ESXiController - DatabaseInterface INFO                 The name < default > already exists, choose another.
+[02-15 19:20:25]: ESXiController - DatabaseInterface INFO                 The name < default > already exists, choose another.
+[02-15 19:20:49]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:20:49]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:20:49]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:20:51]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:20:51]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:20:54]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:20:54]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:20:54]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:20:54]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:20:54]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:21:01]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:22:10]: ESXiController - DatabaseInterface INFO                 The name < default > already exists, choose another.
+[02-15 19:22:19]: ESXiController - DatabaseInterface INFO                 The name < default > already exists, choose another.
+[02-15 19:22:36]: ESXiController - VmConfigDatabase INFO                 Created a new entry: default in collection: home-configs
+[02-15 19:23:21]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:23:21]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:23:22]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:23:24]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:23:24]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:23:25]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:23:25]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:23:25]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:23:25]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:23:25]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:23:28]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:28:51]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:28:51]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:28:51]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:28:53]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:28:53]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:29:02]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:29:02]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:29:02]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:29:02]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:29:02]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:29:07]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[02-15 19:31:10]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[02-15 19:31:10]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[02-15 19:31:10]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[02-15 19:31:12]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[02-15 19:31:12]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[02-15 19:31:15]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[02-15 19:31:15]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[02-15 19:31:15]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[02-15 19:31:15]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[02-15 19:31:15]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 File size:      9409
+
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: controller
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[02-15 19:31:19]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
