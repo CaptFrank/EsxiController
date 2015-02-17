@@ -10,6 +10,7 @@ Created on Nov 19, 2014
 
 import time
 import logging
+import logging.handlers
 
 # =============================================================
 # Constants
@@ -43,6 +44,9 @@ def set_logger():
     logger_console = logging.StreamHandler()
     logger_console.setLevel(LOGGER_LEVEL)
 
+    # Add the syslogger
+    syslogger = logging.SysLogHandler(address=('syslog.haligonia.home.com',514))
+
     # Create a formatter
     logger_formatter = logging.Formatter('[%(asctime)s]: %(name)-50s: %(levelname)-20s %(message)s')
 
@@ -51,4 +55,5 @@ def set_logger():
 
     # We set the root handlers
     logging.getLogger('').addHandler(logger_console)
+    logging.getLogger('').addHandler(syslogger)
     return
