@@ -10,7 +10,6 @@ names using the Marvel Comics API
 import atexit
 import hashlib
 import json
-
 import random
 import time
 
@@ -18,8 +17,8 @@ import requests
 from pyVim import connect
 from pyVmomi import vim
 
-from tools import cli
-from tools import tasks
+from others.tools import cli
+from others.tools import tasks
 
 
 def get_args():

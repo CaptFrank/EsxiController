@@ -24,8 +24,7 @@ from pyVim import connect
 from pyVmomi import vmodl
 from pyVmomi import vim
 
-from tools import cli
-from tools import vm
+from others.tools import vm, cli
 
 
 def parse_service_instance(service_instance):

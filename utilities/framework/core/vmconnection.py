@@ -70,4 +70,11 @@ class VmConnection(object):
         """
         return self.__handle
 
+    def disconnect(self):
+        """
+        Disconnect from server
+        :return:
+        """
+        self.__handle.disconnect()
+
 

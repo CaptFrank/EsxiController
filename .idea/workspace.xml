@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f55dbde-5e0a-4573-a7c0-22113933d497" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Todo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/configurations/host.conf" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utilities/analysis/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utilities/framework/utilities/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utilities/malware/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utilities/malware/malware_lab.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/utilities/framework/utilities/vmloggerengine.py" afterPath="$PROJECT_DIR$/utilities/framework/core/vmloggerengine.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/framework/core/esxicontrollerbase.py" afterPath="$PROJECT_DIR$/utilities/framework/core/esxicontrollerbase.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/serverlog.log" afterPath="$PROJECT_DIR$/log/serverlog.log" />
+    <list default="true" id="1f55dbde-5e0a-4573-a7c0-22113933d497" name="Default" comment="Added the database interface">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/configurations/.placeholder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongodb/.placeholder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/others/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilities/framework/notification/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/esxicontroller.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilities/framework/core/vmesxicontrollerbase.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilities/framework/core/vmesxicontrollercli.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilities/framework/notification/vmnotification.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilities/framework/notification/vmnotificationdispatch.py" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\log\labcontroller-12-02-15.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\log\labcontroller-13-02-15.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\log\labcontroller-15-02-15.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\log\labcontroller-16-02-15.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\log\serverlog.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\add_vm_extra_config_tags.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\change_vm_vif.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\create_random_marvel_vms.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\esxi_perf_sample.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\find_by_uuid.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\getallvms.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\getorphanedvms.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\hello_world_vcenter.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\hello_world_vcenter_with_yaml_recorder.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\list_datastore_cluster.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\list_datastore_info.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\list_host_alarms.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\make_dc_and_cluster.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\pyvmomi-to-suds.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\reboot_vm.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\renamer.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\sessions_list.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\set_note.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\soft_reboot.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\suds-to-pyvmomi.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\upload_file_to_datastore.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\upload_file_to_vm.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\vSphereAutoRestartManager.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\vcenter_details.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\virtual_machine_device_info.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\virtual_machine_power_cycle_and_question.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\vminfo_quick.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\waitforupdates.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\alarm.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\cli.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\cluster.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\datacenter.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\interactive_wrapper.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\pchelper.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\serviceutil.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\tasks.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\tools\vm.py" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework\core\esxicontrollerbase.py" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxicontroller\samples\__init__.py" afterPath="$PROJECT_DIR$/log/.placeholder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LabController.iml" afterPath="$PROJECT_DIR$/.idea/LabController.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Todo" afterPath="$PROJECT_DIR$/Todo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configurations/host.conf" afterPath="$PROJECT_DIR$/configurations/host.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py" afterPath="$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py" afterPath="$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/framework/core/vmconnection.py" afterPath="$PROJECT_DIR$/utilities/framework/core/vmconnection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/framework/core/vmloggerengine.py" afterPath="$PROJECT_DIR$/utilities/framework/core/vmloggerengine.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py" afterPath="$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LabController.iws" />
@@ -37,24 +94,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="esxicontrollerbase.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utilities/framework/core/esxicontrollerbase.py">
+          <file leaf-file-name="vmesxicontrollercli.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmesxicontrollercli.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="1710">
-                  <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#139#149#0" expanded="true" />
-                    <element signature="e#2632#2757#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Todo" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Todo">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.09090909" vertical-offset="0" max-vertical-offset="825">
-                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.37546012" vertical-offset="0" max-vertical-offset="4573">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -64,35 +108,41 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="vmconnection.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmconnection.py">
+          <file leaf-file-name="vmnotificationdispatch.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/utilities/framework/notification/vmnotificationdispatch.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1185">
-                  <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-                  <folding>
-                    <element signature="e#140#151#0" expanded="true" />
-                  </folding>
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="815">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="vmnetworkstager.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py">
+          <file leaf-file-name="vmnotification.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/utilities/framework/notification/vmnotification.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8545455" vertical-offset="435" max-vertical-offset="3015">
-                  <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
-                  <folding>
-                    <element signature="e#140#151#0" expanded="true" />
-                  </folding>
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="vmconfigfile.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py">
+          <file leaf-file-name="esxicontroller.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/esxicontroller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="5145">
-                  <caret line="332" column="33" selection-start-line="332" selection-start-column="33" selection-end-line="332" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Todo" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Todo">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+                  <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -119,22 +169,32 @@
         <option value="$PROJECT_DIR$/utilities/framework/batabase/databaseobjectdefinition.py" />
         <option value="$PROJECT_DIR$/log/labcontroller-13-02-15.log" />
         <option value="$PROJECT_DIR$/configurations/malware_template.conf" />
-        <option value="$PROJECT_DIR$/utilities/framework/core/vmconnection.py" />
-        <option value="$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py" />
         <option value="$PROJECT_DIR$/utilities/framework/batabase/databaseinterface.py" />
-        <option value="$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py" />
-        <option value="$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py" />
-        <option value="$PROJECT_DIR$/configurations/host.conf" />
         <option value="$PROJECT_DIR$/utilities/framework/utilities/vmsyslogger.py" />
         <option value="$PROJECT_DIR$/utilities/framework/utilities/vmloggerengine.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py" />
         <option value="$PROJECT_DIR$/utilities/framework/core/esxicontrollerbase.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/config/vmnotificationdispatch.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/core/vmloggerengine.py" />
         <option value="$PROJECT_DIR$/Todo" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/core/vmconnection.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py" />
+        <option value="$PROJECT_DIR$/configurations/host.conf" />
+        <option value="$PROJECT_DIR$/utilities/framework/core/vmesxicontrollerbase.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/core/vmesxicontrollercli.py" />
+        <option value="$PROJECT_DIR$/esxicontroller.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/notification/vmnotificatiodispatch.py" />
+        <option value="$PROJECT_DIR$/utilities/framework/notification/vmnotification.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -162,6 +222,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -176,7 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ESXiController" />
+              <option name="myItemId" value="esxicontroller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -186,7 +247,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ESXiController" />
+              <option name="myItemId" value="esxicontroller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -200,7 +261,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ESXiController" />
+              <option name="myItemId" value="esxicontroller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -218,7 +279,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ESXiController" />
+              <option name="myItemId" value="esxicontroller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LabController" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="esxicontroller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -240,17 +323,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ESXiController" />
+              <option name="myItemId" value="esxicontroller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="configurations" />
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,14 +364,14 @@
       <recent name="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework\notification" />
+      <recent name="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework\core" />
+      <recent name="C:\Users\fpapinea\workspace\esxicontroller\others" />
       <recent name="$PROJECT_DIR$/utilities/framework/core" />
       <recent name="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework\utilities" />
-      <recent name="C:\Users\fpapinea\workspace\esxicontroller\configurations" />
-      <recent name="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework\core" />
-      <recent name="C:\Users\fpapinea\workspace\esxicontroller\utilities\framework\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.reboot_vm">
+  <component name="RunManager" selected="Python.vmesxicontrollercli">
     <configuration default="false" name="config_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -364,51 +454,24 @@
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
+    <configuration default="false" name="vmesxicontrollercli" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utilities/framework/core" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LabController" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LabController" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utilities/framework/core/vmesxicontrollercli.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -452,7 +515,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
+    <configuration default="true" type="tests" factoryName="py.test">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -470,6 +533,11 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -492,18 +560,62 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LabController" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LabController" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.config_parser" />
       <item index="1" class="java.lang.String" itemvalue="Python.sessions_list" />
       <item index="2" class="java.lang.String" itemvalue="Python.getallvms" />
       <item index="3" class="java.lang.String" itemvalue="Python.reboot_vm" />
+      <item index="4" class="java.lang.String" itemvalue="Python.vmesxicontrollercli" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.reboot_vm" />
-        <item index="1" class="java.lang.String" itemvalue="Python.getallvms" />
-        <item index="2" class="java.lang.String" itemvalue="Python.sessions_list" />
-        <item index="3" class="java.lang.String" itemvalue="Python.config_parser" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.vmesxicontrollercli" />
+        <item index="1" class="java.lang.String" itemvalue="Python.reboot_vm" />
+        <item index="2" class="java.lang.String" itemvalue="Python.getallvms" />
+        <item index="3" class="java.lang.String" itemvalue="Python.sessions_list" />
+        <item index="4" class="java.lang.String" itemvalue="Python.config_parser" />
       </list>
     </recent_temporary>
   </component>
@@ -540,30 +652,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28604925" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17291667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15555556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40093786" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1107595" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15520833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17291667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28604925" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -598,25 +710,25 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/samples/reboot_vm.py</url>
-          <line>54</line>
+          <url>file://$PROJECT_DIR$/others/samples/reboot_vm.py</url>
+          <line>55</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/utilities/framework/batabase/databaseinterface.py</url>
-          <line>179</line>
+          <line>204</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/utilities/framework/batabase/databaseinterface.py</url>
-          <line>253</line>
-          <option name="timeStamp" value="36" />
+          <url>file://$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="38" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -635,40 +747,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="840">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#140#151#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/core/esxicontrollerbase.py">
+    <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmesxicontrollerbase.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="705">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
           <folding>
             <element signature="e#139#149#0" expanded="true" />
-            <element signature="e#2632#2757#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmconnection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="772" max-vertical-offset="1320">
-          <caret line="80" column="79" selection-start-line="80" selection-start-column="79" selection-end-line="80" selection-end-column="79" />
-          <folding>
-            <element signature="e#140#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/reboot_vm.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/reboot_vm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#312#333#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +784,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3225">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#140#151#0" expanded="false" />
+            <element signature="e#4154#5174#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -716,27 +813,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigbase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.629932" vertical-offset="1475" max-vertical-offset="2210">
-          <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-          <folding>
-            <element signature="e#140#167#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/interactive_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1980">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/add_vm_extra_config_tags.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/add_vm_extra_config_tags.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.228223" vertical-offset="705" max-vertical-offset="1290">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -744,15 +821,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/pyVim/connect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13763066" vertical-offset="7871" max-vertical-offset="9390">
-          <caret line="532" column="4" selection-start-line="532" selection-start-column="4" selection-end-line="532" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/sessions_list.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/sessions_list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.9652174" vertical-offset="555" max-vertical-offset="1350">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -760,7 +829,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/virtual_machine_power_cycle_and_question.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/virtual_machine_power_cycle_and_question.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0183486" vertical-offset="1650" max-vertical-offset="3000">
           <caret line="147" column="22" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="22" />
@@ -770,17 +839,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/reboot_vm.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/reboot_vm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56473213" vertical-offset="722" max-vertical-offset="1170">
           <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#312#333#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/set_note.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/set_note.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="945">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -788,7 +855,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/getallvms.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/getallvms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41294643" vertical-offset="895" max-vertical-offset="1545">
           <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
@@ -796,78 +863,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/alarm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2490">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40625" vertical-offset="13" max-vertical-offset="1005">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="e#319#342#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/cli.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3090909" vertical-offset="480" max-vertical-offset="1305">
-          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/vm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="885">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/requests/packages/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/requests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58181816" vertical-offset="300" max-vertical-offset="1125">
-          <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/soft_reboot.py">
+    <entry file="file://$PROJECT_DIR$/others/samples/soft_reboot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09090909" vertical-offset="30" max-vertical-offset="855">
           <caret line="7" column="19" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/pyVmomi/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3495">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/batabase/databasesingleton.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64935064" vertical-offset="0" max-vertical-offset="930">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -876,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="5.008606" vertical-offset="0" max-vertical-offset="7755">
           <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,15 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321859" vertical-offset="1577" max-vertical-offset="7455">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321859" vertical-offset="1082" max-vertical-offset="4710">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,15 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16187051" vertical-offset="0" max-vertical-offset="556">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/batabase/databaseinterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20242424" vertical-offset="2627" max-vertical-offset="3780">
-          <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,95 +896,273 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54375" vertical-offset="0" max-vertical-offset="5775">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongodb/.placeholder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py">
+    <entry file="file://C:/Python27/Lib/logging/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14545454" vertical-offset="0" max-vertical-offset="3780">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="-24.825" vertical-offset="22839" max-vertical-offset="29631">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/.placeholder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configurations/.placeholder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/alarm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4597826" vertical-offset="423" max-vertical-offset="2822">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/serviceutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/pchelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/interactive_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1980">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/datacenter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.002173913" vertical-offset="202" max-vertical-offset="1122">
+          <caret line="13" column="25" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/vm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.09021739" vertical-offset="83" max-vertical-offset="1003">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/core/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018478261" vertical-offset="0" max-vertical-offset="920">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/batabase/databasesingleton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13152175" vertical-offset="134" max-vertical-offset="1054">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmconnection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1185">
-          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-          <folding>
-            <element signature="e#140#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="5145">
-          <caret line="332" column="33" selection-start-line="332" selection-start-column="33" selection-end-line="332" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.7945652" vertical-offset="0" max-vertical-offset="1394">
+          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configurations/host.conf">
+    <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigbase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15" vertical-offset="0" max-vertical-offset="800">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.62826085" vertical-offset="782" max-vertical-offset="2193">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.py">
+    <entry file="file://C:/Python27/Lib/argparse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.18181819" vertical-offset="150" max-vertical-offset="25995">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.8826087" vertical-offset="24667" max-vertical-offset="40222">
+          <caret line="1302" column="8" selection-start-line="1302" selection-start-column="8" selection-end-line="1302" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10909091" vertical-offset="9405" max-vertical-offset="18390">
-          <caret line="634" column="19" selection-start-line="634" selection-start-column="6" selection-end-line="634" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8545455" vertical-offset="435" max-vertical-offset="3015">
-          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
-          <folding>
-            <element signature="e#140#151#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmloggerengine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07272727" vertical-offset="150" max-vertical-offset="975">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.5576087" vertical-offset="184" max-vertical-offset="1105">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="e#191#202#0" expanded="true" />
+            <element signature="e#191#202#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/core/esxicontrollerbase.py">
+    <entry file="file://$PROJECT_DIR$/configurations/host.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="1710">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3326087" vertical-offset="0" max-vertical-offset="920">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31630436" vertical-offset="253" max-vertical-offset="1173">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#1166#2327#0" expanded="false" />
+            <element signature="e#2365#3163#0" expanded="false" />
+            <element signature="e#3214#4488#0" expanded="false" />
+            <element signature="e#4536#5620#0" expanded="false" />
+            <element signature="e#5671#6236#0" expanded="false" />
+            <element signature="e#6274#6445#0" expanded="false" />
+            <element signature="e#6527#7496#0" expanded="false" />
+            <element signature="e#7541#8023#0" expanded="false" />
+            <element signature="e#8074#9026#0" expanded="false" />
+            <element signature="e#9069#9766#0" expanded="false" />
+            <element signature="e#9823#10343#0" expanded="false" />
+            <element signature="e#10379#10554#0" expanded="false" />
+            <element signature="e#10591#10689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/batabase/databaseinterface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40869564" vertical-offset="2888" max-vertical-offset="3808">
+          <caret line="227" column="39" selection-start-line="227" selection-start-column="39" selection-end-line="227" selection-end-column="39" />
+          <folding>
+            <element signature="e#4154#5174#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4244764" vertical-offset="1439" max-vertical-offset="4233">
+          <caret line="218" column="19" selection-start-line="218" selection-start-column="19" selection-end-line="218" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmesxicontrollerbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4391304" vertical-offset="2157" max-vertical-offset="3230">
+          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
           <folding>
             <element signature="e#139#149#0" expanded="true" />
-            <element signature="e#2632#2757#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmnetworkstager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9217391" vertical-offset="2429" max-vertical-offset="3349">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/tools/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50209206" vertical-offset="762" max-vertical-offset="1479">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/esxicontroller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Todo">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09090909" vertical-offset="0" max-vertical-offset="825">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/notification/vmnotification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/notification/vmnotificationdispatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/core/vmesxicontrollercli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37546012" vertical-offset="0" max-vertical-offset="4573">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>

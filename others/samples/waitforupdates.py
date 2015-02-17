@@ -20,16 +20,16 @@ Sample Python program for monitoring property changes to objects of one
 or more types
 """
 
-
-from tools import serviceutil
-from pyVim.connect import SmartConnect, Disconnect
-from pyVmomi import vim, vmodl
-
 import argparse
 import atexit
 import collections
 import getpass
 import sys
+
+from pyVim.connect import SmartConnect, Disconnect
+from pyVmomi import vim, vmodl
+
+from others.tools import serviceutil
 
 
 def get_args():

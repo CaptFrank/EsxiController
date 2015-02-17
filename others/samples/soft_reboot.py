@@ -10,7 +10,8 @@ __author__ = 'errr'
 import atexit
 
 from pyVim import connect
-from tools import cli
+
+from others.tools import cli
 
 
 def setup_args():

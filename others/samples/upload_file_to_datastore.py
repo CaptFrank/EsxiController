@@ -2,13 +2,13 @@
 
 from __future__ import print_function  # This import is for python2.*
 import atexit
-import requests
 
+import requests
 from pyVim import connect
 from pyVmomi import vim
 from pyVmomi import vmodl
 
-from tools import cli
+from others.tools import cli
 
 
 def get_args():

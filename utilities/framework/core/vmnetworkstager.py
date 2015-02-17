@@ -142,7 +142,7 @@ class VmNetworkStager(object):
 
             if vm.is_powered_on():
                 self.__logger.info("Shutting down machine: " + vm.name)
-                self.__task = vm.power_off(sync_run=True)
+                self.__task = vm.suspend(sync_run=True)
                 self.__check_operation()
 
             else:

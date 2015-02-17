@@ -16,11 +16,12 @@ from __future__ import print_function
 import atexit
 
 import requests
-
 from pyVim import connect
 from pyVmomi import vim
-from tools import cli
-from tools import tasks
+
+from others.tools import cli
+from others.tools import tasks
+
 
 requests.packages.urllib3.disable_warnings()
 

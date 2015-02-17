@@ -22,12 +22,12 @@ LOG_FILE_NAME = 'log/labcontroller-%s.log'
 # Source
 # =============================================================
 
-def set_logger():
+def set_logger(syslog_address):
     ''' 
     This method sets the LOGGER for the context of the 
     program.
     
-    param test:                the test name
+    param syslog_address:                the syslog server address
     '''
     
     # We set the file name
@@ -45,7 +45,7 @@ def set_logger():
     logger_console.setLevel(LOGGER_LEVEL)
 
     # Add the syslogger
-    syslogger = logging.SysLogHandler(address=('syslog.haligonia.home.com',514))
+    syslogger = logging.handlers.SysLogHandler(address=syslog_address)#('syslog.haligonia.home.com',514))
 
     # Create a formatter
     logger_formatter = logging.Formatter('[%(asctime)s]: %(name)-50s: %(levelname)-20s %(message)s')

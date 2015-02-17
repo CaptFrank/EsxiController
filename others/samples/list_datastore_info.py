@@ -14,7 +14,7 @@ from pyVim import connect
 from pyVmomi import vmodl
 from pyVmomi import vim
 
-from tools import cli
+from others.tools import cli
 
 
 def get_args():

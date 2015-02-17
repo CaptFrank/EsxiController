@@ -16,8 +16,9 @@ import atexit
 
 from pyVim import connect
 from pyVmomi import vim
-from tools import cli
-from tools import tasks
+
+from others.tools import cli
+from others.tools import tasks
 
 
 def setup_args():

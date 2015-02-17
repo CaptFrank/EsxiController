@@ -10,7 +10,7 @@ import atexit
 
 from pyVim.connect import SmartConnect, Disconnect
 
-from tools import cluster
+from others.tools import cluster, cli, datacenter
 from tools import datacenter
 from tools import cli
 

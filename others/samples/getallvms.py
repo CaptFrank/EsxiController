@@ -23,7 +23,7 @@ import atexit
 from pyVim import connect
 from pyVmomi import vmodl
 
-import tools.cli as cli
+from others.tools import cli
 
 
 def print_vm_info(virtual_machine, depth=1):

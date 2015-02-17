@@ -244,7 +244,7 @@ class VmConfigFile(VmConfigBase):
 
         # Read the configs
         self.read_configs()
-        return
+        return self.__configs
 
     def set_current(self, config):
         """

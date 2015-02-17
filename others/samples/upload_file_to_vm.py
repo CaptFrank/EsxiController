@@ -10,11 +10,12 @@ Example script to change the network of the Virtual Machine NIC
 """
 from __future__ import with_statement
 import atexit
+
 import requests
-from tools import cli
-from tools import tasks
 from pyVim import connect
 from pyVmomi import vim, vmodl
+
+from others.tools import cli
 
 
 def get_args():

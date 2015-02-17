@@ -11,11 +11,12 @@ Example script to reboot a VirtualMachine
 """
 __author__ = 'errr'
 
-from tools import cli
-from tools import tasks
+import atexit
+
 from pyVim import connect
 
-import atexit
+from others.tools import cli
+from others.tools import tasks
 
 
 def setup_args():

@@ -15,8 +15,9 @@ from time import clock
 
 from pyVim import connect
 from pyVmomi import vim
-from tools import cli
-from tools import pchelper
+
+from others.tools import pchelper, cli
+
 
 START = clock()
 

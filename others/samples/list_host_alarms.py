@@ -12,8 +12,8 @@ import atexit
 
 from pyVim.connect import SmartConnect, Disconnect
 
-from tools import alarm
-from tools import cli
+from others.tools import alarm
+from others.tools import cli
 
 
 PARSER = cli.build_arg_parser()
