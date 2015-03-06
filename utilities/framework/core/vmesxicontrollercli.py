@@ -48,6 +48,8 @@ The possible commands are as follows:
             --createSnapshot
             --deleteSnapshot
             --listSnapshots
+            --powerOn
+            --powerOff
 
 === Notification:
 
@@ -86,7 +88,7 @@ def build_arg_parser():
     # Add the control group
     control = parser.add_argument_group(
         title='Control Commands',
-        description='This group of commands is used to directly'
+        description='This group of commands is used to directly '
                     'control the esxicontroller script.'
     )
 
@@ -114,7 +116,7 @@ def build_arg_parser():
     # Add the console group
     console = parser.add_argument_group(
         title='Console Commands',
-        description='This group of commands is used to directly'
+        description='This group of commands is used to directly '
                     'control the esxicontroller console output.'
     )
 
@@ -122,7 +124,7 @@ def build_arg_parser():
                         required=True,
                         action='store',
                         default='info',
-                        choices=['info', 'error', 'critical'],
+                        choices=['info', 'debug', 'warning', 'error', 'critical'],
                         help='Sets the level for the console logging.')
 
     console.add_argument('-l', '--syslog',
@@ -137,7 +139,7 @@ def build_arg_parser():
 
     config = parser.add_argument_group(
         title='Configuration Source Commands',
-        description='This group of commands is used to directly'
+        description='This group of commands is used to directly '
                     'control the esxicontroller configuration source.'
     )
 
@@ -212,7 +214,7 @@ def build_arg_parser():
     # Add the vcenter group
     vcenter = parser.add_argument_group(
         title='Vcenter Commands',
-        description='This group of commands is used to directly'
+        description='This group of commands is used to directly '
                     'control the esxicontroller vcenter server.'
     )
 
@@ -231,12 +233,21 @@ def build_arg_parser():
                 action='store',
                 help='Lists the snapshots for a vm.')
 
+    vcenter.add_argument('-Y', '--powerOn',
+                required=False,
+                action='store',
+                help='Powers on a vm.')
+
+    vcenter.add_argument('-K', '--powerOff',
+                required=False,
+                action='store',
+                help='Powers off a vm.')
 
     # =============================================================
     # Add the notification group
     notification = parser.add_argument_group(
         title='Notification Commands',
-        description='This group of commands is used to directly'
+        description='This group of commands is used to directly '
                     'control the esxicontroller notification server.'
     )
 

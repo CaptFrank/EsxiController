@@ -22,13 +22,13 @@ LOG_FILE_NAME = 'log/labcontroller-%s.log'
 # Source
 # =============================================================
 
-def set_logger(syslog_address):
-    ''' 
+def set_logger(syslog_address=None):
+    """
     This method sets the LOGGER for the context of the 
     program.
     
-    param syslog_address:                the syslog server address
-    '''
+    :param syslog_address:                the syslog server address
+    """
     
     # We set the file name
     filename = LOG_FILE_NAME % time.strftime('%d-%m-%y')
@@ -36,7 +36,7 @@ def set_logger(syslog_address):
     # set up logging to file - see previous section for more details
     logging.basicConfig(level=logging.DEBUG,
                         format='[%(asctime)s]: %(name)-20s %(levelname)-20s %(message)s',
-                        datefmt='%m-%d %H:%M:%S',
+                        datefmt='%y-%m-%d %H:%M:%S',
                         filename=filename,
                         filemode='a')
 
@@ -44,8 +44,7 @@ def set_logger(syslog_address):
     logger_console = logging.StreamHandler()
     logger_console.setLevel(LOGGER_LEVEL)
 
-    # Add the syslogger
-    syslogger = logging.handlers.SysLogHandler(address=syslog_address)#('syslog.haligonia.home.com',514))
+
 
     # Create a formatter
     logger_formatter = logging.Formatter('[%(asctime)s]: %(name)-50s: %(levelname)-20s %(message)s')
@@ -55,5 +54,11 @@ def set_logger(syslog_address):
 
     # We set the root handlers
     logging.getLogger('').addHandler(logger_console)
-    logging.getLogger('').addHandler(syslogger)
+    print('[+] Added a console logging engine...')
+
+    if syslog_address:
+        # Add the syslogger
+        syslogger = logging.handlers.SysLogHandler(address=syslog_address)  #('syslog.haligonia.home.com',514))
+        logging.getLogger('').addHandler(syslogger)
+        print('[+] Added a syslog logging engine...')
     return

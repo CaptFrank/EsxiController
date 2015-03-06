@@ -4,10 +4,11 @@
 # =============================================================
 
 import time
-import atexit
+import thread
+import Queue
 import logging
-import pysphere
-import logging
+
+from utilities.framework.core.vmstagetask import VmStageTask
 
 # =============================================================
 # Source
@@ -27,24 +28,29 @@ class VmNetworkStager(object):
     # The connection handle
     __handle = None
 
-    # The config to act upon
-    __config = None
-
-    # Vm list
-    __vm_list = []
-
-    # Task list
-    __task = None
-
     # Logger
     __logger = None
 
-    def __init__(self, configuration, connection, log_level=logging.INFO):
+    # The task server
+    __server = None
+
+    # The kill flag
+    __alive = True
+
+    # Task list
+    __task_list = {}
+
+    # The task queue
+    __task_queue = Queue.Queue()
+
+    # Destinations to email
+    __destinations = []
+
+    def __init__(self, connection, destinations, log_level=logging.INFO):
         """
         This is the default constructor to the class
-
-        :param configuration:   the config dict
         :param connection:      the connection to the vcenter instance
+        :param destinations:    the destinations to email.
         :return:
         """
 
@@ -53,143 +59,111 @@ class VmNetworkStager(object):
 
         # Set the internal handles to the connection and config
         self.__handle = connection
-        self.__config = configuration
+        self.__destinations = destinations
 
-        self.__logger.info("Getting all the vm properties.")
-
-        # Get the vms
-        self.__get_vms()
+        # Create a server thread
+        self.__server = thread.start_new(self.task_server, (self.__task_queue,
+                                                            self.__handle))
+        self.__logger.info("Created a new task server thread.")
         return
 
-    def start_stage(self):
+    def add_stage_task(self, configuration, name):
         """
-        This method takes the connection instance and the configuration
-        and starts the network stage process.
+        Here we add a task to the task queue.
 
-        There are 3 major actions that we can do to setup the network
-            - Start
-            - Stop
-            - Reboot
+        :param configuration:   the configurations to start
+        :param name:            the name of the task
+        :return:
+        """
+
+        # We add the configuration and name to a task object
+        task = {
+            'configurations': configuration,
+            'name': name,
+            'destinations': self.__destinations
+        }
+
+        # We then add it to our task queue to get it executed
+        if not self.__task_queue.full():
+            self.__task_queue.put(task, block=True)
+            self.__task_queue.task_done()
+            self.__logger.info("Added a new task with name {name} to the task queue.".format(name=name))
+        else:
+            self.__logger.info("Cannot add task... Task queue is full.")
+        return
+
+    def delete_stage_task(self):
+        """
+        This deletes an arbitrary task from the task list and returns it.
 
         :return:
         """
 
-        self.__logger.info('Powering the machines on the config.')
-        # Start the tasks
-        self.__power_on()
-        return
+        # If the task queue is empty we return None
+        task = None
 
-    def stop_stage(self):
+        if not self.__task_queue.empty():
+            task = self.__task_queue.get(block=True)
+            self.__task_queue.task_done()
+            self.__logger.info("Deleted task with name {name} from the task queue.".format(name=task['name']))
+        else:
+            self.__logger.info("Cannot add task... Task queue is empty.")
+        return task
+
+    def task_server(self, queue, connection):
         """
-        This method takes the connection instance and the configuration
-        and stops the network stage process.
+        This is the main task server method. This is the task server
+        thread worker method.
 
+        :param queue:               the queue to address
+        :param connection:          the connection to use
         :return:
         """
 
-        self.__logger.info('Resetting the machines on the config.')
-        # Stop the tasks
-        self.__power_off()
+        # Loop until killed
+        while self.__alive:
+
+            # We create a new vmstagetask
+            if not queue.empty():
+
+                # We get a stage reference
+                task_config = queue.get()
+                queue.task_dont()
+
+                # Create a stage object
+                stage = VmStageTask(connection, task_config)
+
+                # We start it
+                stage.start()
+
+                # Add the task to the list
+                self.__task_list[task_config['name']] = stage
+        self.__logger.info("Server thread not alive... Returning")
         return
 
-    def __get_vms(self):
+    def kill_task(self, name):
         """
-        We retrieve the vms by their names
+        Here we take a name and kill that task.
 
+        :param name:                the task name to kill
         :return:
         """
 
-        # Only get the active machines
-        for vm in self.__config:
-            if vm['Active']:
-                self.__vm_list.append(self.__handle.get_vm_by_name(vm['Name']))
-                self.__logger.info(self.__handle.get_properties())
+        # We kill the task specified
+        self.__logger.info("Attempting to kill the task <{nam}>.".format(name=name))
+        self.__task_list[name].kill_task()
         return
 
-    def __power_on(self):
+    def kill_server(self):
         """
-        This powers on the configuration vms.
-
+        This kills the task server.
         :return:
         """
-
-        for vm in self.__vm_list:
-
-            self.__revert_snapshot(vm, self.__config['vm.name']['Snapshot'])
-
-            # Reset if already running
-            if vm.is_powered_on():
-                self.__logger.info("Resetting machine: " + vm.name)
-                self.__task = vm.reset(sync_run=True)
-                self.__check_operation()
-
-            else:
-                self.__logger.info("Powering machine: " + vm.name)
-                self.__task = vm.power_on(sync_run=True)
-                self.__check_operation()
+        self.__alive = False
         return
 
-    def __power_off(self):
-        """
-        This powers off the configuration vms.
 
-        :return:
-        """
 
-        for vm in self.__vm_list:
 
-            self.__create_snapshot(vm, self.__config['vm.name']['Snapshot'])
 
-            if vm.is_powered_on():
-                self.__logger.info("Shutting down machine: " + vm.name)
-                self.__task = vm.suspend(sync_run=True)
-                self.__check_operation()
 
-            else:
-                self.__logger.info("Machine already shutdown !!!: " + vm.name)
-        return
-
-    def __revert_snapshot(self, vm, snapshot):
-        """
-        Revert to the specified snapshot.
-
-        :param vm:              the vm instance
-        :param snapshot:        the snapshot name
-        :return:
-        """
-
-        self.__logger.info("Revert to: " + snapshot)
-        self.__task = vm.revert_to_named_snapshot(snapshot, sync_run=True)
-        self.__check_operation()
-        return
-
-    def __create_snapshot(self, vm, snapshot):
-        """
-        Create the specified snapshot.
-
-        :param vm:              the vm instance
-        :param snapshot:        the snapshot name
-        :return:
-        """
-
-        self.__logger.info("Creating: " + vm.name + "Analysis-" + time.strftime('%d-%m-%y'))
-        self.__task = vm.create_snapshot(snapshot, sync_run=True)
-        self.__check_operation()
-        return
-
-    def __check_operation(self):
-        """
-        This checks the operations.
-
-        :return:
-        """
-
-        try:
-            status = self.__task.wait_for_state(['running', 'error'], timeout=10)
-            if status == 'error':
-                self.__logger.error("Error powering on: " + self.__task.get_error_message())
-            else:
-                self.__logger.info("Successfully powered on machine.")
-        except:
-            self.__logger.error("Timeout !")
-        return

@@ -18,7 +18,7 @@ from vmconfigbase import VmConfigBase
 # Constants
 # =============================================================
 
-CONFIGURATION_STORE = 'configurations/configurations.conf'
+CONFIGURATION_STORE = 'configurations/.configurations.conf'
 
 # =============================================================
 # Source

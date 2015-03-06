@@ -2,7 +2,7 @@
 # Imports
 # =============================================================
 
-import abc
+import ast
 import logging
 import configparser
 
@@ -26,7 +26,11 @@ class VmEsxiControllerBase(object):
     # ====================
     # Configs
 
+    # The host settings
     __host_configs = dict()
+
+    # The email address to send the notifications
+    __email_dest = []
 
     # The configs
     __configs = dict()
@@ -86,6 +90,8 @@ class VmEsxiControllerBase(object):
         self.__host_configs['password'] = self.__parser.get('host', 'password')
         self.__host_configs['data'] = self.__parser.get('host', 'data')
 
+        # Get the emails to notify
+        self.__email_dest = ast.literal_eval(self.__parser.get('client', 'email_notifications'))
 
         self.__logger.info("Connecting to host...")
         self.__vm_connection = VmConnection(host=self.__host_configs['host'],
@@ -116,14 +122,14 @@ class VmEsxiControllerBase(object):
             self.__db_handle = VmConfigDatabase(self.__host_configs['data'],
                                                 self.__log_level)
 
-            if (config is not None) and (collection is not None):
-                self.__logger.info("Loading config...")
-                self.__configs = self.__db_handle.load_configs(config, collection)
-
             # Do we need to save the config
             if save:
                 self.__logger.info("Saving config to db...")
                 self.__db_handle.save_configs(config, collection)
+
+            if (config is not None) and (collection is not None):
+                self.__logger.info("Loading config...")
+                self.__configs = self.__db_handle.load_configs(config, collection)
 
         # Load from file
         else:
@@ -142,8 +148,8 @@ class VmEsxiControllerBase(object):
 
         # Create a network stager
         self.__logger.info("Creating a network stager.")
-        self.__stage = VmNetworkStager(self.__configs,
-                                       self.__vm_connection,
+        self.__stage = VmNetworkStager(self.__vm_connection,
+                                       self.__email_dest,
                                        self.__log_level)
 
         self.__logger.info("Setup complete")
@@ -156,7 +162,8 @@ class VmEsxiControllerBase(object):
         :return:
         """
         self.__logger.info("Starting stage...")
-        self.__stage.start_stage()
+        self.__stage.add_stage_task(self.__configs,
+                                    self.__configs['attributes']['name'])
         return
 
     def stop(self):
@@ -165,7 +172,7 @@ class VmEsxiControllerBase(object):
         :return:
         """
         self.__logger.info("Stopping stage...")
-        self.__stage.stop_stage()
+        self.__stage.kill_task(self.__configs['attributes']['name'])
         return
 
     def get_file_handle(self):
