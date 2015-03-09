@@ -1,0 +1,859 @@
+[15-03-08 21:43:14]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:43:14]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:43:15]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:43:20]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:43:20]: EsxiController       INFO                 The following configurations are as follows: 
+
+[15-03-08 21:45:39]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:45:39]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:45:40]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:45:45]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:45:45]: EsxiController       INFO                 The following configurations are as follows: 
+
+[15-03-08 21:46:02]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 21:46:02]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 21:46:02]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-08 21:46:02]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-08 21:46:02]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-08 21:46:02]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-08 21:46:02]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-08 21:46:02]: ESXiController - VmEsxiControllerBase INFO                 Starting stage...
+[15-03-08 21:46:02]: ESXiController - VmNetworkStager INFO                 Added a new task with name default to the task queue.
+[15-03-08 21:46:39]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:46:39]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:46:40]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:47:17]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:47:17]: EsxiController       INFO                 The following configurations are as follows: 
+
+[15-03-08 21:47:42]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 21:47:42]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 21:47:42]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-08 21:47:42]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-08 21:47:42]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-08 21:47:42]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-08 21:47:42]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-08 21:47:42]: ESXiController - VmEsxiControllerBase INFO                 Starting stage...
+[15-03-08 21:47:42]: ESXiController - VmNetworkStager INFO                 Added a new task with name default to the task queue.
+[15-03-08 21:48:32]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:48:32]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:48:33]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:49:00]: EsxiController       ERROR                [-] Not a valid config type source < configurations/malware_template.conf >.
+[15-03-08 21:49:00]: EsxiController       ERROR                [-] Exiting the system context.
+[15-03-08 21:49:13]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:49:13]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:49:13]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:49:18]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:49:18]: EsxiController       INFO                 The following configurations are as follows: 
+
+[15-03-08 21:50:21]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 21:50:21]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 21:50:21]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-08 21:50:21]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-08 21:50:21]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-08 21:50:21]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-08 21:50:21]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-08 21:50:21]: ESXiController - VmEsxiControllerBase INFO                 Starting stage...
+[15-03-08 21:50:21]: ESXiController - VmNetworkStager INFO                 Added a new task with name default to the task queue.
+[15-03-08 21:51:42]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:51:42]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:51:43]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:51:47]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:51:47]: EsxiController       INFO                 The following configurations are as follows: 
+
+[15-03-08 21:53:43]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 21:53:43]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 21:53:43]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 21:53:43]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 21:53:43]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 21:53:43]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 21:53:43]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 21:53:43]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 21:53:43]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_templates.conf
+[15-03-08 21:54:59]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:54:59]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:54:59]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:55:05]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:55:05]: EsxiController       INFO                 The following configurations are as follows: 
+
+[15-03-08 21:57:39]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:57:39]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:57:40]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:57:42]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:57:42]: EsxiController       INFO                 The following configurations are as follows: 
+	-.configurations.conf
+	-host.conf
+	-malware_template.conf
+
+[15-03-08 21:59:06]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:59:06]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:59:07]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:59:09]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:59:09]: EsxiController       INFO                 The following configurations are as follows: 
+	- host.conf
+	- malware_template.conf
+
+[15-03-08 21:59:34]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 21:59:34]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 21:59:35]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 21:59:36]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 21:59:36]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 21:59:56]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 21:59:56]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 21:59:56]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 21:59:56]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 21:59:56]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 21:59:56]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 21:59:56]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 21:59:56]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 21:59:56]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_templates.conf
+[15-03-08 22:00:37]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:00:37]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:00:37]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:00:40]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 22:00:40]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 22:01:00]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 22:01:00]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 22:01:00]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 22:01:00]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 22:01:00]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 22:01:00]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 22:01:00]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 22:01:00]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:01:16]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 22:02:15]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:02:15]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:02:15]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:02:18]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 22:02:18]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 22:02:36]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 22:02:36]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 22:02:36]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 22:02:36]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 22:02:36]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 22:02:36]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 22:02:36]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 22:02:36]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:02:40]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 22:03:13]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:03:13]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:03:13]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:03:17]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 22:03:17]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 22:03:33]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 22:03:33]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 22:03:33]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 22:03:33]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 22:03:33]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 22:03:33]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 22:03:33]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 22:03:33]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:03:36]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 22:04:12]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:04:12]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:04:13]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:04:15]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 22:04:15]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 22:04:31]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 22:04:31]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 22:04:31]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 22:04:31]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 22:04:31]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 22:04:31]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 22:04:31]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 22:04:31]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:04:39]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 22:05:12]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:05:12]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:05:12]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:05:14]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 22:05:14]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 22:05:34]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-08 22:05:34]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-08 22:05:34]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-08 22:05:34]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-08 22:05:34]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-08 22:05:34]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/07/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-08 22:05:34]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-08 22:05:34]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:05:37]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-08 22:05:39]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-08 22:05:41]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-08 22:05:44]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-08 22:05:46]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-08 22:05:46]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-08 22:05:46]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-08 22:05:46]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-08 22:05:46]: ESXiController - VmEsxiControllerBase INFO                 Starting stage...
+[15-03-08 22:05:46]: ESXiController - VmNetworkStager INFO                 Added a new task with name default to the task queue.
+[15-03-08 22:08:26]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:08:26]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:08:27]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:08:30]: EsxiController       INFO                 [+] Selected the input source as a database type...
+[15-03-08 22:09:19]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:09:19]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:09:19]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:09:21]: EsxiController       INFO                 [+] Selected the input source as a database type...
+[15-03-08 22:09:43]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:09:43]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:09:43]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:09:45]: EsxiController       INFO                 [+] Selected the input source as a database type...
+[15-03-08 22:10:06]: ESXiController - VmEsxiControllerBase INFO                 Database load requested.
+[15-03-08 22:10:06]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the database engine.
+[15-03-08 22:10:06]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[15-03-08 22:10:06]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[15-03-08 22:10:06]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[15-03-08 22:10:08]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[15-03-08 22:10:08]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 Reading the saved configurations...
+[15-03-08 22:10:08]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 Getting config: default from collection: attack-configs
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 Printing out formatted settings: 
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-7-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-7-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-xp-pro-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-xp-pro-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-vista-x86
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-vista-x86
+[+] architecture    x86
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           security-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] backup          True
+[+] name            security-analytics
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-8-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-8-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           remnux-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] backup          True
+[+] name            remnux-analytics
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-server-2008-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-server-2008-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-arch-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-arch-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-nebula-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-nebula-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           controller
+[+] active          True
+[+] snapshot        base_snapshot
+[+] backup          False
+[+] name            controller
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           snorby-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] name            security-analytics
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-fedora-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-fedora-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-centos-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-centos-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           cuckoo-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] backup          False
+[+] name            cuckoo-analytics
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-7-x86
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-7-x86
+[+] architecture    x86
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-ubuntu-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-ubuntu-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-debian-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-centos-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           attacker-kali
+[+] active          True
+[+] snapshot        base_snapshot
+[+] name            kali-linux
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           sinkhole
+[+] active          True
+[+] snapshot        base_snapshot
+[+] backup          False
+[+] name            sinkhole
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           attributes
+[+] name            default
+[+] timeout         99
+
+ ========================================================== 
+
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 Favorite set to: default
+[15-03-08 22:10:08]: ESXiController - VmConfigDatabase INFO                 Set current config to: default
+[15-03-08 22:10:08]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-08 22:10:08]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-08 22:10:08]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-08 22:10:08]: ESXiController - VmEsxiControllerBase INFO                 Starting stage...
+[15-03-08 22:10:08]: ESXiController - VmNetworkStager INFO                 Added a new task with name default to the task queue.
+[15-03-08 22:19:03]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:19:03]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:19:04]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:19:12]: EsxiController       INFO                 [+] Selected the input source as a database type...
+[15-03-08 22:19:31]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:19:31]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:19:32]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:19:42]: EsxiController       INFO                 [+] Selected the input source as a database type...
+[15-03-08 22:24:42]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:24:51]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:24:51]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:24:52]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:24:56]: EsxiController       INFO                 [+] Selected the input source as file type...
+[15-03-08 22:24:56]: EsxiController       INFO                 The following configurations are as follows: 
+	- configurations/host.conf
+	- configurations/malware_template.conf
+
+[15-03-08 22:25:06]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-08 22:25:06]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-08 22:25:07]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-08 22:25:15]: EsxiController       INFO                 [+] Selected the input source as a database type...
+[15-03-08 22:26:14]: ESXiController - VmEsxiControllerBase INFO                 Database load requested.
+[15-03-08 22:26:14]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the database engine.
+[15-03-08 22:26:14]: ESXiController - VmConfigDatabase INFO                 Connecting to the mongoDB instance.
+[15-03-08 22:26:14]: ESXiController - DatabaseInterface INFO                 Starting the mongdb daemon.
+[15-03-08 22:26:15]: ESXiController - DatabaseInterface INFO                 The mongdb daemon started.
+[15-03-08 22:26:17]: ESXiController - DatabaseInterface INFO                 Connected to the localhost server.
+[15-03-08 22:26:17]: ESXiController - DatabaseInterface INFO                 Added a database: esxiControllerConfigs
+[15-03-08 22:26:17]: ESXiController - VmConfigDatabase INFO                 Reading the saved configurations...
+[15-03-08 22:26:20]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 Getting config: default from collection: attack-configs
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 Printing out formatted settings: 
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-7-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-7-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-xp-pro-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-xp-pro-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-vista-x86
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-vista-x86
+[+] architecture    x86
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           security-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] backup          True
+[+] name            security-analytics
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-8-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-8-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           remnux-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] backup          True
+[+] name            remnux-analytics
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-server-2008-x64
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-server-2008-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-arch-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-arch-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-nebula-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-nebula-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           controller
+[+] active          True
+[+] snapshot        base_snapshot
+[+] backup          False
+[+] name            controller
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           snorby-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] name            security-analytics
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-fedora-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-fedora-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-centos-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-centos-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           cuckoo-analytics
+[+] active          False
+[+] snapshot        base_snapshot
+[+] backup          False
+[+] name            cuckoo-analytics
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           win-7-x86
+[+] platform        Windows
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            win-7-x86
+[+] architecture    x86
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-ubuntu-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-ubuntu-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           linux-debian-x64
+[+] platform        Linux
+[+] backup          True
+[+] snapshot        base_snapshot
+[+] name            linux-centos-x64
+[+] architecture    x64
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           attacker-kali
+[+] active          True
+[+] snapshot        base_snapshot
+[+] name            kali-linux
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           sinkhole
+[+] active          True
+[+] snapshot        base_snapshot
+[+] backup          False
+[+] name            sinkhole
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 
+ ========================================================== 
+[+] name:           attributes
+[+] name            default
+[+] timeout         99
+
+ ========================================================== 
+
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 Favorite set to: default
+[15-03-08 22:26:20]: ESXiController - VmConfigDatabase INFO                 Set current config to: default
+[15-03-08 22:26:20]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-08 22:26:20]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-08 22:26:20]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-08 22:26:20]: ESXiController - VmEsxiControllerBase INFO                 Starting stage...
+[15-03-08 22:26:20]: ESXiController - VmNetworkStager INFO                 Added a new task with name default to the task queue.

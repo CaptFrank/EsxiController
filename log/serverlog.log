@@ -1,0 +1,56 @@
+2015-03-08T22:26:15.178-0400 [initandlisten] MongoDB starting : pid=7322 port=27017 dbpath=mongodb/ 64-bit host=hackstation-3.local
+2015-03-08T22:26:15.179-0400 [initandlisten] db version v2.6.7
+2015-03-08T22:26:15.179-0400 [initandlisten] git version: nogitversion
+2015-03-08T22:26:15.179-0400 [initandlisten] build info: Darwin miniyosemite.local 14.1.0 Darwin Kernel Version 14.1.0: Fri Dec  5 06:49:27 PST 2014; root:xnu-2782.10.67~9/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-03-08T22:26:15.179-0400 [initandlisten] allocator: tcmalloc
+2015-03-08T22:26:15.179-0400 [initandlisten] options: { storage: { dbPath: "mongodb/" } }
+2015-03-08T22:26:15.179-0400 [initandlisten] journal dir=mongodb/journal
+2015-03-08T22:26:15.180-0400 [initandlisten] recover : no journal files present, no recovery needed
+2015-03-08T22:26:15.282-0400 [initandlisten] waiting for connections on port 27017
+2015-03-08T22:26:17.055-0400 [initandlisten] connection accepted from 127.0.0.1:62404 #1 (1 connection now open)
+2015-03-08T22:26:21.164-0400 [conn1] end connection 127.0.0.1:62404 (0 connections now open)
+2015-03-08T22:27:15.336-0400 [clientcursormon] mem (MB) res:49 virt:2806
+2015-03-08T22:27:15.337-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:27:15.337-0400 [clientcursormon]  connections:0
+2015-03-08T22:27:16.969-0400 [initandlisten] connection accepted from 127.0.0.1:62551 #2 (1 connection now open)
+2015-03-08T22:28:05.967-0400 [initandlisten] connection accepted from 127.0.0.1:62663 #3 (2 connections now open)
+2015-03-08T22:28:15.968-0400 [initandlisten] connection accepted from 127.0.0.1:62685 #4 (3 connections now open)
+2015-03-08T22:28:26.968-0400 [initandlisten] connection accepted from 127.0.0.1:62710 #5 (4 connections now open)
+2015-03-08T22:29:05.966-0400 [initandlisten] connection accepted from 127.0.0.1:62798 #6 (5 connections now open)
+2015-03-08T22:29:15.963-0400 [initandlisten] connection accepted from 127.0.0.1:62819 #7 (6 connections now open)
+2015-03-08T22:32:15.628-0400 [clientcursormon] mem (MB) res:23 virt:2809
+2015-03-08T22:32:15.628-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:32:15.628-0400 [clientcursormon]  connections:6
+2015-03-08T22:37:15.915-0400 [clientcursormon] mem (MB) res:6 virt:2809
+2015-03-08T22:37:15.915-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:37:15.915-0400 [clientcursormon]  connections:6
+2015-03-08T22:42:16.195-0400 [clientcursormon] mem (MB) res:5 virt:2809
+2015-03-08T22:42:16.197-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:42:16.197-0400 [clientcursormon]  connections:6
+2015-03-08T22:47:16.481-0400 [clientcursormon] mem (MB) res:5 virt:2809
+2015-03-08T22:47:16.483-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:47:16.483-0400 [clientcursormon]  connections:6
+2015-03-08T22:52:16.770-0400 [clientcursormon] mem (MB) res:4 virt:2809
+2015-03-08T22:52:16.771-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:52:16.771-0400 [clientcursormon]  connections:6
+2015-03-08T22:53:16.828-0400 [clientcursormon] mem (MB) res:5 virt:2809
+2015-03-08T22:53:16.829-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:53:16.829-0400 [clientcursormon]  connections:6
+2015-03-08T22:58:17.090-0400 [clientcursormon] mem (MB) res:5 virt:2809
+2015-03-08T22:58:17.091-0400 [clientcursormon]  mapped (incl journal view):320
+2015-03-08T22:58:17.091-0400 [clientcursormon]  connections:6
+2015-03-08T22:59:32.929-0400 [conn4] end connection 127.0.0.1:62685 (5 connections now open)
+2015-03-08T22:59:32.935-0400 [conn7] end connection 127.0.0.1:62819 (4 connections now open)
+2015-03-08T22:59:32.951-0400 [conn2] end connection 127.0.0.1:62551 (3 connections now open)
+2015-03-08T22:59:32.953-0400 [conn5] end connection 127.0.0.1:62710 (2 connections now open)
+2015-03-08T22:59:33.001-0400 [conn3] end connection 127.0.0.1:62663 (1 connection now open)
+2015-03-08T22:59:33.003-0400 [conn6] end connection 127.0.0.1:62798 (0 connections now open)
+d] shutdown: lock for final commit...
+2015-03-08T22:26:14.925-0400 [conn3] end connection 127.0.0.1:60398 (5 connections now open)
+2015-03-08T22:26:14.925-0400 [signalProcessingThread] shutdown: final commit...
+2015-03-08T22:26:14.925-0400 [signalProcessingThread] shutdown: closing all files...
+2015-03-08T22:26:14.925-0400 [signalProcessingThread] closeAllFiles() finished
+2015-03-08T22:26:14.925-0400 [signalProcessingThread] journalCleanup...
+2015-03-08T22:26:14.925-0400 [signalProcessingThread] removeJournalFiles
+2015-03-08T22:26:14.926-0400 [signalProcessingThread] shutdown: removing fs lock...
+2015-03-08T22:26:14.926-0400 [signalProcessingThread] dbexit: really exiting now

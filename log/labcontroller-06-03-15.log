@@ -1,0 +1,515 @@
+[15-03-06 17:54:28]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 17:54:28]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 17:54:29]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:18:50]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:18:50]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:18:50]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:20:46]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:20:46]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:20:46]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:21:22]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:21:22]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:21:22]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:21:22]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:21:22]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:22:51]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:22:51]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:22:51]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:22:56]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:22:56]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:22:56]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:22:56]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:22:56]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:24:01]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:24:01]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:24:02]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:24:04]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:24:04]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:24:04]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:24:04]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:24:04]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:24:04]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:24:04]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:24:04]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:24:05]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:24:05]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:24:30]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:24:30]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:24:30]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:24:37]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:24:37]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:24:37]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:24:37]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:24:37]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:25:49]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:25:49]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:25:49]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:26:19]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:26:19]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:26:19]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:26:45]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:26:45]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:26:45]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:26:45]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:26:45]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:27:05]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:27:05]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:27:05]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:27:05]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:27:05]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:28:30]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:28:30]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:28:31]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:28:33]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:28:33]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:28:33]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:28:33]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:28:33]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:28:46]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:28:46]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:28:46]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:28:46]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:28:46]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:29:16]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:29:16]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:29:16]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:29:16]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:29:16]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:29:33]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:29:33]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:29:33]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:29:38]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:29:38]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:29:38]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:29:38]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:29:38]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:34:24]: ESXiController - VmEsxiControllerBase INFO                 Reading the host configurations.
+[15-03-06 18:34:24]: ESXiController - VmEsxiControllerBase INFO                 Connecting to host...
+[15-03-06 18:34:25]: ESXiController - VmConnection INFO                 Connection successful...
+[15-03-06 18:34:30]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-06 18:34:30]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        02/12/2015
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-06 18:34:30]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-06 18:34:30]: ESXiController - VmConfigFile INFO                 Set current config to: default
+[15-03-06 18:34:30]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-06 18:35:01]: ESXiController - VmConfigFile INFO                 Added a possible config to the config database.
+[15-03-06 18:35:01]: ESXiController - VmConfigFile INFO                 Saved the config in the conguration table.
+[15-03-06 18:35:03]: ESXiController - VmConfigFile INFO                 Moved the config file to the data store.
+[15-03-06 18:35:05]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-06 18:35:07]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-06 18:35:08]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
+[15-03-07 15:51:18]: ESXiController - VmEsxiControllerBase INFO                 File load requested.
+[15-03-07 15:51:18]: ESXiController - VmEsxiControllerBase INFO                 Connecting to the file parsing engine.
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Created a config parser object.
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Reading table of configurations.
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Loaded the possible configurations.
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 
+ ========================================================== 
+[+] name:           default
+[+] created:        03/06/15
+[+] location:       configurations/malware_template.conf
+
+ ========================================================== 
+
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Current favorite set to: default
+[15-03-07 15:51:18]: ESXiController - VmEsxiControllerBase INFO                 Loading config...
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Read the config file: configurations/malware_template.conf
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 File size:      10053
+
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: attributes
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: controller
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: sinkhole
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: cuckoo-analytics
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: remnux-analytics
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: security-analytics
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: snorby-analytics
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: attacker-kali
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: linux-arch-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: linux-centos-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: linux-debian-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: linux-fedora-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: linux-nebula-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: linux-ubuntu-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: win-7-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: win-7-x86
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: win-8-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: win-vista-x86
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: win-server-2008-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Section read: win-xp-pro-x64
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Set current config to: default
+[15-03-07 15:51:18]: ESXiController - VmEsxiControllerBase INFO                 Saving config to file engine...
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Added a possible config to the config database.
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Saved the config in the conguration table.
+[15-03-07 15:51:18]: ESXiController - VmConfigFile INFO                 Moved the config file to the data store.
+[15-03-07 15:51:18]: ESXiController - VmEsxiControllerBase INFO                 Creating a network stager.
+[15-03-07 15:51:18]: ESXiController - VmNetworkStager INFO                 Created a new task server thread.
+[15-03-07 15:51:18]: ESXiController - VmEsxiControllerBase INFO                 Setup complete
