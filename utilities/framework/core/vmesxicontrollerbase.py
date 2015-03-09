@@ -99,7 +99,7 @@ class VmEsxiControllerBase(object):
                                             password=self.__host_configs['password'])
         return
 
-    def setup(self, config, collection, db=False, save=True):
+    def setup(self, config, collection=None, db=False, save=True):
         """
         This is the setup method for the class
 
@@ -122,14 +122,14 @@ class VmEsxiControllerBase(object):
             self.__db_handle = VmConfigDatabase(self.__host_configs['data'],
                                                 self.__log_level)
 
-            # Do we need to save the config
-            if save:
-                self.__logger.info("Saving config to db...")
-                self.__db_handle.save_configs(config, collection)
-
             if (config is not None) and (collection is not None):
                 self.__logger.info("Loading config...")
                 self.__configs = self.__db_handle.load_configs(config, collection)
+
+            # Do we need to save the config
+            if save:
+                self.__logger.info("Saving config to db...")
+                self.__db_handle.save_configs(self.__configs, collection)
 
         # Load from file
         else:
@@ -141,10 +141,11 @@ class VmEsxiControllerBase(object):
                 self.__logger.info("Loading config...")
                 self.__configs = self.__file_handle.load_configs(filename=config)
 
-            # Do we need to save the config
-            if save:
-                self.__logger.info("Saving config to file engine...")
-                self.__file_handle.save_configs(config)
+                # Do we need to save the config
+                if save:
+                    self.__file_handle.set_current(self.__configs['attributes']['name'])
+                    self.__logger.info("Saving config to file engine...")
+                    self.__file_handle.save_configs(self.__configs)
 
         # Create a network stager
         self.__logger.info("Creating a network stager.")

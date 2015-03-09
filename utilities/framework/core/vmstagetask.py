@@ -97,7 +97,7 @@ class VmStageTask(threading.Thread):
         while self.__alive:
 
             # we sleep
-            time.sleep(1)
+            time.sleep(10)
 
             # Monitor -- vm status
             temp = self.__get_status()
@@ -167,7 +167,7 @@ class VmStageTask(threading.Thread):
         """
 
         # Only get the active machines
-        for vm in self.__config:
+        for vm in self.__config['configurations']:
             if vm['Active']:
                 self.__vm_list.append(self.__handle.get_vm_by_name(vm['Name']))
                 self.__logger.info(self.__handle.get_properties())

@@ -62,9 +62,15 @@ The possible commands are as follows:
 # Imports
 # =============================================================
 
+import os
 import time
 import logging
 import configparser
+
+from esxivcenter import *
+from esxioperations import *
+from esxinotifications import *
+from esxiconfigurations import *
 
 from utilities.framework.core.vmloggerengine import *
 from utilities.framework.core.vmesxicontrollercli import *
@@ -103,10 +109,38 @@ DEFAULT_HOST_LOCATION = "configurations/host.conf"
 
 # Confirm options
 CONFIRM_OPTIONS = [
+    'Yes',
     'yes',
-    'YES'
+    'YES',
+    'Y',
+    'y'
 ]
 
+DENY_OPTIONS = [
+    'No'
+    'no',
+    'NO',
+    'n',
+    'N'
+]
+
+# Choices
+FILE = [
+    'file',
+    'FILE',
+    'File',
+    'f',
+    'F'
+]
+
+DATABASE = [
+    'Database',
+    'database',
+    'db',
+    'DB',
+    'D',
+    'd'
+]
 # =============================================================
 # Variables
 # =============================================================
@@ -145,8 +179,8 @@ def main():
 
     # Read the configs
     configs = configparser.ConfigParser()
-    host_file = raw_input("Please enter the host config file path or [yes] to confirm\n"
-                          "[default: configurations/host.conf]: ")
+    host_file = raw_input("[+] Please enter the host config file path or [yes] to confirm\n"
+                          "[+] [default: configurations/host.conf]: ")
 
     if host_file in CONFIRM_OPTIONS:
         host_file = DEFAULT_HOST_LOCATION
@@ -166,6 +200,66 @@ def main():
     # ===========================
     vm_controller = VmEsxiControllerBase(host_file, log_level)
 
+    # ===========================
+    # Setup controller
+    # ===========================
+
+    # Select file vs. Database
+    choice = raw_input("[+] Please select the source of the config [file / db]: ")
+
+    # Logger
+    logger = logging.getLogger('EsxiController')
+
+    # Choice is a file type
+    if choice in FILE:
+        logger.info('[+] Selected the input source as file type...')
+
+        # List possible file configs
+        logger.info(get_file_configs())
+
+        # Get options
+        file = raw_input('[+] Please input the config file path: ')
+        save = raw_input('[+] Would you like to save the config [y/n]: ')
+
+        # Confirm options
+        if save in CONFIRM_OPTIONS:
+            save = True
+        elif save in DENY_OPTIONS:
+            save = False
+
+        # We start the configs
+        vm_controller.setup(file, None, False, save)
+
+    # Choice is a database type
+    elif choice in DATABASE:
+        logger.info('[+] Selected the input source as a database type...')
+
+        # Get options
+        config = raw_input('[+] Please input the config name: ')
+        collection = raw_input('[+] Please input the collection name: ')
+        save = raw_input('[+] Would you like to save the config [y/n]: ')
+
+        # Confirm options
+        if save in CONFIRM_OPTIONS:
+            save = True
+        elif save in DENY_OPTIONS:
+            save = False
+
+        # We start the configs
+        vm_controller.setup(config, collection, True, save)
+
+    # Error
+    else:
+        logger.error('[-] Not a valid config type source < %s >.' % choice)
+        logger.error('[-] Exiting the system context.')
+        exit(1)
+
+    # ===========================
+    # Start controller
+    # ===========================
+
+    # Start the stage
+    vm_controller.start()
     return
 
 def setup_logging(args, configs):
@@ -192,6 +286,55 @@ def setup_logging(args, configs):
                     configs.get('host', 'syslogger_port')))
     else:
         set_logger(None)
+    return
+
+def get_file_configs():
+    """
+    List the files and the configs.
+
+    :return:
+    """
+
+    # List the configs in the configurations
+    files = [f for f in os.listdir('./configurations/') if ('.conf' in f) and (f != '.configurations.conf')]
+
+    # Set a log
+    log = 'The following configurations are as follows: \n'
+    for file in files:
+        log += "\t- configurations/" + file + '\n'
+
+    return log
+
+def get_db_configs(configs):
+    """
+    Gets the current db configs.
+
+    :param configs:         the configs
+    :return:
+    """
+
+    # Set a log
+    log = 'The following configurations are as follows: \n'
+
+    for item in configs:
+        for config in item.values():
+            log += "\t- " + config + "\n"
+    return
+
+def get_db_collections(configs):
+    """
+    Gets the current db configs.
+
+    :param configs:         the configs
+    :return:
+    """
+
+    # Set a log
+    log = 'The following collections are as follows: \n'
+
+    for item in configs:
+        for config in item.values():
+            log += "\t-" + config + "\n"
     return
 
 if __name__ == '__main__':

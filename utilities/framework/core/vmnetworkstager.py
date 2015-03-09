@@ -128,7 +128,6 @@ class VmNetworkStager(object):
 
                 # We get a stage reference
                 task_config = queue.get()
-                queue.task_dont()
 
                 # Create a stage object
                 stage = VmStageTask(connection, task_config)
@@ -138,6 +137,8 @@ class VmNetworkStager(object):
 
                 # Add the task to the list
                 self.__task_list[task_config['name']] = stage
+
+            time.sleep(5)
         self.__logger.info("Server thread not alive... Returning")
         return
 

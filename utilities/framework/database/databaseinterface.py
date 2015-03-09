@@ -167,7 +167,7 @@ class DatabaseInterface(object):
             self.__logger.info("Setting favorite config to: " + config)
             return self.get_collection(collection).update({'$set':{'favorite': config}})
 
-        elif not self.filter(collection, config):
+        elif self.filter(collection, config):
             self.__logger.info("The name < %s > already exists, choose another." % config)
             return None
         else:
@@ -182,7 +182,7 @@ class DatabaseInterface(object):
 
             except:
                 self.__logger.info("Duplicate entry...")
-        return
+            return True
 
     def remove(self, collection, config=None):
         """

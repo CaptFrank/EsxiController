@@ -43,8 +43,10 @@ class VmConfigFile(VmConfigBase):
     # The filename
     __filename = ""
 
-    # The talbe
+    # The table
     __table = None
+
+    # Current Configs
 
     def __init__(self, filename=None, log_level=logging.INFO):
         """
@@ -95,7 +97,7 @@ class VmConfigFile(VmConfigBase):
         self.__logger.info("Read the config file: %s", self.__filename)
 
         # Get file stats
-        stats = os.stat(self.__filename)
+        stats = os.stat(os.getcwd() + '/' + self.__filename)
 
         # Print file stats
         self.__logger.info("File size:      %i\n" % stats.st_size)
