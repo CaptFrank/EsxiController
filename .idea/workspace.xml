@@ -2,68 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f55dbde-5e0a-4573-a7c0-22113933d497" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/controller/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/logger/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/logger/data/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/registration/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/site/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/libs/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/libs/engine/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/libs/logger/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/db/db.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/deploy.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/libs/engine/engine.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/libs/engine/engine.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/extensions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/controller/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/logger/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/registration/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/site/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/helpers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/controller/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/logger/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/registration/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/site/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/static/temp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/controller/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/logger/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/registration/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/apps/site/views.py" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\log\labcontroller-06-03-15.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\log\labcontroller-07-03-15.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\log\labcontroller-08-03-15.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\log\serverlog.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\.placeholder" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\esxiControllerConfigs.0" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\esxiControllerConfigs.ns" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\journal\j._0" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\local.0" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\local.ns" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\mongod.lock" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmconnection.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmesxicontrollerbase.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmesxicontrollercli.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmloggerengine.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmnetworkstager.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmstagetask.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\notification\vmnotification.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\notification\vmnotificationdispatch.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\notification\vmnotificationtemplates.py" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\log\.placeholder" afterPath="$PROJECT_DIR$/server/server/log/.placeholder" />
-      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\mongodb\.placeholder" afterPath="$PROJECT_DIR$/server/server/templates/temp" />
-      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core\vmloggerengine.py" afterPath="$PROJECT_DIR$/server/server/libs/logger/loggerengine.py" />
-      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\utilities\framework\notification\__init__.py" afterPath="$PROJECT_DIR$/server/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LabController.iml" afterPath="$PROJECT_DIR$/.idea/LabController.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/fpapinea.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/fpapinea.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\configurations\.configurations.conf" afterPath="$PROJECT_DIR$/utilities/framework/configurations/.configurations.conf" />
+      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\configurations\.placeholder" afterPath="$PROJECT_DIR$/utilities/framework/configurations/.placeholder" />
+      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\configurations\host.conf" afterPath="$PROJECT_DIR$/utilities/framework/configurations/host.conf" />
+      <change type="MOVED" beforePath="C:\Users\fpapinea\workspace\esxiController\configurations\malware_template.conf" afterPath="$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LabController.iws" />
@@ -91,8 +33,8 @@
       <file leaf-file-name="engine.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server/libs/engine/engine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27982163" vertical-offset="531" max-vertical-offset="1428">
-              <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.5451505" vertical-offset="531" max-vertical-offset="1428">
+              <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
               <folding>
                 <element signature="e#448#457#0" expanded="true" />
               </folding>
@@ -261,11 +203,11 @@
       <recent name="C:\Users\fpapinea\workspace\esxiController\server\server\apps\spawner" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fpapinea\workspace\esxiController\utilities\framework" />
+      <recent name="C:\Users\fpapinea\workspace\esxiController\utilities" />
       <recent name="C:\Users\fpapinea\workspace\esxiController\server\server\libs" />
       <recent name="C:\Users\fpapinea\workspace\esxiController\server\engine" />
       <recent name="C:\Users\fpapinea\workspace\esxiController" />
-      <recent name="C:\Users\fpapinea\workspace\esxiController\server\server\utils" />
-      <recent name="C:\Users\fpapinea\workspace\esxiController\utilities\framework\core" />
     </key>
   </component>
   <component name="RunManager" selected="Python.esxicontroller">
@@ -551,7 +493,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425869931152</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Started">
+      <created>1426189418304</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1426189418304</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -561,6 +509,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1654373" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -570,7 +519,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -620,7 +568,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Added the database interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the database interface" />
+    <MESSAGE value="Started" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,7 +687,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configurations/host.conf">
+    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/host.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
           <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
@@ -746,7 +695,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configurations/.placeholder">
+    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/.placeholder">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -754,7 +703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configurations/.configurations.conf">
+    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/.configurations.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="6" selection-end-column="0" />
@@ -842,7 +791,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configurations/malware_template.conf">
+    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923" vertical-offset="1836" max-vertical-offset="6919">
           <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
@@ -1077,8 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server/libs/engine/engine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27982163" vertical-offset="531" max-vertical-offset="1428">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.5451505" vertical-offset="531" max-vertical-offset="1428">
+          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
           <folding>
             <element signature="e#448#457#0" expanded="true" />
           </folding>
