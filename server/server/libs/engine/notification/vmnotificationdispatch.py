@@ -9,8 +9,6 @@ import smtplib
 from server.server.libs.engine.notification.vmnotification import VmNotification
 
 
-
-
 # =============================================================
 # Constant
 # =============================================================

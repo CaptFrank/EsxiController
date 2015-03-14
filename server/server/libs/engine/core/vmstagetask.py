@@ -8,9 +8,6 @@ import threading
 from __init__ import DictDiffer as diff
 from server.server.libs.engine.notification.vmnotificationdispatch import *
 
-
-
-
 # =============================================================
 # Source
 # =============================================================

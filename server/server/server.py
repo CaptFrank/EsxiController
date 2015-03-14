@@ -28,7 +28,7 @@ Imports
 import os
 
 from flask import Flask
-from configparser import ConfigParser
+from ConfigParser import ConfigParser
 from flask import request, session, redirect, url_for, abort
 
 """

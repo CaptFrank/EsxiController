@@ -66,7 +66,7 @@ class VmConfigBase(object):
         """
         raise NotImplemented
 
-    def edit_configs(self):
+    def update_configs(self):
         """
         This edits the config that is in the context of the
         config class.

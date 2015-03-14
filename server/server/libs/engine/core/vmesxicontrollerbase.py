@@ -4,14 +4,11 @@
 
 import ast
 import logging
-import configparser
+import ConfigParser
 
-from utilities.framework.core.vmconnection import VmConnection
+from server.server.libs.engine.core.vmconnection import VmConnection
 from server.server.libs.engine.core.vmnetworkstager import VmNetworkStager
 from server.server.libs.engine.config.vmconfigdatabase import VmConfigDatabase
-
-
-
 
 # =============================================================
 # Source
@@ -77,7 +74,7 @@ class VmEsxiControllerBase(object):
 
         # Configs
         self.__logger.info("Reading the host configurations.")
-        self.__parser = configparser.ConfigParser()
+        self.__parser = ConfigParser.ConfigParser()
         self.__parser.read(host_config)
 
         # Get the handles

@@ -7,10 +7,8 @@ import time
 import thread
 import logging
 
-from queue import Queue
+from Queue import Queue
 from server.server.libs.engine.core.vmstagetask import VmStageTask
-
-
 
 # =============================================================
 # Source
@@ -112,6 +110,31 @@ class VmNetworkStager(object):
             self.__logger.info("Cannot add task... Task queue is empty.")
         return task
 
+    def kill_task(self, name):
+        """
+        Here we take a name and kill that task.
+
+        :param name:                the task name to kill
+        :return:
+        """
+
+        # We kill the task specified
+        self.__logger.info("Attempting to kill the task <{nam}>.".format(name=name))
+        self.__task_list[name].kill_task()
+        return
+
+    def kill_server(self):
+        """
+        This kills the task server.
+        :return:
+        """
+        self.__alive = False
+        return
+
+    # =======================
+    # The task server thread.
+    # =======================
+
     def task_server(self, queue, connection):
         """
         This is the main task server method. This is the task server
@@ -143,28 +166,6 @@ class VmNetworkStager(object):
             time.sleep(5)
         self.__logger.info("Server thread not alive... Returning")
         return
-
-    def kill_task(self, name):
-        """
-        Here we take a name and kill that task.
-
-        :param name:                the task name to kill
-        :return:
-        """
-
-        # We kill the task specified
-        self.__logger.info("Attempting to kill the task <{nam}>.".format(name=name))
-        self.__task_list[name].kill_task()
-        return
-
-    def kill_server(self):
-        """
-        This kills the task server.
-        :return:
-        """
-        self.__alive = False
-        return
-
 
 
 

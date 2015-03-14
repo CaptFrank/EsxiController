@@ -8,10 +8,6 @@ from email.mime.text import MIMEText
 
 from server.server.libs.engine.notification.vmnotificationtemplates import *
 
-
-
-
-
 # =============================================================
 # Source
 # =============================================================
@@ -25,16 +21,16 @@ class VmNotification(object):
     """
 
     @staticmethod
-    def get(type):
+    def get(notification):
         """
         This gets the message type that is requested
 
-        :param type:            the message type
+        :param notification:    the message type
         :return:
         """
 
         # We get the message
-        return MESSAGE_TYPES['type']
+        return MESSAGE_TYPES[notification]
 
     @staticmethod
     def format(destination, message, reason, configs):
