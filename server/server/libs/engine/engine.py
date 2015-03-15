@@ -95,6 +95,48 @@ Source
 =============================================
 """
 
+def setup_logging(args, configs):
+    """
+    Sets up the logging engine.
+
+    :return:
+    """
+
+    global log_level
+    global syslog_enable
+
+    # We switch to get them
+    # We setup the verbosity
+    if args.verbose.upper() in LOGGING_LEVELS:
+        log_level = args.verbose.upper()
+    else:
+        print('[+] Verbosity Level not recognized... Setting to INFO.')
+        log_level = logging.INFO
+
+    logging_configs = {
+        'syslog' : None,
+        'splunk' : None
+    }
+
+    # We setup the syslog
+    if args.syslog == 'enable':
+        # We get the logging configs
+        logging_configs['syslog'] = (configs.get('host', 'syslogger_address'),
+                                       configs.get('host', 'syslogger_port')),
+
+    if args.splunk == 'enable':
+        # We setup the logging engine
+        logging_configs['splunk'] = {
+            'token'     : configs.get('host', 'splunk_token'),
+            'project'   : configs.get('host', 'splunk_project'),
+            'api'       : configs.get('host', 'splunk_api')
+        }
+
+    set_logger(logging_configs['syslog'],
+               logging_configs['splunk'])
+
+    return
+
 
 def setup(args):
     """
@@ -135,20 +177,6 @@ def setup(args):
     # Logging
     # ===========================
 
-    # We get the logging configs
-    logging_configs = {
-        'syslog'    : (configs.get('host', 'syslogger_address'),
-                       configs.get('host', 'syslogger_port')),
-        'splunk'    : {
-            'token'     :  configs.get('host', 'splunk_token'),
-            'project'   :  configs.get('host', 'splunk_project'),
-            'api'       :  configs.get('host', 'splunk_api')
-        }
-    }
-
-    # We setup the logging engine
-    set_logger(logging_configs['syslog'],
-               logging_configs['splunk'])
 
     # ===========================
     # Controller

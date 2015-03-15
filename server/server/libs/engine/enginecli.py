@@ -114,6 +114,12 @@ def build_arg_parser():
                         default='enable',
                         choices=['enable', 'disable'],
                         help='Enables or disables the syslogger engine.')
+    console.add_argument('-L', '--splunk',
+                        required=True,
+                        action='store',
+                        default='enable',
+                        choices=['enable', 'disable'],
+                        help='Enables or disables the splunk engine.')
 
     # =============================================================
     # Add the notification group
