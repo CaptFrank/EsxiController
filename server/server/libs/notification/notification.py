@@ -5,15 +5,17 @@
 import time
 import pprint
 from email.mime.text import MIMEText
+from Cheetah.Template import Template
 
-from server.server.libs.engine.notification.vmnotificationtemplates import *
+from server.server.libs.notification.notificationtemplates import *
+
 
 # =============================================================
 # Source
 # =============================================================
 
 
-class VmNotification(object):
+class notification(object):
     """
     This is the notification engine for the framework. It
     houses the possible messages that can be sent and the formatting

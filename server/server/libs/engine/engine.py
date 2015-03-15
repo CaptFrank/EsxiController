@@ -21,9 +21,10 @@ Imports
 """
 
 import os
-
-from queue import Queue
-from configparser import ConfigParser
+from Queue import Queue
+from server.server.libs.engine.enginecli import *
+from server.server.libs.logger.loggerengine import *
+from server.server.libs.engine.core.controller import *
 
 """
 =============================================
@@ -39,7 +40,54 @@ __date__                        = "3/11/2015"
 # Application Title
 APP_TITLE                       = """
 
+
+___________                   .__  _________                       __                      .__    .__
+\_   _____/   ______ ___  ___ |__| \_   ___ \    ____     ____   _/  |_  _______    ____   |  |   |  |     ____   _______
+ |    __)_   /  ___/ \  \/  / |  | /    \  \/   /  _ \   /    \  \   __\ \_  __ \  /  _ \  |  |   |  |   _/ __ \  \_  __ \
+ |        \  \___ \   >    <  |  | \     \____ (  <_> ) |   |  \  |  |    |  | \/ (  <_> ) |  |__ |  |__ \  ___/   |  | \/
+/_______  / /____  > /__/\_ \ |__|  \______  /  \____/  |___|  /  |__|    |__|     \____/  |____/ |____/  \___  >  |__|
+        \/       \/        \/              \/                \/                                               \/
+
 """
+
+# Application prologue
+APP_PROLOGUE                    = """
+
+Author:     {author}
+Version:    {version}
+Date:       {date}
+
+"""
+
+# Logging levels
+LOGGING_LEVELS                  = [
+                                    'CRITICAL',
+                                    'ERROR',
+                                    'WARNING',
+                                    'INFO',
+                                    'DEBUG'
+                                    ]
+
+# Confirm options
+CONFIRM_OPTIONS                 = ['Yes', 'yes', 'YES', 'Y', 'y']
+
+DENY_OPTIONS                    = ['No', 'no', 'NO', 'n', 'N']
+
+# =============================================================
+# Variables
+# =============================================================
+
+# Host file
+host_file                       = None
+
+# The verbosity
+log_level                       = None
+
+# The syslogs
+syslog_enable                   = None
+
+# The controller object
+controller                      = None
 
 """
 =============================================
@@ -47,14 +95,64 @@ Source
 =============================================
 """
 
-def setup():
+
+def setup(args):
     """
     This sets up the engine and spawns all the necessary
     threads needed to operate.
 
+    :param args:            the args
     :return:
     """
 
+    # Global handles
+    global host_file
+    global log_level
+    global syslog_enable
+    global controller
+
+    # ===========================
+    # Host Configs
+    # ===========================
+
+    # We check for the configs
+    host_file = args.config
+
+    # Check the file
+    exist = os.path.isfile(host_file)
+    if exist:
+        print("[+] Host file selected...")
+
+    else:
+        print("[-] Invalid host file location...")
+        exit(1)
+
+    # We read the logging configs
+    configs = ConfigParser.ConfigParser()
+    configs.read(host_file)
+
+    # ===========================
+    # Logging
+    # ===========================
+
+    # We get the logging configs
+    logging_configs = {
+        'syslog'    : (configs.get('host', 'syslogger_address'),
+                       configs.get('host', 'syslogger_port')),
+        'splunk'    : {
+            'token'     :  configs.get('host', 'splunk_token'),
+            'project'   :  configs.get('host', 'splunk_project'),
+            'api'       :  configs.get('host', 'splunk_api')
+        }
+    }
+
+    # We setup the logging engine
+    set_logger(logging_configs['syslog'],
+               logging_configs['splunk'])
+
+    # ===========================
+    # Controller
+    # ===========================
     return
 
 def run():
@@ -72,6 +170,18 @@ def main():
 
     :return:
     """
+
+    # Print the banner
+    print(APP_TITLE)
+    print(APP_PROLOGUE.format(author=__author__,
+                              version=__version__,
+                              date=__date__))
+
+    # Get the args
+    args = get_args()
+
+    # We setup the engine
+    setup(args)
 
     return
 

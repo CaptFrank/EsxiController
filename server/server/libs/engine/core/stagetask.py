@@ -6,13 +6,13 @@ import time
 import threading
 
 from __init__ import DictDiffer as diff
-from server.server.libs.engine.notification.vmnotificationdispatch import *
+from server.server.libs.notification.notificationdispatch import *
 
 # =============================================================
 # Source
 # =============================================================
 
-class VmStageTask(threading.Thread):
+class stageTask(threading.Thread):
     """
     This is the stage task definition. This is the
     class that handles the direct interactions between
@@ -20,22 +20,22 @@ class VmStageTask(threading.Thread):
     """
 
     # The connection handle
-    __handle = None
+    __handle                            = None
 
     # The config to act upon
-    __config = None
+    __config                            = None
 
     # The vm list
-    __vm_list = []
+    __vm_list                           = list()
 
     # The kill flag
-    __alive = True
+    __alive                             = True
 
     # Status
-    __status = {}
+    __status                            = dict()
 
     # Dispatch
-    __dispatch = None
+    __dispatch                          = None
 
 
     def __init__(self, connection, configurations, log_level=logging.INFO):
@@ -58,7 +58,7 @@ class VmStageTask(threading.Thread):
         self.__config = configurations
 
         # Setup the dispatch
-        self.__dispatch = VmNotificationDispatch()
+        self.__dispatch = notificationDispatch()
 
         # Get the vms
         self.__get_vms()
@@ -75,11 +75,13 @@ class VmStageTask(threading.Thread):
             # Start the stage
             self.__start_stage()
 
-        except Exception:
+        except Exception, e:
             # Send a notification that the stage is done
             self.__dispatch.send_notification(self.__config['destinations'],
                                           'error',
-                                          '%s staging incomplete!!!' % self.__config['configurations']['name'],
+                                          '%s staging incomplete!!!\n'
+                                          'Error: %s' % (self.__config['configurations']['name'],
+                                          e),
                                           self.__config['configurations']
                                           )
 

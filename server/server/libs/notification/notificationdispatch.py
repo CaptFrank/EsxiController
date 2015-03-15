@@ -6,8 +6,7 @@
 import logging
 import smtplib
 
-from server.server.libs.engine.notification.vmnotification import VmNotification
-
+from server.server.libs.notification.notification import notification
 
 # =============================================================
 # Constant
@@ -20,7 +19,7 @@ ESXI_CONTROLLER_ADDRESS = 'esxicontroller@mail.haligonia.home.com'
 # Source
 # =============================================================
 
-class VmNotificationDispatch(object):
+class notificationDispatch(object):
     """
     This is the message dispatcher for the ESXI controller
     framework.
@@ -85,9 +84,9 @@ class VmNotificationDispatch(object):
         """
 
         # We get the message type
-        self.__message = VmNotification.get(self.__msg_type)
-        self.__message = VmNotification.format(self.__destination,
-                                               self.__message,
-                                               reason,
-                                               configs)
+        self.__message = notification.get(self.__msg_type)
+        self.__message = notification.format(self.__destination,
+                                                self.__message,
+                                                reason,
+                                                configs)
         return

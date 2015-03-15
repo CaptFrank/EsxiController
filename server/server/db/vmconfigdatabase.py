@@ -6,9 +6,8 @@
 import os
 import logging
 
-from datadiff import diff
 from vmconfigbase import VmConfigBase
-from configparser import ConfigParser
+from ConfigParser import ConfigParser
 from utilities.framework.database.databaseinterface import *
 
 # =============================================================

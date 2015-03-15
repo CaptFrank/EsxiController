@@ -6,16 +6,15 @@
 import time
 import thread
 import logging
-
 from Queue import Queue
-from server.server.libs.engine.core.vmstagetask import VmStageTask
+from server.server.libs.engine.core.stagetask import stageTask
 
 # =============================================================
 # Source
 # =============================================================
 
 
-class VmNetworkStager(object):
+class networkStager(object):
     """
     This class is the network configuration stager.
     It is responsible to start a config and turn on the requisite
@@ -26,35 +25,36 @@ class VmNetworkStager(object):
     """
 
     # The connection handle
-    __handle = None
+    __handle                                = None
 
     # Logger
-    __logger = None
+    __logger                                = None
 
     # The task server
-    __server = None
+    __server                                = None
 
     # The kill flag
-    __alive = True
+    __alive                                 = True
 
     # Task list
-    __task_list = {}
+    __task_list                             = dict()
 
     # The task queue
-    __task_queue = Queue()
+    __task_queue                            = Queue()
 
     # Destinations to email
-    __destinations = []
+    __destinations                          = list()
 
     def __init__(self, connection, destinations, log_level=logging.INFO):
         """
         This is the default constructor to the class
+
         :param connection:      the connection to the vcenter instance
         :param destinations:    the destinations to email.
         :return:
         """
 
-        self.__logger = logging.getLogger("ESXiController - VmNetworkStager")
+        self.__logger = logging.getLogger("ESXiController - networkStager")
         self.__logger.setLevel(log_level)
 
         # Set the internal handles to the connection and config
@@ -78,9 +78,9 @@ class VmNetworkStager(object):
 
         # We add the configuration and name to a task object
         task = {
-            'configurations': configuration,
-            'name': name,
-            'destinations': self.__destinations
+            'configurations'        : configuration,
+            'name'                  : name,
+            'destinations'          : self.__destinations
         }
 
         # We then add it to our task queue to get it executed
@@ -155,7 +155,7 @@ class VmNetworkStager(object):
                 task_config = queue.get()
 
                 # Create a stage object
-                stage = VmStageTask(connection, task_config)
+                stage = stageTask(connection, task_config)
 
                 # We start it
                 stage.start()

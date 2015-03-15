@@ -6,16 +6,15 @@ import ast
 import logging
 import ConfigParser
 
-from server.server.libs.engine.core.vmconnection import VmConnection
-from server.server.libs.engine.core.vmnetworkstager import VmNetworkStager
-from server.server.libs.engine.config.vmconfigdatabase import VmConfigDatabase
+from server.server.libs.engine.core.connection import connection
+from server.server.libs.engine.core.networkstager import networkStager
 
 # =============================================================
 # Source
 # =============================================================
 
 
-class VmEsxiControllerBase(object):
+class controller(object):
     """
     This is the base class for the esxi controllers.
     It houses the base logger, filename, parser and configs.
@@ -26,34 +25,34 @@ class VmEsxiControllerBase(object):
     # Configs
 
     # The host settings
-    __host_configs = dict()
+    __host_configs                      = dict()
 
     # The email address to send the notifications
-    __email_dest = []
+    __email_dest                        = list()
 
     # The configs
-    __configs = dict()
+    __configs                           = dict()
 
     # The internal logger
-    __logger = None
+    __logger                            = None
 
     # log level
-    __log_level = logging.INFO
+    __log_level                         = logging.INFO
 
     # ====================
     # Handles
 
     # The config parser
-    __parser = None
+    __parser                            = None
 
     # The vm connection
-    __vm_connection = None
+    __vm_connection                     = None
 
     # Database handle
-    __db_handle = None
+    __db_handle                         = None
 
     # Stage
-    __stage = None
+    __stage                             = None
 
     def __init__(self, host_config, log_level=logging.INFO):
         """
@@ -68,7 +67,7 @@ class VmEsxiControllerBase(object):
         """
 
         # Logger
-        self.__logger = logging.getLogger("ESXiController - VmEsxiControllerBase")
+        self.__logger = logging.getLogger("ESXiController - esxiControllerBase")
         self.__logger.setLevel(log_level)
         self.__log_level = log_level
 
@@ -88,9 +87,13 @@ class VmEsxiControllerBase(object):
 
         # Connect to the host
         self.__logger.info("Connecting to host...")
-        self.__vm_connection = VmConnection(host=self.__host_configs['host'],
-                                            user=self.__host_configs['user'],
-                                            password=self.__host_configs['password'])
+        self.__vm_connection = connection(host=self.__host_configs['host'],
+                                          user=self.__host_configs['user'],
+                                          password=self.__host_configs['password'])
+        return
+
+    def run(self):
+
         return
 
     def setup(self, config):
@@ -99,32 +102,21 @@ class VmEsxiControllerBase(object):
         The input is in the form of a dict{} where the structure is
         the following:
 
-            config = {
-                        'document': <name>,
-                        'collection': <name>
-                    }
+            config = {}
 
-        :param config:              the config name to load
+        :param config:              the config struct to load
         :return:
         """
 
-        # Get the configs
-        # We check what kind of config needs to load
-        #   - Either needs to load from db,
-        #   - Or from file.
+        # We set the configs to teh internal reference
+        self.__configs = config
 
-        # Load from db
-        self.__logger.info("Database load requested.")
-        self.__logger.info("Connecting to the database engine.")
-        self.__db_handle = VmConfigDatabase(self.__host_configs['data'],
-                                            self.__log_level)
-        self.__configs = self.__db_handle.load_configs(config)
 
         # Create a network stager
         self.__logger.info("Creating a network stager.")
-        self.__stage = VmNetworkStager(self.__vm_connection,
-                                       self.__email_dest,
-                                       self.__log_level)
+        self.__stage = networkStager(self.__vm_connection,
+                                     self.__email_dest,
+                                     self.__log_level)
         self.__logger.info("Setup complete")
         return
 

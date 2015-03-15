@@ -24,19 +24,19 @@ class VmConfigBase(object):
     """
 
     # The configs
-    __configs = None
+    __configs                           = None
 
     # The config parser
-    __parser = None
+    __parser                            = None
 
     # The internal logger
-    __logger = None
+    __logger                            = None
 
     # The log level
-    __log_level = None
+    __log_level                         = None
 
     # The current config
-    __current_config = None
+    __current_config                    = None
 
     @abstractmethod
     def load_configs(self, config=None):

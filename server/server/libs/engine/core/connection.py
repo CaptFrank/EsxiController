@@ -12,7 +12,7 @@ from pysphere import VIServer
 # Source
 # =============================================================
 
-class VmConnection(object):
+class connection(object):
     """
     This class is the network configuration stager.
     It is responsible to start a config and turn on the requisite
@@ -23,13 +23,13 @@ class VmConnection(object):
     """
 
     # The libvirt handle
-    __handle = None
+    __handle                                = None
 
     # The config to act upon
-    __config = None
+    __config                                = None
 
     # The logger
-    __logger = None
+    __logger                                = None
 
     def __init__(self, host, user, password, log_level=logging.INFO):
         """
@@ -55,6 +55,7 @@ class VmConnection(object):
             self.__logger.info("Connection unsuccessful...")
             exit(1)
 
+        # Register an exit strategy
         atexit.register(VIServer.disconnect, self.__handle)
 
         self.__logger.info("Connection successful...")
