@@ -10,6 +10,7 @@ Imports
 =============================================
 """
 
+import os
 import time
 import logging
 import logging.handlers
@@ -22,6 +23,7 @@ Constant
 """
 
 LOGGER_LEVEL = logging.INFO
+LOG_FILE_DIR = '/var/log/esxicontroller/'
 LOG_FILE_NAME = '/var/log/esxicontroller/labcontroller-%s.log'
 
 """
@@ -47,7 +49,15 @@ def set_logger(syslog_address=None, splunk_configs=None):
     :param syslog_address:                the syslog server address
     :param splunk_configs:                the configs for the splunk logging engine
     """
-    
+
+    # Check to see if the dir is existent
+    if not os.path.isdir(LOG_FILE_DIR):
+        print('[-] Logging directory does not exist, creating.')
+
+        # We create a dir
+        os.makedirs(LOG_FILE_DIR)
+        print('[+] Logging directory created: %s.' % LOG_FILE_DIR)
+
     # We set the file name
     filename = LOG_FILE_NAME % time.strftime('%d-%m-%y')
 

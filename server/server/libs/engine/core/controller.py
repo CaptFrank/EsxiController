@@ -3,7 +3,9 @@
 # =============================================================
 
 import ast
+import time
 import logging
+import threading
 import ConfigParser
 
 from server.server.libs.engine.core.connection import connection
@@ -14,7 +16,7 @@ from server.server.libs.engine.core.networkstager import networkStager
 # =============================================================
 
 
-class controller(object):
+class controller(threading.Thread):
     """
     This is the base class for the esxi controllers.
     It houses the base logger, filename, parser and configs.
@@ -54,6 +56,12 @@ class controller(object):
     # Stage
     __stage                             = None
 
+    # ====================
+    # Process attributes
+
+    # The alive bool
+    alive                               = True
+
     def __init__(self, host_config, log_level=logging.INFO):
         """
         This sets the default values within the context of the
@@ -65,6 +73,9 @@ class controller(object):
         :param host_config:        the host config file
         :return:
         """
+
+        # Threading override
+        threading.Thread.__init__(self)
 
         # Logger
         self.__logger = logging.getLogger("ESXiController - esxiControllerBase")
@@ -93,24 +104,39 @@ class controller(object):
         return
 
     def run(self):
-
-        return
-
-    def setup(self, config):
         """
-        This is the setup method for the class
-        The input is in the form of a dict{} where the structure is
-        the following:
+        The default run method for the thread.
+        All we do in this method is call upon the
+        idle method to idle the main context until killed
 
-            config = {}
-
-        :param config:              the config struct to load
         :return:
         """
 
-        # We set the configs to teh internal reference
-        self.__configs = config
+        self.idle()
+        return
 
+
+    def idle(self):
+        """
+        This is the main loop for the app that is called upon in the
+        top level main context.
+
+        :return:
+        """
+
+        while self.alive:
+            try:
+                time.sleep(1)
+            except (KeyboardInterrupt, SystemExit):
+                self.__logger.info("Killing app based on user input...")
+                exit(0)
+        return
+
+    def setup(self):
+        """
+        This is the setup method for the class
+        :return:
+        """
 
         # Create a network stager
         self.__logger.info("Creating a network stager.")
@@ -121,22 +147,29 @@ class controller(object):
         return
 
 
-    def start(self):
+    def start_task(self, config):
         """
         This is the start method.
+
+        The input is in the form of a dict{} where the structure is
+        the following:
+
+            config = {}
+
+        :param config:              the config struct to load
         :return:
         """
         self.__logger.info("Starting stage...")
-        self.__stage.add_stage_task(self.__configs,
-                                    self.__configs['attributes']['name'])
+        self.__stage.add_stage_task(config,
+                                    config['attributes']['name'])
         return
 
-    def stop(self):
+    def stop_task(self, config):
         """
         This is stops the stage
         :return:
         """
         self.__logger.info("Stopping stage...")
-        self.__stage.kill_task(self.__configs['attributes']['name'])
+        self.__stage.kill_task(config['attributes']['name'])
         return
 
