@@ -50,26 +50,6 @@ def build_arg_parser():
                     'control the esxicontroller script.'
     )
 
-    control.add_argument('-s', '--start',
-                        required=False,
-                        action='store',
-                        help='Starts the session with the provided host configurations.')
-
-    control.add_argument('-S', '--stop',
-                        required=False,
-                        default=True,
-                        help='Stops the current session gracefully.')
-
-    control.add_argument('-r', '--reset',
-                        required=False,
-                        default=True,
-                        help='Resets a session.')
-
-    control.add_argument('-k', '--kill',
-                        required=False,
-                        default=True,
-                        help='Stops the current session viciously.')
-
     # =============================================================
     # Add the source group
     config = parser.add_argument_group(
@@ -79,19 +59,20 @@ def build_arg_parser():
     )
 
     config.add_argument('-p', '--printConfig',
-                required=False,
-                action='store',
-                help='Prints the specified config.')
+                        required=False,
+                        action='store',
+                        help='Prints the specified config.')
 
     config.add_argument('-c', '--config',
-                required=True,
-                action='store',
-                help='Sets the configs.')
+                        required=True,
+                        action='store',
+                        default='engine.conf',
+                        help='Sets the configs.')
 
     config.add_argument('-D', '--diff',
-                required=False,
-                action='store',
-                help='Diff 2 configs.')
+                        required=False,
+                        action='store',
+                        help='Diff 2 configs.')
 
     # =============================================================
     # Add the console group
@@ -130,13 +111,13 @@ def build_arg_parser():
     )
 
     notification.add_argument('-t', '--test',
-                    required=False,
-                    help='Tests the notification engine.')
+                        required=False,
+                        help='Tests the notification engine.')
 
     notification.add_argument('-A', '--send',
-                required=False,
-                action='store',
-                help='Sends a message through the notification engine.')
+                        required=False,
+                        action='store',
+                        help='Sends a message through the notification engine.')
     return parser
 
 def get_args():

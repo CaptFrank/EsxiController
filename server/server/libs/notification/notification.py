@@ -46,12 +46,23 @@ class notification(object):
         """
 
         # We need the following:
-        # Time, Reason, Configs
-        namespace = {
-            'time': time.strftime('%y-%m-%d %H:%M:%S'),
-            'configs': pprint.pprint(configs),
-            'reason': reason
-            }
+
+        if configs is not None:
+
+            # Time, Reason, Configs
+            namespace = {
+                'time': time.strftime('%y-%m-%d %H:%M:%S'),
+                'configs': pprint.pprint(configs),
+                'reason': reason
+                }
+        else:
+
+            # Time, Reason, Configs
+            namespace = {
+                'time': time.strftime('%y-%m-%d %H:%M:%S'),
+                'configs': None,
+                'reason': reason
+                }
         message = Template(message, searchList=[namespace])
 
         # Setup message

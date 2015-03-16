@@ -22,10 +22,12 @@ Imports
 
 import os
 import multiprocessing
+from subprocess import call
 
 from server.server.libs.engine.enginecli import *
 from server.server.libs.logger.loggerengine import *
 from server.server.libs.engine.core.controller import *
+from server.server.libs.notification.notificationdispatch import *
 
 """
 =============================================
@@ -73,8 +75,8 @@ LOGGING_LEVELS                  = [
 CONFIRM_OPTIONS                 = ['Yes', 'yes', 'YES', 'Y', 'y']
 DENY_OPTIONS                    = ['No', 'no', 'NO', 'n', 'N']
 
-# Child process attributes
-JOBS                            = []
+# Message types
+MESSAGE_TYPE                    = ['error', 'complete', 'test']
 
 # =============================================================
 # Variables
@@ -94,6 +96,9 @@ syslog_enable                   = None
 
 # The controller object
 controller_handle               = None
+
+# Child process attributes
+jobs                            = []
 
 """
 =============================================
@@ -231,7 +236,8 @@ def run(args):
 
         pid = multiprocessing.Process(target=process, args=(args,))
         if pid > 0:
-            JOBS.append(pid)
+            jobs.append(pid)
+            pid.daemon = True
             pid.start()
 
     except OSError, e:
@@ -274,8 +280,62 @@ def main():
     # Get the args
     args = get_args()
 
+    # ===========================
+    # Notifications
+    # ===========================
+
+    # We send a test notification
+    if args.test:
+
+        # Create a notification dispatcher
+        dispatcher = notificationDispatch()
+
+        # Get inputs
+        destination = raw_input("[+] Destination address: ")
+        dispatcher.send_notification(destination, 'test', 'test', None)
+
+    elif args.send:
+
+        # Create a notification dispatcher
+        dispatcher = notificationDispatch()
+
+        # Get inputs
+        destination = raw_input("[+] Destination address: ")
+
+        print('[+] Message types:')
+        for item in MESSAGE_TYPE:
+            print('[+]\t - %s' % item)
+
+        msg_type = raw_input("[+] Message Type: ")
+        reason = raw_input('[+] Reason: ')
+        dispatcher.send_notification(destination, msg_type, reason, None)
+
+    # ===========================
+    # Configs
+    # ===========================
+
+    # We print the configs
+    if args.printConfigs:
+        call('more %s' % args.printConfigs)
+
+    # We diff the 2 configs
+    elif args.diff:
+        names = args.diff.remove("'")
+        name1 = names.diff.split(" ")[0]
+        name2 = names.diff.split(" ")[1]
+        call('diff %s %s' %(name1, name2))
+
+    # ===========================
+    # Operations
+    # ===========================
+
     # We setup the engine
     run(args)
+
+    # Wait until done
+    for item in jobs:
+        item.join()
+
     return
 
 if __name__ == "__main__":
