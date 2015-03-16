@@ -3,7 +3,8 @@
     models.py
     ==========
 
-    This is the database models for the controller application
+    This is the models interface for the database for the task
+    applications.
 
     :copyright: (c) 2015 by GammaRay.
     :license: BSD, see LICENSE for more details.
@@ -20,8 +21,14 @@ Imports
 =============================================
 """
 
-import datetime
-from mongokit import Connection, Document, Database
+from server.server.db.db import base
+from sqlalchemy import Column, Integer, String
+
+"""
+=============================================
+Constant
+=============================================
+"""
 
 """
 =============================================

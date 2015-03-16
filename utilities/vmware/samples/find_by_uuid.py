@@ -68,8 +68,8 @@ si = connect.SmartConnect(host=args.host, user=args.user, pwd=args.password,
 atexit.register(connect.Disconnect, si)
 
 # see:
-# http://pubs.vmware.com/vsphere-55/topic/com.vmware.wssdk.apiref.doc/vim.ServiceInstanceContent.html
-# http://pubs.vmware.com/vsphere-55/topic/com.vmware.wssdk.apiref.doc/vim.SearchIndex.html
+# http://pubs.vmware.com/vsphere-55/topic/com.vmware.wssdk.apiref.docs/vim.ServiceInstanceContent.html
+# http://pubs.vmware.com/vsphere-55/topic/com.vmware.wssdk.apiref.docs/vim.SearchIndex.html
 search_index = si.content.searchIndex
 vm = search_index.FindByUuid(None, args.uuid, True, True)
 
