@@ -23,10 +23,11 @@ Imports
 
 import json
 import uuid
+
 from sqlalchemy import *
 from datetime import datetime
-from server.server.db.db import base
-from sqlalchemy.orm import relationship, backref
+from flask_sqlalchemy import *
+from sqlalchemy.orm import relationship
 
 """
 =============================================
@@ -40,12 +41,16 @@ Source
 =============================================
 """
 
-class Configuration(base):
+# ===================
+# Configuration
+# ===================
+
+class Configuration(Model):
     """
     This is the main table used in this application.
     It stores the configs in form of str(json).
 
-    Extends the base class.
+    Extends the Model class.
     """
 
     # ===================
@@ -59,23 +64,30 @@ class Configuration(base):
     # ===================
 
     id          = Column(Integer,       primary_key     = True)
-    name        = Column(String(50),    unique          = True)
-    uuid        = Column(String(20),    unique          = True)
+    name        = Column(String,        unique          = True)
+    uuid        = Column(String,        unique          = True)
     favorite    = Column(Boolean,       default         = False)
     date        = Column(DateTime,      default         = datetime.utcnow)
+    recent      = Column(DateTime)
+    uses        = Column(Integer)
+
+
+    # Favorite Relationship
+    favorite_id = Column(Integer,       ForeignKey('favorites.id'))
 
     # Core attributes
-    config_type = Column(String())
-    configs     = Column(String(),      unique          = False)
+    config_type = Column(String)
+    configs     = Column(String,        unique          = False)
 
     # ===================
     # Sources
     # ===================
 
-    def __init__(self, name = None,
-                 configs = None,
-                 favorite = None,
-                 config_type = None):
+    def __init__(self,
+                 name           = None,
+                 configs        = None,
+                 favorite       = None,
+                 config_type    = None):
         """
         This is the default constructor for the table
 
@@ -112,12 +124,16 @@ class Configuration(base):
         return '<Configuration %r - favorite %r>' \
                % (self.name, self.favorite)
 
-class Session(base):
+# ===================
+# Session
+# ===================
+
+class Session(Model):
     """
     This is the main table used in this application.
     It stores the sessions in form of union of configs.
 
-    Extends the base class.
+    Extends the Model class.
     """
 
     # ===================
@@ -131,26 +147,76 @@ class Session(base):
     # ===================
 
     id          = Column(Integer,       primary_key     = True)
-    name        = Column(String(50),    unique          = True)
-    uuid        = Column(String(20),    unique          = True)
+    name        = Column(String,        unique          = True)
+    uuid        = Column(String,        unique          = True)
     favorite    = Column(Boolean,       default         = False)
     date        = Column(DateTime,      default         = datetime.utcnow)
+    count       = Column(Integer)
+
+    # Favorite Relationship
+    favorite_id = Column(Integer,       ForeignKey('favorites.id'))
 
     # Core attributes
-    config_id   = Column(Integer,       ForeignKey('configs.type'))
+    config_id   = Column(Integer,       ForeignKey('configs.config_type'))
     config      = relationship(
-                        "Configuration",
-                        backref = "parents"
+                        'Configuration',
+                        backref     = 'parents',
+                        lazy        = 'dynamic'
                         )
 
-    def __init__(self, name = None, favorite = None):
-        self.name = name
-        self.email = email
+    # ===================
+    # Sources
+    # ===================
+
+    def __init__(self,
+                 name           = None,
+                 config_id      = None,
+                 favorite       = None):
+        """
+        This is the default constructor for the table
+
+        :param name:                    the config name
+        :param config_id:               the config type to unionize
+        :param favorite:                the favorite boolean
+        :return:
+        """
+
+        self.name           = name
+        self.config_id      = config_id
+        self.uuid           = str(uuid.uuid4())
+        self.favorite       = favorite
+        return
+
+    def __str__(self):
+        """
+        Override the str method.
+
+        :return:
+        """
+        return '<Session %s - favorite: %s - config: %s' \
+               % (self.name, str(self.favorite), self.config_id)
 
     def __repr__(self):
-        return '<User %r>' % (self.name)
+        """
+        Override the repr method.
 
-class Favorite(base):
+        :return:
+        """
+
+        return '<Configuration %r - favorite %r>' \
+               % (self.name, self.favorite)
+
+# ===================
+# Favorite
+# ===================
+
+class Favorite(Model):
+    """
+    This is the favorite table. It hosts both the
+    favorite used config and the favorite used session.
+
+    Extends the Model class.
+    """
 
     # ===================
     # Table name
@@ -162,14 +228,46 @@ class Favorite(base):
     # Attributes
     # ===================
 
-    id          = Column(Integer,       primary_key=True)
-    name        = Column(String(50),    unique=True)
-    email       = Column(String(120),   unique=True)
+    id          = Column(Integer,       primary_key     = True)
+    name        = Column(String,        unique          = True)
+    uuid        = Column(String,        unique          = True)
+    date        = Column(DateTime,      default         = datetime.utcnow)
 
+    # Core attributes
+    fav_config  = relationship("Configuration",
+                               primaryjoin="and_(Favorite.id==Configuration.favorite_id, "
+                                           "Configuration.favorite==True")
+    fav_session = relationship("Configuration",
+                               primaryjoin="and_(Favorite.id==Session.favorite_id, "
+                                           "Session.favorite==True")
 
-    def __init__(self, name=None, email=None):
+    # ===================
+    # Sources
+    # ===================
+
+    def __init__(self, name = None):
+        """
+        This is the default constructor for the class.
+
+        :param name:                the name of the favorite
+        :return:
+        """
         self.name = name
-        self.email = email
+        self.uuid           = str(uuid.uuid4())
+        return
+
+    def __str__(self):
+        """
+        Override the str method.
+
+        :return:
+        """
+        return '<Favorite %s' % self.name
 
     def __repr__(self):
-        return '<User %r>' % (self.name)
+        """
+        Override the repr method.
+
+        :return:
+        """
+        return '<Favorite %s' % self.name

@@ -21,9 +21,8 @@ Imports
 =============================================
 """
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from dictalchemy import *
+from flask_sqlalchemy import SQLAlchemy
 
 """
 =============================================
@@ -43,25 +42,26 @@ Source
 # Database
 # =====================
 
-# Create a database engine
-engine      = create_engine(DATABASE_ACCESS,
-                            convert_unicode=True)
+def setup_db(app):
+    """
+    Returns a hanlde to a sql database.
 
-# Create a session
-session     = scoped_session(sessionmaker(autocommit=False,
-                                          autoflush=False,
-                                          bind=engine))
+    The database config must be in the app.config dict
 
-# Create a base
-base        = declarative_base()
-base.query  = session.query_property()
+        app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_ACCESS
 
-def init_db():
+    :param app:             the web app and its configs
+    :return:
+    """
+    return SQLAlchemy(app)
+
+def init_db(db):
     """
     Import all modules here that might define models so that
     they will be registered properly on the metadata. Otherwise
     you will have to import them first before calling init_db()
 
+    :param db:              the database handle
     :return:
     """
 
@@ -71,4 +71,6 @@ def init_db():
     import server.server.apps.engine.models
 
     # Create all models
-    base.metadata.create_all(bind=engine)
+    db.create_all()
+    make_class_dictable(db)
+    return
