@@ -5,9 +5,10 @@
 import time
 import pprint
 from email.mime.text import MIMEText
-from Cheetah.Template import Template
 
-from server.server.libs.notification.notificationtemplates import *
+from Cheetah.Template import Template
+from server.server.utils.notification.notificationtemplates import *
+
 
 
 # =============================================================

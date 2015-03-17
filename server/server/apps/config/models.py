@@ -57,27 +57,28 @@ class Configuration(Model):
     # Table name
     # ===================
 
-    __tablename__ = 'configs'
+    __tablename__   = 'configs'
 
     # ===================
     # Attributes
     # ===================
 
-    id          = Column(Integer,       primary_key     = True)
-    name        = Column(String,        unique          = True)
-    uuid        = Column(String,        unique          = True)
-    favorite    = Column(Boolean,       default         = False)
-    date        = Column(DateTime,      default         = datetime.utcnow)
-    recent      = Column(DateTime)
-    uses        = Column(Integer)
+    id              = Column(Integer,       primary_key     = True)
+    name            = Column(String,        unique          = True)
+    uuid            = Column(String,        unique          = True)
+    favorite        = Column(Boolean,       default         = False)
+    date            = Column(DateTime,      default         = datetime.utcnow())
+    access          = Column(DateTime)
+    recent          = Column(DateTime)
+    user            = Column(String)
 
 
     # Favorite Relationship
-    favorite_id = Column(Integer,       ForeignKey('favorites.id'))
+    favorite_id     = Column(Integer,       ForeignKey('favorites.id'))
 
     # Core attributes
-    config_type = Column(String)
-    configs     = Column(String,        unique          = False)
+    config_type     = Column(String)
+    configs         = Column(String,        unique          = False)
 
     # ===================
     # Sources
@@ -140,25 +141,25 @@ class Session(Model):
     # Table name
     # ===================
 
-    __tablename__ = 'sessions'
+    __tablename__   = 'sessions'
 
     # ===================
     # Attributes
     # ===================
 
-    id          = Column(Integer,       primary_key     = True)
-    name        = Column(String,        unique          = True)
-    uuid        = Column(String,        unique          = True)
-    favorite    = Column(Boolean,       default         = False)
-    date        = Column(DateTime,      default         = datetime.utcnow)
-    count       = Column(Integer)
+    id              = Column(Integer,       primary_key     = True)
+    name            = Column(String,        unique          = True)
+    uuid            = Column(String,        unique          = True)
+    favorite        = Column(Boolean,       default         = False)
+    date            = Column(DateTime,      default         = datetime.utcnow())
+    count           = Column(Integer)
 
     # Favorite Relationship
-    favorite_id = Column(Integer,       ForeignKey('favorites.id'))
+    favorite_id     = Column(Integer,       ForeignKey('favorites.id'))
 
     # Core attributes
-    config_id   = Column(Integer,       ForeignKey('configs.config_type'))
-    config      = relationship(
+    config_id       = Column(Integer,       ForeignKey('configs.config_type'))
+    config          = relationship(
                         'Configuration',
                         backref     = 'parents',
                         lazy        = 'dynamic'
@@ -222,22 +223,22 @@ class Favorite(Model):
     # Table name
     # ===================
 
-    __tablename__ = 'favorites'
+    __tablename__   = 'favorites'
 
     # ===================
     # Attributes
     # ===================
 
-    id          = Column(Integer,       primary_key     = True)
-    name        = Column(String,        unique          = True)
-    uuid        = Column(String,        unique          = True)
-    date        = Column(DateTime,      default         = datetime.utcnow)
+    id              = Column(Integer,       primary_key     = True)
+    name            = Column(String,        unique          = True)
+    uuid            = Column(String,        unique          = True)
+    date            = Column(DateTime,      default         = datetime.utcnow())
 
     # Core attributes
-    fav_config  = relationship("Configuration",
+    fav_config      = relationship("Configuration",
                                primaryjoin="and_(Favorite.id==Configuration.favorite_id, "
                                            "Configuration.favorite==True")
-    fav_session = relationship("Configuration",
+    fav_session     = relationship("Configuration",
                                primaryjoin="and_(Favorite.id==Session.favorite_id, "
                                            "Session.favorite==True")
 

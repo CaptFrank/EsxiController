@@ -6,7 +6,8 @@ import time
 import threading
 
 from __init__ import DictDiffer as diff
-from server.server.libs.notification.notificationdispatch import *
+from server.server.utils.notification.notificationdispatch import *
+
 
 # =============================================================
 # Source

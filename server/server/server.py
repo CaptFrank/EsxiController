@@ -28,8 +28,8 @@ Imports
 import os
 
 from flask import Flask
-from ConfigParser import ConfigParser
-from flask import request, session, redirect, url_for, abort
+from ..server.db.db import *
+from flask_httpauth import *
 
 """
 =============================================
@@ -51,10 +51,16 @@ APP_TITLE                       = """
 SERVER_NAME                     = "EsxiServer"
 
 # Vcenter Handle
-SERVER                          = None
+server                          = None
 
 # Flask app
-FLASK                           = None
+app                           = None
+
+# The db
+db                              = None
+
+# The authentication interface
+auth                            = None
 
 """
 =============================================
@@ -98,18 +104,29 @@ def main():
     """
 
     # Get global access
-    global SERVER
-    global FLASK
+    global server
+    global app
+    global db
+    global auth
+
+    # ===================
+    # Application
+    # ===================
 
     # Create a flask app
-    FLASK = Flask(SERVER_NAME)
+    app         = Flask(SERVER_NAME)
+    # Set debug
+    app.debug   = True
 
-    # Setup the app
-    setup()
+    # ==================
+    # Database
+    # ==================
 
-    # Run the app
-    run_service_server()
-    run_web_server()
+    # Wrap the db to the app
+    db          = setup_db(app)
+    # Init the db
+    init_db(db)
+
     return
 
 if __name__ == "__main__":

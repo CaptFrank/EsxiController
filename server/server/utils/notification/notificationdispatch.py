@@ -6,7 +6,8 @@
 import logging
 import smtplib
 
-from server.server.libs.notification.notification import notification
+from server.server.utils import notification
+
 
 # =============================================================
 # Constant
