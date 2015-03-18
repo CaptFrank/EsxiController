@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f55dbde-5e0a-4573-a7c0-22113933d497" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\fpapinea\Desktop\server\server\server\apps\login\login.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/utils/error/loginhandler.py" afterPath="$PROJECT_DIR$/server/server/utils/error/loginhandler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/apps/login/models.py" afterPath="$PROJECT_DIR$/server/server/apps/login/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/apps/login/routes.py" afterPath="$PROJECT_DIR$/server/server/apps/login/routes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/server.py" afterPath="$PROJECT_DIR$/server/server/server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/docs/sitemap" afterPath="$PROJECT_DIR$/server/server/docs/sitemap" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LabController.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +31,8 @@
           <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/server/server.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6020067" vertical-offset="123" max-vertical-offset="2703">
-                  <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+                <state vertical-scroll-proportion="0.33667782" vertical-offset="1568" max-vertical-offset="2686">
+                  <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
                   <folding>
                     <element signature="e#651#660#0" expanded="true" />
                   </folding>
@@ -70,11 +64,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="malware_template.conf" pinned="false" current-in-tab="true">
+          <file leaf-file-name="malware_template.conf" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0" vertical-offset="5338" max-vertical-offset="6970">
                   <caret line="314" column="14" selection-start-line="314" selection-start-column="14" selection-end-line="314" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/server/apps/config/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5451505" vertical-offset="293" max-vertical-offset="4658">
+                  <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -141,11 +145,11 @@
         <option value="$PROJECT_DIR$/server/server/server.conf" />
         <option value="$PROJECT_DIR$/server/server/apps/config/models.py" />
         <option value="$PROJECT_DIR$/server/server/apps/login/routes.py" />
-        <option value="$PROJECT_DIR$/server/server/server.py" />
         <option value="$PROJECT_DIR$/server/server/docs/sitemap" />
         <option value="$PROJECT_DIR$/server/server/apps/login/login.py" />
         <option value="$PROJECT_DIR$/server/server/apps/login/models.py" />
         <option value="$PROJECT_DIR$/server/server/utils/error/loginhandler.py" />
+        <option value="$PROJECT_DIR$/server/server/server.py" />
       </list>
     </option>
   </component>
@@ -337,7 +341,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
+              <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LabController" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -729,10 +759,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13540569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13540569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1139,13 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/apps/config/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52619845" vertical-offset="599" max-vertical-offset="4658">
-          <caret line="69" column="79" selection-start-line="69" selection-start-column="79" selection-end-line="69" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python34/Lib/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="4478" max-vertical-offset="36397">
@@ -1220,10 +1243,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/apps/config/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5451505" vertical-offset="293" max-vertical-offset="4658">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6020067" vertical-offset="123" max-vertical-offset="2703">
-          <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.33667782" vertical-offset="1568" max-vertical-offset="2686">
+          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
           <folding>
             <element signature="e#651#660#0" expanded="true" />
           </folding>

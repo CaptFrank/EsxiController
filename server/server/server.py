@@ -29,7 +29,6 @@ import os
 
 from flask import Flask
 from ..server.db.db import *
-from flask_httpauth import *
 from datetime import timedelta
 from flask_login import LoginManager
 
@@ -106,10 +105,10 @@ def main():
     """
 
     # Get global access
+    global login_manager
     global server
     global app
     global db
-    global login_manager
 
     # ===================
     # Application
