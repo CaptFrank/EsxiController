@@ -24,7 +24,6 @@ Imports
 from sqlalchemy import *
 from datetime import datetime
 from flask_sqlalchemy import *
-from flask_login import UserMixin
 from server.server.server import app
 from itsdangerous import URLSafeTimedSerializer
 from passlib.apps import custom_app_context as pwd_context
@@ -46,7 +45,7 @@ Source
 # ===================
 # User
 # ===================
-class User(UserMixin, Model):
+class User(Model):
     """
     This user table is where we host all the usernames and
     their associated passwords hashed.
@@ -71,6 +70,7 @@ class User(UserMixin, Model):
     login_count     = Column(Integer)
     created         = Column(DateTime)
     age             = Column(DateTime)
+    authenticated   = Column(Boolean,       default             = False)
 
     # ===================
     # Sources
@@ -121,6 +121,30 @@ class User(UserMixin, Model):
         """
         data = [str(self.username), self.password_hash]
         return login_serializer.dumps(data)
+
+    def is_active(self):
+        """
+        True, as all users are active.
+        """
+        return True
+
+    def get_id(self):
+        """
+        Return the email address to satisfy Flask-Login's requirements.
+        """
+        return self.username
+
+    def is_authenticated(self):
+        """
+        Return True if the user is authenticated.
+        """
+        return self.authenticated
+
+    def is_anonymous(self):
+        """
+        False, as anonymous users aren't supported.
+        """
+        return False
 
     def __str__(self):
         """

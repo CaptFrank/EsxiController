@@ -22,10 +22,11 @@ Imports
 """
 
 from flask import *
-from server.server.server import db, app, login_manager
+from server.server.libs.help import *
 from server.server.apps.login.models import *
-from server.server.utils.error.loginhandler import *
 from flask_login import login_user, logout_user
+from server.server.utils.error.loginhandler import *
+from server.server.server import db, app, login_manager
 
 """
 =============================================
@@ -41,11 +42,29 @@ Variables
 =============================================
 """
 
+current_users               = {}
+
 """
 =============================================
 Source
 =============================================
 """
+
+@app.route('/login/help',    methods = ['GET'])
+def login_help():
+    """
+    This method returns a jasonified help dict for
+    for the login app.
+
+    :return:
+    """
+
+    # Return the help
+    return jsonify({
+        'app'   :   "login",
+        'help'  :   LOGIN_HELP,
+        'date'  :   str(datetime.utcnow())
+    }), SUCCESS_RESPONSE
 
 @app.route('/register/',     methods = ['POST'])
 def register():
@@ -80,9 +99,18 @@ def register():
         db.session.commit()
 
         # Return the response
-        return jsonify({ 'username'  : user.username}), \
-               SUCCESS_RESPONSE, \
-               {'location'  : url_for('get_user', id = user.id, _external = True)}
+        return jsonify({
+            'username'  : user.username
+            }), \
+            SUCCESS_RESPONSE, \
+            {
+                'location'  : url_for(
+                    'get_user',
+                    id = user.username,
+                    _external = True
+                )
+            }
+
     else:
         raise LoginException("Message empty.")
 
@@ -128,6 +156,9 @@ def login():
     :return:
     """
 
+    # global handle
+    global current_users
+
     # Check if the json is not none
     if request.json is not None:
 
@@ -152,6 +183,12 @@ def login():
         # Check the hashes
         if user.password_hash == hashed.password_hash:
 
+            # Authenticate the user
+            user.authenticated = True
+            current_users[username] = user
+            db.session.add(user)
+            db.session.commit()
+
             # We have a good match so we login
             login_user(user, remember = True)
 
@@ -162,7 +199,7 @@ def login():
             return jsonify({ 'username'     : hashed.username,
                              'login_count'  : hashed.login_count,
                              'last_login'   : hashed.last_login,
-                             'age'          : hashed.age
+                             'created'      : hashed.age
                             }), \
                SUCCESS_RESPONSE
 
@@ -176,6 +213,31 @@ def logout():
 
     :return:
     """
+
+    # global handle
+    global current_users
+
+    # Check if the json is not none
+    if request.json is not None:
+
+        # We get the user attributes
+        username = request.json.get('username')
+
+        # Check the attributes
+        if username is None:
+            raise LoginException("Null username.")
+    else:
+        raise LoginException("Not a valid request.")
+
+    # Get from the session
+    user = current_users['username']
+
+    # Authenticate the user
+    user.authenticated = False
+    db.session.add(user)
+    db.session.commit()
+
+    # Logout the cookie
     logout_user()
     return redirect('/')
 

@@ -2,38 +2,38 @@
     This is the site map for the REST Api Interface
 
         =================================
-        * General Operations
-        *
+        ** General Operations
+        **
         * - Root directory listing:
         *    - /                                                 // Sends the API Urls below
-        *
+        **
         ** - Login
         **    - /register       {username:username,
         **                        password:password}              // Create a user
         **    - /unregister     {username: username}              // Deletes a user
         **    - /login          {username:username}               // Login
         **
-        **    - /logout                                           // Logout
-        *
+        **    - /logout         {username:username}               // Logout
+        **
         =================================
         * Directory Listing
         *
         * - Directory listings:
         *
         *    - /list/                                            // Sends how to
-        **    - /list/all                                         // lists the registered configs
-        **    - /list/<session>                                   // lists a session config
-        **    - /list/<config>                                    // lists the config specified
-        **    - /list/target/<target>                             // lists based on the target name
-        **    - /list/arch/<architecture>                         // lists based on the target architecture
-        **    - /list/platform/<platform>                         // lists based on the platform
+        *    - /list/all                                         // lists the registered configs
+        *    - /list/<session>                                   // lists a session config
+        *    - /list/<config>                                    // lists the config specified
+        *    - /list/target/<target>                             // lists based on the target name
+        *    - /list/arch/<architecture>                         // lists based on the target architecture
+        *    - /list/platform/<platform>                         // lists based on the platform
         *
-        **    - /list/type/<type>                                  // lists based on config type
-        **    - /list/recent/                                      // lists the most recent
-        **    - /list/access/<access>                              // lists on the accessed time
-        **    - /list/date/<date>                                  // lists based on the date created
-        **    - /list/user/<user>                                  // lists based on user
-        **    - /list/favorites/                                   // lists the favorites
+        *    - /list/type/<type>                                  // lists based on config type
+        *    - /list/recent/                                      // lists the most recent
+        *    - /list/access/<access>                              // lists on the accessed time
+        *    - /list/date/<date>                                  // lists based on the date created
+        *    - /list/user/<user>                                  // lists based on user
+        *    - /list/favorites/                                   // lists the favorites
         *
         * - Diff two configs
         *

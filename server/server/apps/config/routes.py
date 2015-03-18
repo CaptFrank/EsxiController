@@ -14,3 +14,37 @@
     Date:           3/11/2015
 
 """
+
+"""
+=============================================
+Imports
+=============================================
+"""
+
+from flask import *
+from flask_login import login_required
+from server.server.apps.login.models import *
+from server.server.utils.error.loginhandler import *
+from server.server.server import db, app, login_manager
+
+"""
+=============================================
+Constant
+=============================================
+"""
+
+SUCCESS_RESPONSE            = 201
+
+"""
+=============================================
+Variables
+=============================================
+"""
+
+
+"""
+=============================================
+Source
+=============================================
+"""
+

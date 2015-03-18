@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f55dbde-5e0a-4573-a7c0-22113933d497" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/server.py" afterPath="$PROJECT_DIR$/server/server/server.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server/libs/help.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/fpapinea.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/fpapinea.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/apps/login/models.py" afterPath="$PROJECT_DIR$/server/server/apps/login/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/apps/config/routes.py" afterPath="$PROJECT_DIR$/server/server/apps/config/routes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/apps/login/routes.py" afterPath="$PROJECT_DIR$/server/server/apps/login/routes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/docs/sitemap" afterPath="$PROJECT_DIR$/server/server/docs/sitemap" />
     </list>
     <ignored path="LabController.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,40 +30,24 @@
     <favorites_list name="LabController" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5161487">
+    <splitter split-orientation="horizontal" split-proportion="0.50578916">
       <split-first>
-        <leaf>
-          <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/server/server/server.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33667782" vertical-offset="1568" max-vertical-offset="2686">
-                  <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#651#660#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
         <leaf>
           <file leaf-file-name="server.conf" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/server/server.conf">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1020">
-                  <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+                  <caret line="28" column="0" selection-start-line="27" selection-start-column="15" selection-end-line="28" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sitemap" pinned="false" current-in-tab="false">
+          <file leaf-file-name="sitemap" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/server/docs/sitemap">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-                  <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+                <state vertical-scroll-proportion="0.1516165" vertical-offset="0" max-vertical-offset="2295">
+                  <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -68,17 +57,33 @@
             <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0" vertical-offset="5338" max-vertical-offset="6970">
-                  <caret line="314" column="14" selection-start-line="314" selection-start-column="14" selection-end-line="314" selection-end-column="14" />
+                  <caret line="331" column="18" selection-start-line="331" selection-start-column="18" selection-end-line="331" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="routes.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/server/apps/config/routes.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.8862876" vertical-offset="55" max-vertical-offset="952">
+                  <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#419#438#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/server/apps/config/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5451505" vertical-offset="293" max-vertical-offset="4658">
-                  <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="3761" max-vertical-offset="4658">
+                  <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -99,8 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/utilities/framework/core/vmstagetask.py" />
-        <option value="$PROJECT_DIR$/utilities/framework/config/vmconfigfile.py" />
         <option value="$PROJECT_DIR$/utilities/framework/config/vmconfigdatabase.py" />
         <option value="$PROJECT_DIR$/esxinotifications.py" />
         <option value="$PROJECT_DIR$/esxivcenter.py" />
@@ -140,16 +143,18 @@
         <option value="$PROJECT_DIR$/server/server/apps/task/models.py" />
         <option value="$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf" />
         <option value="$PROJECT_DIR$/server/server/db/db.py" />
-        <option value="$PROJECT_DIR$/server/server/apps/config/routes.py" />
         <option value="$PROJECT_DIR$/server/server/utils/error/basehandler.py" />
         <option value="$PROJECT_DIR$/server/server/server.conf" />
         <option value="$PROJECT_DIR$/server/server/apps/config/models.py" />
-        <option value="$PROJECT_DIR$/server/server/apps/login/routes.py" />
-        <option value="$PROJECT_DIR$/server/server/docs/sitemap" />
         <option value="$PROJECT_DIR$/server/server/apps/login/login.py" />
-        <option value="$PROJECT_DIR$/server/server/apps/login/models.py" />
         <option value="$PROJECT_DIR$/server/server/utils/error/loginhandler.py" />
         <option value="$PROJECT_DIR$/server/server/server.py" />
+        <option value="$PROJECT_DIR$/server/server/docs/sitemap" />
+        <option value="$PROJECT_DIR$/server/server/apps/login/models.py" />
+        <option value="$PROJECT_DIR$/server/server/apps/config/routes.py" />
+        <option value="$PROJECT_DIR$/server/server/libs/loginresponses.py" />
+        <option value="$PROJECT_DIR$/server/server/libs/help.py" />
+        <option value="$PROJECT_DIR$/server/server/apps/login/routes.py" />
       </list>
     </option>
   </component>
@@ -294,6 +299,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="error" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LabController" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -866,19 +893,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="73" />
+      <option name="time" value="78" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server/db/db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1343">
@@ -1097,6 +1116,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62541807" vertical-offset="0" max-vertical-offset="897">
           <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,13 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/apps/config/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28428093" vertical-offset="0" max-vertical-offset="897">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server/apps/task/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
@@ -1161,14 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/server.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="1020">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python34/Lib/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="4478" max-vertical-offset="36397">
@@ -1177,50 +1182,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/flask/Lib/site-packages/flask_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2006689" vertical-offset="2268" max-vertical-offset="14824">
-          <caret line="158" column="45" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/docs/sitemap">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_pluginbase.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.896679" vertical-offset="3272" max-vertical-offset="8143">
           <caret line="334" column="20" selection-start-line="334" selection-start-column="20" selection-end-line="334" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/apps/login/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1224">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding>
-            <element signature="e#412#431#0" expanded="true" />
-            <element signature="e#1069#2126#0" expanded="false" />
-            <element signature="e#2201#2996#0" expanded="false" />
-            <element signature="e#3064#4425#0" expanded="false" />
-            <element signature="e#4494#4590#0" expanded="false" />
-            <element signature="e#4648#5032#0" expanded="false" />
-            <element signature="e#5089#6273#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/apps/login/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20401338" vertical-offset="276" max-vertical-offset="2465">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1235,29 +1200,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf">
+    <entry file="file://$USER_HOME$/flask/Lib/site-packages/flask_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3472" max-vertical-offset="6970">
-          <caret line="314" column="14" selection-start-line="314" selection-start-column="14" selection-end-line="314" selection-end-column="14" />
+        <state vertical-scroll-proportion="4.25641" vertical-offset="4104" max-vertical-offset="14824">
+          <caret line="480" column="6" selection-start-line="480" selection-start-column="6" selection-end-line="480" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server/apps/config/models.py">
+    <entry file="file://C:/Python34/Lib/site-packages/sqlalchemy/orm/query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5451505" vertical-offset="293" max-vertical-offset="4658">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        <state vertical-scroll-proportion="-10.526198" vertical-offset="10904" max-vertical-offset="62186">
+          <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33667782" vertical-offset="1568" max-vertical-offset="2686">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.29877368" vertical-offset="1568" max-vertical-offset="2686">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
           <folding>
             <element signature="e#651#660#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/apps/login/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36085972" vertical-offset="4" max-vertical-offset="2873">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="e#405#429#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/libs/help.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11371238" vertical-offset="0" max-vertical-offset="897">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/apps/login/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.042363435" vertical-offset="1143" max-vertical-offset="2091">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+          <folding>
+            <element signature="e#412#431#0" expanded="true" />
+            <element signature="e#1142#1414#0" expanded="false" />
+            <element signature="e#2751#3546#0" expanded="false" />
+            <element signature="e#3614#5204#0" expanded="false" />
+            <element signature="e#5273#5945#0" expanded="false" />
+            <element signature="e#6003#6387#0" expanded="false" />
+            <element signature="e#6444#7628#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/apps/config/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3761" max-vertical-offset="4658">
+          <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/apps/config/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8862876" vertical-offset="55" max-vertical-offset="952">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#419#438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/server.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="28" column="0" selection-start-line="27" selection-start-column="15" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/framework/configurations/malware_template.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5338" max-vertical-offset="6970">
+          <caret line="331" column="18" selection-start-line="331" selection-start-column="18" selection-end-line="331" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server/docs/sitemap">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1516165" vertical-offset="0" max-vertical-offset="2295">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
