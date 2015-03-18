@@ -21,14 +21,21 @@ Imports
 =============================================
 """
 
-import json
-import uuid
-
 from sqlalchemy import *
 from datetime import datetime
 from flask_sqlalchemy import *
+from flask_login import UserMixin
 from server.server.server import app
+from itsdangerous import URLSafeTimedSerializer
 from passlib.apps import custom_app_context as pwd_context
+
+"""
+=============================================
+Variables
+=============================================
+"""
+
+login_serializer = URLSafeTimedSerializer(app.secret_key)
 
 """
 =============================================
@@ -39,7 +46,7 @@ Source
 # ===================
 # User
 # ===================
-class User(Model):
+class User(UserMixin, Model):
     """
     This user table is where we host all the usernames and
     their associated passwords hashed.
@@ -107,6 +114,13 @@ class User(Model):
         self.last_login = datetime.utcnow()
         self.age = datetime.utcnow() - self.created
         return
+
+    def get_auth_token(self):
+        """
+        Encode a secure token for cookie
+        """
+        data = [str(self.username), self.password_hash]
+        return login_serializer.dumps(data)
 
     def __str__(self):
         """

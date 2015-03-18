@@ -30,6 +30,8 @@ import os
 from flask import Flask
 from ..server.db.db import *
 from flask_httpauth import *
+from datetime import timedelta
+from flask_login import LoginManager
 
 """
 =============================================
@@ -54,13 +56,13 @@ SERVER_NAME                     = "EsxiServer"
 server                          = None
 
 # Flask app
-app                           = None
+app                             = None
 
 # The db
 db                              = None
 
 # The authentication interface
-auth                            = None
+login_manager                   = None
 
 """
 =============================================
@@ -107,25 +109,42 @@ def main():
     global server
     global app
     global db
-    global auth
+    global login_manager
 
     # ===================
     # Application
     # ===================
 
     # Create a flask app
-    app         = Flask(SERVER_NAME)
+    app = Flask(SERVER_NAME)
     # Set debug
-    app.debug   = True
+    app.debug = True
+
+    # Change the duration of how long the Remember Cookie is valid on the users
+    # computer.  This can not really be trusted as a user can edit it.
+    app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
 
     # ==================
     # Database
     # ==================
 
     # Wrap the db to the app
-    db          = setup_db(app)
+    db = setup_db(app)
     # Init the db
     init_db(db)
+
+    # ==================
+    # Login
+    # ==================
+
+    # Flask-Login Login Manager
+    login_manager = LoginManager()
+
+    # Tell the login manager where to redirect users to display the login page
+    login_manager.login_view = "/login/"
+
+    # Init the application context
+    login_manager.init_app(app)
 
     return
 

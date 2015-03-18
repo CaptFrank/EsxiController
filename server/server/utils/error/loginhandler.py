@@ -20,9 +20,8 @@ Imports
 =============================================
 """
 
-from flask import jsonify
 from ..error.basehandler import *
-from server.server.server import app, auth
+from server.server.server import app
 
 """
 =============================================
@@ -65,7 +64,6 @@ class LoginException(BaseHandler):
         return
 
 @app.errorhandler(LoginException)
-@auth.error_handler
 def handle_login_exception(error):
     """
     The handler function to call from the context.
