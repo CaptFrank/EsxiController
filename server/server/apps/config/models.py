@@ -23,8 +23,10 @@ Imports
 
 import json
 import uuid
+import ast
 
 from sqlalchemy import *
+from sqlalchemy import sql
 from datetime import datetime
 from flask_sqlalchemy import *
 from sqlalchemy.orm import relationship
@@ -67,9 +69,9 @@ class Configuration(Model):
     name            = Column(String,        unique          = True)
     uuid            = Column(String,        unique          = True)
     favorite        = Column(Boolean,       default         = False)
-    date            = Column(DateTime,      default         = datetime.utcnow())
+    date            = Column(DateTime)
     access          = Column(DateTime)
-    recent          = Column(DateTime)
+    recent          = Column(Integer,       default         = 0)
     user            = Column(String)
 
 
@@ -100,10 +102,27 @@ class Configuration(Model):
         """
 
         self.name           = name
-        self.configs        = json.dumps(configs)
+        self.configs        = str(configs)
         self.uuid           = str(uuid.uuid4())
         self.favorite       = favorite
         self.config_type    = config_type
+        self.date           = datetime.utcnow()
+        return
+
+    def update_config_record(self, user):
+        """
+        We update the configs timestamps and counts
+
+        :param access:
+        :param recent:
+        :param user:
+        :return:
+        """
+
+        # Update internals
+        self.access = datetime.utcnow()
+        self.recent += 1
+        self.user = user
         return
 
     def __str__(self):
@@ -151,18 +170,19 @@ class Session(Model):
     name            = Column(String,        unique          = True)
     uuid            = Column(String,        unique          = True)
     favorite        = Column(Boolean,       default         = False)
-    date            = Column(DateTime,      default         = datetime.utcnow())
-    count           = Column(Integer)
+    date            = Column(DateTime)
+    config_type     = Column(String)
 
     # Favorite Relationship
     favorite_id     = Column(Integer,       ForeignKey('favorites.id'))
 
     # Core attributes
-    config_id       = Column(Integer,       ForeignKey('configs.config_type'))
+    config_id       = Column(String,       ForeignKey('configs.config_type'))
     config          = relationship(
                         'Configuration',
-                        backref     = 'parents',
-                        lazy        = 'dynamic'
+                        backref     = 'session',
+                        lazy        = 'dynamic',
+                        primaryjoin = sql.and_(config_type == Configuration.config_type)
                         )
 
     # ===================
@@ -171,7 +191,7 @@ class Session(Model):
 
     def __init__(self,
                  name           = None,
-                 config_id      = None,
+                 config_type    = None,
                  favorite       = None):
         """
         This is the default constructor for the table
@@ -179,13 +199,15 @@ class Session(Model):
         :param name:                    the config name
         :param config_id:               the config type to unionize
         :param favorite:                the favorite boolean
+
         :return:
         """
 
         self.name           = name
-        self.config_id      = config_id
+        self.config_type    = config_type
         self.uuid           = str(uuid.uuid4())
         self.favorite       = favorite
+        self.date           = datetime.utcnow()
         return
 
     def __str__(self):
@@ -234,13 +256,23 @@ class Favorite(Model):
     uuid            = Column(String,        unique          = True)
     date            = Column(DateTime,      default         = datetime.utcnow())
 
+    # Extended keys
+    config_fav      = ForeignKey('configs.favorite')
+    session_fav     = ForeignKey('sessions.favorite')
+
     # Core attributes
-    fav_config      = relationship("Configuration",
-                               primaryjoin="and_(Favorite.id==Configuration.favorite_id, "
-                                           "Configuration.favorite==True")
-    fav_session     = relationship("Configuration",
-                               primaryjoin="and_(Favorite.id==Session.favorite_id, "
-                                           "Session.favorite==True")
+    fav_config      = relationship(
+                                "Configuration",
+                                backref     = 'favorite_config',
+                                lazy        = 'dynamic',
+                                primaryjoin = sql.and_(id == Configuration.favorite_id,
+                                                    Configuration.favorite == True))
+    fav_session     = relationship(
+                                "Configuration",
+                                backref     = 'favorite_session',
+                                lazy        = 'dynamic',
+                                primaryjoin = sql.and_(id == Session.favorite_id,
+                                                    Session.favorite == True))
 
     # ===================
     # Sources

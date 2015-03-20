@@ -22,7 +22,6 @@ Imports
 """
 
 from flask import *
-from server.server.libs.help import *
 from server.server.apps.login.models import *
 from flask_login import login_user, logout_user
 from server.server.utils.error.loginhandler import *
@@ -35,6 +34,7 @@ Constant
 """
 
 SUCCESS_RESPONSE            = 201
+APP_STATIC_DIRECTORY        = 'apps/login/static/'
 
 """
 =============================================
@@ -50,7 +50,7 @@ Source
 =============================================
 """
 
-@app.route('/login/help',    methods = ['GET'])
+@app.route('/login/help',    methods = ['GET', 'POST'])
 def login_help():
     """
     This method returns a jasonified help dict for
@@ -58,13 +58,7 @@ def login_help():
 
     :return:
     """
-
-    # Return the help
-    return jsonify({
-        'app'   :   "login",
-        'help'  :   LOGIN_HELP,
-        'date'  :   str(datetime.utcnow())
-    }), SUCCESS_RESPONSE
+    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.md')
 
 @app.route('/register/',     methods = ['POST'])
 def register():
@@ -132,7 +126,7 @@ def unregister():
             raise LoginException("Null username.")
 
         # Get the db entry
-        user = User.query.filter_by(username = username).first()
+        user = User.query.filter_by(username = username).first_or_404()
 
         # Check the db for the user
         if user is None:
@@ -143,8 +137,11 @@ def unregister():
         db.session.commit()
 
         # Return the response
-        return jsonify({ 'username'  : user.username}), \
-               SUCCESS_RESPONSE
+        return jsonify({
+            'username'  : user.username
+        }), \
+        SUCCESS_RESPONSE
+
     else:
         raise LoginException("Message empty.")
 
@@ -174,7 +171,7 @@ def login():
         user = User(username, password)
 
         # Get the db entry
-        hashed = User.query.filter_by(username = username).first()
+        hashed = User.query.filter_by(username = username).first_or_404()
 
         # Check for existence
         if hashed is None:
@@ -196,11 +193,12 @@ def login():
             hashed.update_login_record()
             db.session.commit()
 
-            return jsonify({ 'username'     : hashed.username,
-                             'login_count'  : hashed.login_count,
-                             'last_login'   : hashed.last_login,
-                             'created'      : hashed.age
-                            }), \
+            return jsonify({
+                'username'     : hashed.username,
+                'login_count'  : hashed.login_count,
+                'last_login'   : hashed.last_login,
+                'created'      : hashed.age
+                }), \
                SUCCESS_RESPONSE
 
         else:
@@ -241,6 +239,13 @@ def logout():
     logout_user()
     return redirect('/')
 
+
+"""
+=============================================
+Utilities
+=============================================
+"""
+
 @login_manager.user_loader
 def load_user(username):
     """
@@ -251,7 +256,7 @@ def load_user(username):
     user_loader stores the returned User object in current_user during every
     flask request.
     """
-    return User.query.filter_by(username = username).first()
+    return User.query.filter_by(username = username).first_or_404()
 
 @login_manager.token_loader
 def load_token(token):
@@ -276,7 +281,7 @@ def load_token(token):
     data = login_serializer.loads(token, max_age = max_age)
 
     # Find the User
-    user = User.query.filter_by(username = data[0]).first()
+    user = User.query.filter_by(username = data[0]).first_or_404()
 
     # Check Password and return user or None
     if user and data[1] == user.password_hash:

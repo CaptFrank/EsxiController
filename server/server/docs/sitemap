@@ -4,8 +4,9 @@
         =================================
         ** General Operations
         **
-        * - Root directory listing:
-        *    - /                                                 // Sends the API Urls below
+        ** - Root directory listing:
+        **    - /                                                 // Sends the API Urls below
+        **    - /help                                             // Sends the API Urls below
         **
         ** - Login
         **    - /register       {username:username,
@@ -35,39 +36,39 @@
         *    - /list/user/<user>                                  // lists based on user
         *    - /list/favorites/                                   // lists the favorites
         *
-        * - Diff two configs
-        *
-        *    - /diff/                                            // Sends how to
-        *    - /diff/<config>/<config>                           // Diffs to registered configs
-        *
         =================================
-        * Config Operations
-        *
-        * - Registration of config
-        *
-        *    - /add/                                             // Sends the how to
-        *    - /add/session/<name>                               // Adds a session
-        *    - /add/session/config/<name>                        // Adds a session config
-        *    - /add/config/<name>                                // Registers a config in global context
-        *    - /add/link/session/<session>/config/<config>       // This links a session with a config
-        *
-        * - Deleting a config
-        *
-        *    - /delete/                                          // Sends the how to
-        *    - /delete/session/<session>                         // Deletes a session
-        *    - /delete/session/<session>/link/<link>             // Deletes a link
-        *    - /delete/config/<config>                           // Deletes a config in global context
-        *    - /delete/session/config/<config>                   // Deletes a config from a session
-        *
+        ** Config Operations
+        **
+        ** - Registration of config
+        **
+        **    - /add/help                                         // Sends the how to
+        **    - /add/favorite/<name>                              // Sets up a favorite record
+        **    - /add/session/<name>                               // Adds a session
+        **    - /add/session/config/<name>                        // Adds a session config
+        **    - /add/config/<name>                                // Registers a config in global context
+        **
+        ** - Deleting a config
+        **
+        **    - /delete//help                                     // Sends the how to
+        **    - /delete/session/<session>                         // Deletes a session
+        **    - /delete/config/<config>                           // Deletes a config in global context
+        **    - /delete/session/config/<config>                   // Deletes a config from a session
+        **    - /delete/favorite/<favorite>                       // deletes a favorite
+        **
         * - Modify a config
         *
-        *    - /modify/                                          // Sends the how to
+        *    - /modify//help                                     // Sends the how to
         *    - /modify/config/<config>                           // Modifies a config in global context
         *    - /modify/session/config/<config>                   // Modifies a config from a session
         *
-        * - Favorite setting
+        * - Diff two configs
         *
-        *    - /favorite/                                        // Sends how to
+        **    - /diff//help                                       // Sends how to
+        *    - /diff/<config>/<config>                           // Diffs to registered configs
+        *
+        ** - Favorite setting
+        **
+        **    - /favorite/help                                   // Sends how to
         *    - /favorite/set/config/<favorite>                   // Sets a global config
         *    - /favorite/set/session/<favorite>                  // Sets a session
         *

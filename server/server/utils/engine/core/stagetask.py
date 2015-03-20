@@ -76,7 +76,7 @@ class stageTask(threading.Thread):
             # Start the stage
             self.__start_stage()
 
-        except Exception, e:
+        except Exception as e:
             # Send a notification that the stage is done
             self.__dispatch.send_notification(self.__config['destinations'],
                                           'error',

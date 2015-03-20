@@ -50,6 +50,11 @@ def build_arg_parser():
                     'control the esxicontroller script.'
     )
 
+    control.add_argument('-S', '--start',
+                        required=False,
+                        action='store',
+                        help='Starts the engine.')
+
     # =============================================================
     # Add the source group
     config = parser.add_argument_group(

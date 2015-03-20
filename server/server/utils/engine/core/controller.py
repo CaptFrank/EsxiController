@@ -4,13 +4,31 @@
 
 import ast
 import time
+import json
 import logging
 import threading
 
-import ConfigParser
+from configparser import ConfigParser
 from server.server.utils.engine.core.connection import connection
 from server.server.utils.engine.core.networkstager import networkStager
 
+import snakemq.link
+import snakemq.message
+import snakemq.messaging
+import snakemq.packeter
+from snakemq.message import FLAG_PERSISTENT
+from snakemq.storage.sqlite import SqliteQueuesStorage
+
+
+# =============================================================
+# Constants
+# =============================================================
+
+SERVER_TITLE                            = 'CONTROLLER_SERVER'
+LOCALHOST                               = ''
+DB_PATH                                 = 'db/controllerServer.db'
+
+CLIENT_PORT                             = 9999
 
 # =============================================================
 # Source
@@ -42,7 +60,7 @@ class controller(threading.Thread):
     # log level
     __log_level                         = logging.INFO
 
-    # ====================
+    # =======================
     # Handles
 
     # The config parser
@@ -57,11 +75,29 @@ class controller(threading.Thread):
     # Stage
     __stage                             = None
 
-    # ====================
+    # =======================
     # Process attributes
 
     # The alive bool
-    alive                               = True
+    __alive                             = True
+
+    # =======================
+    # External communication
+
+    # Communication context
+    __snake                             = None
+
+    # Packeter
+    __packeter                          = None
+
+    # Link
+    __link                              = None
+
+    # Message Storage
+    __storage                           = None
+
+    # Messenger
+    __messenger                         = None
 
     def __init__(self, host_config, log_level=logging.INFO):
         """
@@ -79,13 +115,16 @@ class controller(threading.Thread):
         threading.Thread.__init__(self)
 
         # Logger
-        self.__logger = logging.getLogger("ESXiController - esxiControllerBase")
+        self.__logger = logging.getLogger("ESXiController - controller")
         self.__logger.setLevel(log_level)
         self.__log_level = log_level
 
+        # Init the snake mq logger
+        snakemq.init_logging(self.__logger)
+
         # Configs
         self.__logger.info("Reading the host configurations.")
-        self.__parser = ConfigParser.ConfigParser()
+        self.__parser = ConfigParser()
         self.__parser.read(host_config)
 
         # Get the handles
@@ -125,7 +164,8 @@ class controller(threading.Thread):
         :return:
         """
 
-        while self.alive:
+        while self.__alive:
+            self.__link.loop()
             try:
                 time.sleep(1)
             except (KeyboardInterrupt, SystemExit):
@@ -144,9 +184,98 @@ class controller(threading.Thread):
         self.__stage = networkStager(self.__vm_connection,
                                      self.__email_dest,
                                      self.__log_level)
+
+        # Setup the sakemq engine
+        self.__logger.info("Creating a snakemq interface")
+        self.__link = snakemq.link.Link()
+        self.__packeter = snakemq.packeter.Packeter(self.__link)
+        self.__storage = SqliteQueuesStorage(DB_PATH)
+        self.__messenger = snakemq.messaging.Messaging(SERVER_TITLE,
+                                                       LOCALHOST,
+                                                       self.__packeter,
+                                                       self.__storage)
+
+        self.__logger.info("Adding listener")
+        self.__link.add_listener((LOCALHOST, CLIENT_PORT))
+        self.__logger.info("Created server port on localhost:" + str(CLIENT_PORT))
+
+        self.__messenger.on_message_recv.add(self.on_receive)
+        self.__messenger.on_connect.add(self.on_connect)
+        self.__messenger.on_disconnect.add(self.on_disconnect)
+        self.__messenger.on_message_drop.add(self.on_message_drop)
+        self.__messenger.on_error.add(self.on_error)
         self.__logger.info("Setup complete")
         return
 
+    def on_receive(self, conn, ident, message):
+        """
+        We receive a packet message
+
+        The message should be in the form of json dictionary
+
+        :param conn:                    The connection
+        :param ident:                   The identity
+        :param message:                 The message
+        :return:
+        """
+
+        # Get the config
+        config = json.loads(message)
+
+        # Check for nulity
+        if config is not None:
+            self.start_task(config)
+
+        return
+
+    def on_connect(self, conn, ident, message):
+        """
+        We receive a packet message
+
+        :param conn:                    The connection
+        :param ident:                   The identity
+        :param message:                 The message
+        :return:
+        """
+        self.__logger.info("Connected to: " + ident + " through: " + conn)
+        return
+
+    def on_disconnect(self, conn, ident, message):
+        """
+        We receive a packet message
+
+        :param conn:                    The connection
+        :param ident:                   The identity
+        :param message:                 The message
+        :return:
+        """
+        self.__logger.info("Disconnected from: " + ident + " through: " + conn)
+        self.__alive = False
+        return
+
+    def on_message_drop(self, conn, ident, message):
+        """
+        We receive a packet message
+
+        :param conn:                    The connection
+        :param ident:                   The identity
+        :param message:                 The message
+        :return:
+        """
+        self.__logger.error("Messaging engine reported a message drop")
+        return
+
+    def on_error(self, conn, ident, message):
+        """
+        We receive a packet message
+
+        :param conn:                    The connection
+        :param ident:                   The identity
+        :param message:                 The message
+        :return:
+        """
+        self.__logger.error("Messaging engine error!")
+        return
 
     def start_task(self, config):
         """

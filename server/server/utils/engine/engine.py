@@ -23,10 +23,11 @@ Imports
 import os
 import multiprocessing
 from subprocess import call
+from configparser import ConfigParser
 
-from server.server.libs.engine.enginecli import *
-from server.server.libs.logger.loggerengine import *
-from server.server.libs.engine.core.controller import *
+from server.server.utils.engine.enginecli import *
+from server.server.utils.logger.loggerengine import *
+from server.server.utils.engine.core.controller import *
 from server.server.utils.notification.notificationdispatch import *
 
 
@@ -197,7 +198,7 @@ def setup(args):
         exit(1)
 
     # We read the logging configs
-    configs = ConfigParser.ConfigParser()
+    configs = ConfigParser()
     configs.read(host_file)
 
     # ===========================
@@ -230,18 +231,16 @@ def run(args):
     :return:
     """
 
-
-
     # We try forking the process
     try:
 
-        pid = multiprocessing.Process(target=process, args=(args,))
+        pid = multiprocessing.Process(target = process, args = (args,))
         if pid > 0:
             jobs.append(pid)
             pid.daemon = True
             pid.start()
 
-    except OSError, e:
+    except OSError as e:
         print("[-] Forking child process failed: %d (%s)" % (e.errno, e.strerror))
         print("[-] Exiting the main context.")
         exit(1)
@@ -292,7 +291,7 @@ def main():
         dispatcher = notificationDispatch()
 
         # Get inputs
-        destination = raw_input("[+] Destination address: ")
+        destination = input("[+] Destination address: ")
         dispatcher.send_notification(destination, 'test', 'test', None)
 
     elif args.send:
@@ -301,14 +300,14 @@ def main():
         dispatcher = notificationDispatch()
 
         # Get inputs
-        destination = raw_input("[+] Destination address: ")
+        destination = input("[+] Destination address: ")
 
         print('[+] Message types:')
         for item in MESSAGE_TYPE:
             print('[+]\t - %s' % item)
 
-        msg_type = raw_input("[+] Message Type: ")
-        reason = raw_input('[+] Reason: ')
+        msg_type = input("[+] Message Type: ")
+        reason = input('[+] Reason: ')
         dispatcher.send_notification(destination, msg_type, reason, None)
 
     # ===========================
@@ -330,12 +329,13 @@ def main():
     # Operations
     # ===========================
 
-    # We setup the engine
-    run(args)
+    if args.start:
+        # We setup the engine
+        run(args)
 
-    # Wait until done
-    for item in jobs:
-        item.join()
+        # Wait until done
+        for item in jobs:
+            item.join()
 
     return
 

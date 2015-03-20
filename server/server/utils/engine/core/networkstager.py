@@ -164,6 +164,7 @@ class networkStager(object):
 
                 # Add the task to the list
                 self.__task_list[task_config['name']] = stage
+                self.__logger.info("Added a worker thread to the thread pool.")
 
             time.sleep(5)
         self.__logger.info("Server thread not alive... Returning")
