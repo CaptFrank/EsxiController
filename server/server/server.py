@@ -25,11 +25,14 @@ Imports
 =============================================
 """
 
-import os
+from datetime import timedelta
 
-from flask import Flask
-from ConfigParser import ConfigParser
-from flask import request, session, redirect, url_for, abort
+from flask import *
+from flask_login import LoginManager
+
+from server.server.db.db import *
+from server.server.utils.client.client import *
+
 
 """
 =============================================
@@ -45,16 +48,49 @@ __date__                        = "3/11/2015"
 # Application Title
 APP_TITLE                       = """
 
+ ____|           _)  ___|             |             | |             ___|
+ __|    __|\ \  / | |      _ \  __ \  __|  __| _ \  | |  _ \  __| \___ \   _ \  __|\ \   / _ \  __|
+ |    \__ \ `  <  | |     (   | |   | |   |   (   | | |  __/ |          |  __/ |    \ \ /  __/ |
+_____|____/ _/\_\_|\____|\___/ _|  _|\__|_|  \___/ _|_|\___|_|    _____/ \___|_|     \_/ \___|_|
+
+
 """
+
+# The app static directory
+APP_STATIC_DIRECTORY            = 'public/'
 
 # Server name
 SERVER_NAME                     = "EsxiServer"
 
+CLIENT_TITLE                    = 'CONTROLLER_CLIENT'
+LOCALHOST                       = ''
+DB_PATH                         = 'db/controllerClient.db'
+
+CLIENT_PORT                     = 9999
+
+"""
+=============================================
+Variables
+=============================================
+"""
+
 # Vcenter Handle
-SERVER                          = None
+server                          = None
 
 # Flask app
-FLASK                           = None
+app                             = None
+
+# The db
+db                              = None
+
+# The authentication interface
+login_manager                   = None
+
+# The storage engine
+storage                         = None
+
+# Client messager
+client_th                       = None
 
 """
 =============================================
@@ -62,32 +98,16 @@ Source
 =============================================
 """
 
-def setup():
+@app.route('/',                 methods = ['GET'])
+@app.route('/help',             methods = ['GET'])
+def index():
     """
-    Thi sets up the objects needed to start the REST api.
+    This method returns a jasonified help dict for
+    for the login app.
 
     :return:
     """
-
-    return
-
-def run_web_server():
-    """
-    This runs the application and its components.
-
-    :return:
-    """
-
-    return
-
-def run_service_server():
-    """
-    This is the service server entry point...
-
-    :return:
-    """
-
-    return
+    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.md')
 
 def main():
     """
@@ -97,19 +117,69 @@ def main():
     :return:
     """
 
+    # Print the banner
+    print(APP_TITLE)
+    print('Author:  \t\t' + __author__)
+    print('Date:    \t\t' + __date__)
+    print('Version: \t\t' + __version__)
+    time.sleep(2)
+
     # Get global access
-    global SERVER
-    global FLASK
+    global login_manager
+    global storage
+    global server
+    global client_th
+    global app
+    global db
+
+    # ===================
+    # Application
+    # ===================
 
     # Create a flask app
-    FLASK = Flask(SERVER_NAME)
+    app = Flask(SERVER_NAME)
+    # Set debug
+    app.debug = True
 
-    # Setup the app
-    setup()
+    # Change the duration of how long the Remember Cookie is valid on the users
+    # computer.  This can not really be trusted as a user can edit it.
+    app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
 
-    # Run the app
-    run_service_server()
-    run_web_server()
+    # ==================
+    # Database
+    # ==================
+
+    # Wrap the db to the app
+    db = setup_db(app)
+
+    # Init the db
+    init_db(db)
+
+    # ==================
+    # Login
+    # ==================
+
+    # Flask-Login Login Manager
+    login_manager = LoginManager()
+
+    # Tell the login manager where to redirect users to display the login page
+    login_manager.login_view = "/login/"
+
+    # Init the application context
+    login_manager.init_app(app)
+
+    # ==================
+    # Backend connection
+    # ==================
+
+    # Create a client thread object
+    client_th = client()
+
+    # Hook the app to the client
+    client_th.setup(app)
+
+    # Run the task
+    client_th.run()
     return
 
 if __name__ == "__main__":

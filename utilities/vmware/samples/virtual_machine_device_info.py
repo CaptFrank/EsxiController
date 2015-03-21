@@ -209,7 +209,7 @@ si = connect.SmartConnect(host=args.host, user=args.user, pwd=args.password,
 # Note: from daemons use a shutdown hook to do this, not the atexit
 atexit.register(connect.Disconnect, si)
 
-# http://pubs.vmware.com/vsphere-55/topic/com.vmware.wssdk.apiref.doc/vim.SearchIndex.html
+# http://pubs.vmware.com/vsphere-55/topic/com.vmware.wssdk.apiref.docs/vim.SearchIndex.html
 search_index = si.content.searchIndex
 
 # without exception find managed objects using durable identifiers that the
