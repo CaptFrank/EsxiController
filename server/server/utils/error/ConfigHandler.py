@@ -21,7 +21,7 @@ Imports
 """
 
 from ..error.basehandler import *
-from server.server.server import app
+from server import app
 
 """
 =============================================

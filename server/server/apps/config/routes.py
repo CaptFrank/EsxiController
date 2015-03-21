@@ -21,13 +21,11 @@ Imports
 =============================================
 """
 
-import os
-
 from flask import *
 from flask_login import login_required
-from server.server.apps.config.models import *
-from server.server.utils.error.confighandler import *
-from server.server.server import db, app, login_manager, storage
+from apps.config.models import *
+from utils.error.confighandler import *
+from server import db, app
 
 """
 =============================================
@@ -55,12 +53,19 @@ Source
 # Help
 # ===========
 
-@app.route('/add/help',                 methods = ['GET', 'POST'])
-@app.route('/diff/help',                methods = ['GET', 'POST'])
-@app.route('/delete/help',              methods = ['GET', 'POST'])
-@app.route('/modify/help',              methods = ['GET', 'POST'])
-@app.route('/config/help',              methods = ['GET', 'POST'])
-@app.route('/favorite/help',            methods = ['GET', 'POST'])
+print('[+] Adding route: ' + '/add/help')
+print('[+] Adding route: ' + '/diff/help')
+print('[+] Adding route: ' + '/delete/help')
+print('[+] Adding route: ' + '/modify/help')
+print('[+] Adding route: ' + '/config/help')
+print('[+] Adding route: ' + '/favorite/help')
+
+@app.route('/add/help',                 methods = ['GET', 'PUT', 'POST'])
+@app.route('/diff/help',                methods = ['GET', 'PUT', 'POST'])
+@app.route('/delete/help',              methods = ['GET', 'PUT', 'POST'])
+@app.route('/modify/help',              methods = ['GET', 'PUT', 'POST'])
+@app.route('/config/help',              methods = ['GET', 'PUT', 'POST'])
+@app.route('/favorite/help',            methods = ['GET', 'PUT', 'POST'])
 def config_help():
     """
     This method returns a jasonified help dict for
@@ -68,11 +73,14 @@ def config_help():
 
     :return:
     """
-    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.md')
+    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.txt')
 
 # ===========
 # Add
 # ===========
+
+print('[+] Adding route: ' + '/add/config/')
+print('[+] Adding route: ' + '/add/session/config/')
 
 @app.route('/add/config/',              methods = ['PUT', 'POST'])
 @app.route('/add/session/config/',      methods = ['PUT', 'POST'])
@@ -100,7 +108,6 @@ def config_add():
     if request.json is not None:
 
         # We get the content of the request
-        session = request.json.get('session')
         config = request.json.get('config')
         config_dict = json.loads(request.json.get('config_dict'))
 
@@ -150,6 +157,9 @@ def config_add():
                 }
     else:
         raise ConfigException("Not a valid json packet.")
+
+
+print('[+] Adding route: ' + '/add/session/')
 
 @app.route('/add/session/',             methods = ['PUT', 'POST'])
 @login_required
@@ -221,6 +231,8 @@ def session_add():
     else:
         raise ConfigException("Not a valid json packet.")
 
+print('[+] Adding route: ' + '/add/favorite/')
+
 @app.route('/add/favorite/',            methods = ['PUT', 'POST'])
 @login_required
 def favorite_add():
@@ -279,8 +291,11 @@ def favorite_add():
 # Delete
 # ===========
 
-@app.route('/delete/config/',           methods = ['DELETE'])
-@app.route('/delete/session/config/',   methods = ['DELETE'])
+print('[+] Adding route: ' + '/delete/config/')
+print('[+] Adding route: ' + '/delete/session/config/')
+
+@app.route('/delete/config/',           methods = ['DELETE', 'UPDATE'])
+@app.route('/delete/session/config/',   methods = ['DELETE', 'UPDATE'])
 @login_required
 def config_delete():
     """
@@ -318,7 +333,10 @@ def config_delete():
     else:
         raise ConfigException("Message empty.")
 
-@app.route('/delete/session/',          methods = ['DELETE'])
+
+print('[+] Adding route: ' + '/delete/session/')
+
+@app.route('/delete/session/',          methods = ['DELETE', 'UPDATE'])
 @login_required
 def session_delete():
     """
@@ -356,7 +374,9 @@ def session_delete():
     else:
         raise ConfigException("Message empty.")
 
-@app.route('/delete/favorite/',         methods = ['DELETE'])
+print('[+] Adding route: ' + '/delete/favorite/')
+
+@app.route('/delete/favorite/',         methods = ['DELETE', 'UPDATE'])
 @login_required
 def favorite_delete():
     """
@@ -398,6 +418,12 @@ def favorite_delete():
 # Modify
 # ===========
 
+print('[+] Adding route: ' + '/modify/config/')
+print('[+] Adding route: ' + '/modify/session/config/')
+
+@app.route('/modify/config/',         methods = ['PUT', 'UPDATE', 'POST'])
+@app.route('/modify/session/config/', methods = ['PUT', 'UPDATE', 'POST'])
+@login_required
 def config_modify():
     """
     Modify a config.
@@ -405,30 +431,177 @@ def config_modify():
     args = {
             'config'    : <config name>,
             'section'   : <section name>,
-            'attribute' : {
+            'attribute' : [{
                     'name'  : <name>,
                     'value' : <value>,
-                        }
+                        }]
         }
     """
 
+    # We check if we have all the needed attributes.
+    if request.json is not None:
+
+        # We get the user attributes
+        config = request.json.get('config')
+        section = request.json.get('section')
+        attributes = json.loads(request.json.get('attributes'))
+
+        if config is None:
+            raise ConfigException("Null config name.")
+        elif section is None:
+            raise ConfigException("Null section name.")
+        elif attributes is None:
+            raise ConfigException("Null attribute structure.")
+
+        # We get the config
+        config_db = Configuration.query.filter_by(name = config).first_or_404()
+
+        # We load the structure
+        config_dict = dict(config_db)
+
+        # cycle through the attributes to change
+        for attribute in attributes:
+            config_dict[attribute['name']] = attribute['value']
+
+        # We commit
+        db.session.commit()
+
+        # Return the response
+        return jsonify({
+            'before'    : dict(config_db),
+            'after'     : config_dict
+
+        }), \
+        SUCCESS_RESPONSE
 
     return
 
-def config_diff():
+# ============
+# Favorite Set
+# ============
 
-    return
+print('[+] Adding route: ' + '/favorite/set/config/')
+print('[+] Adding route: ' + '/favorite/set/session/')
 
-def config_favorite():
+@app.route('/favorite/set/config/',         methods = ['PUT', 'UPDATE', 'POST'])
+@app.route('/favorite/set/session/',        methods = ['PUT', 'UPDATE', 'POST'])
+@login_required
+def config_favorite_set():
+    """
+    Sets the favorite config or session
 
-    return
+        args    = {
+                    'name' : name
+                    'config' : config
+                    }
+    """
 
-"""
-=============================================
-Utilities
-=============================================
-"""
+    # We check if we have all the needed attributes.
+    if request.json is not None:
 
+        # We get the user attributes
+        name = request.json.get('name')
+        favorite = request.json.get('favorite')
+
+        if name is None:
+            raise ConfigException("Favorite name is null.")
+        elif favorite is None:
+            raise ConfigException("Favorite config type is null.")
+        else:
+
+            # We have a non null config
+            # Check the session
+
+            # We add the config file only
+            # Get the db entry
+            fav_db = Favorite.query.filter_by(name = name).first()
+
+            # Check the db for the user
+            if fav_db is not None:
+                raise Configuration("Favorite already registered.")
+
+            # Create a favorite to commit
+            favorite_db = Favorite(name, favorite)
+
+            # Add and commit
+            db.session.add(favorite_db)
+            db.session.commit()
+
+
+            # Return the response
+            return jsonify({
+                    'name'          : favorite_db.name,
+                    'favorite'      : favorite_db.config_type,
+                    'created'       : favorite_db.date,
+
+
+                }), \
+                SUCCESS_RESPONSE, \
+                {
+                    'location'  : url_for(
+                        'get_user',
+                        id = favorite_db.name,
+                        _external = True
+                    )
+                }
+    else:
+        raise ConfigException("Not a valid json packet.")
+
+# ============
+# Favorite Get
+# ============
+
+print('[+] Adding route: ' + '/favorite/get/config/')
+print('[+] Adding route: ' + '/favorite/get/session/')
+
+@app.route('/favorite/get/config/',         methods = ['GET', 'POST'])
+@app.route('/favorite/get/session/',        methods = ['GET', 'POST'])
+@login_required
+def config_favorite_get():
+    """
+    Gets the favorite config or session
+    :return:
+    """
+
+    # We check if we have all the needed attributes.
+    if request.json is not None:
+
+        # We get the user attributes
+        name = request.json.get('name')
+
+        if name is None:
+            raise ConfigException("Favorite name is null.")
+        else:
+
+            # We have a non null config
+            # Check the session
+
+            # We add the config file only
+            # Get the db entry
+            fav_db = Favorite.query.filter_by(name = name).first_or_404()
+
+            # Check the db for the user
+            if fav_db is None:
+                raise Configuration("Favorite not registered.")
+
+
+            # Return the response
+            return jsonify({
+                    'name'          : fav_db.name,
+                    'favorite'      : fav_db.config_type,
+                    'created'       : fav_db.date,
+
+                }), \
+                SUCCESS_RESPONSE, \
+                {
+                    'location'  : url_for(
+                        'get_user',
+                        id = fav_db.name,
+                        _external = True
+                    )
+                }
+    else:
+        raise ConfigException("Not a valid json packet.")
 
 
 

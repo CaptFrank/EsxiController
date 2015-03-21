@@ -25,14 +25,17 @@ Imports
 =============================================
 """
 
+import sys
+sys.path.append(".")
+
 from datetime import timedelta
 
 from flask import *
 from flask_login import LoginManager
 
-from server.server.db.db import *
-from server.server.utils.client.client import *
-
+from db.db import *
+from utils.client.client import *
+from utils.logger.loggerengine import *
 
 """
 =============================================
@@ -68,29 +71,6 @@ DB_PATH                         = 'db/controllerClient.db'
 
 CLIENT_PORT                     = 9999
 
-"""
-=============================================
-Variables
-=============================================
-"""
-
-# Vcenter Handle
-server                          = None
-
-# Flask app
-app                             = None
-
-# The db
-db                              = None
-
-# The authentication interface
-login_manager                   = None
-
-# The storage engine
-storage                         = None
-
-# Client messager
-client_th                       = None
 
 """
 =============================================
@@ -98,16 +78,59 @@ Source
 =============================================
 """
 
-@app.route('/',                 methods = ['GET'])
-@app.route('/help',             methods = ['GET'])
-def index():
-    """
-    This method returns a jasonified help dict for
-    for the login app.
 
-    :return:
-    """
-    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.md')
+
+# ===================
+# Application
+# ===================
+
+# Flask app
+app = Flask(SERVER_NAME)
+
+# Set debug
+app.debug = True
+
+# Change the duration of how long the Remember Cookie is valid on the users
+# computer.  This can not really be trusted as a user can edit it.
+app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_ACCESS
+
+# ==================
+# Database
+# ==================
+
+# Wrap the db to the app
+db = setup_db(app)
+
+# Init the db
+init_db(db)
+
+# ==================
+# Login
+# ==================
+
+# The authentication interface
+login_manager                   = LoginManager()
+
+# Tell the login manager where to redirect users to display the login page
+login_manager.login_view = "/login/"
+
+# Init the application context
+login_manager.init_app(app)
+
+# ==================
+# Backend connection
+# ==================
+
+# Create a client thread object
+client_th = client()
+
+# Hook the app to the client
+client_th.setup(app)
+
+# Run the task
+#client_th.start()
+
 
 def main():
     """
@@ -116,6 +139,13 @@ def main():
 
     :return:
     """
+
+    # Apps imports
+    import apps.config.routes
+    import apps.engine.routes
+    import apps.listing.routes
+    import apps.login.routes
+    import apps.task.routes
 
     # Print the banner
     print(APP_TITLE)
@@ -133,54 +163,26 @@ def main():
     global db
 
     # ===================
-    # Application
+    # Logging
     # ===================
 
-    # Create a flask app
-    app = Flask(SERVER_NAME)
-    # Set debug
-    app.debug = True
+    # Create the logging engine
+    set_logger()
 
-    # Change the duration of how long the Remember Cookie is valid on the users
-    # computer.  This can not really be trusted as a user can edit it.
-    app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
-
-    # ==================
-    # Database
-    # ==================
-
-    # Wrap the db to the app
-    db = setup_db(app)
-
-    # Init the db
-    init_db(db)
-
-    # ==================
-    # Login
-    # ==================
-
-    # Flask-Login Login Manager
-    login_manager = LoginManager()
-
-    # Tell the login manager where to redirect users to display the login page
-    login_manager.login_view = "/login/"
-
-    # Init the application context
-    login_manager.init_app(app)
-
-    # ==================
-    # Backend connection
-    # ==================
-
-    # Create a client thread object
-    client_th = client()
-
-    # Hook the app to the client
-    client_th.setup(app)
-
-    # Run the task
-    client_th.run()
+    # Run the app
+    app.run()
     return
+
+@app.route('/',                 methods = ['GET'])
+@app.route('/help',             methods = ['GET'])
+def index():
+    """
+    This method returns a jasonified help dict for
+    for the login app.
+
+    :return:
+    """
+    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.txt')
 
 if __name__ == "__main__":
     main()

@@ -21,10 +21,10 @@ Imports
 =============================================
 """
 
+from server import app, db
 from sqlalchemy import *
 from datetime import datetime
 from flask_sqlalchemy import *
-from server.server.server import app
 from itsdangerous import URLSafeTimedSerializer
 from passlib.apps import custom_app_context as pwd_context
 
@@ -45,6 +45,7 @@ Source
 # ===================
 # User
 # ===================
+
 class User(Model):
     """
     This user table is where we host all the usernames and

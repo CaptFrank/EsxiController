@@ -21,8 +21,6 @@ Imports
 =============================================
 """
 
-from server.server.db.db import base
-from sqlalchemy import Column, Integer, String
 
 """
 =============================================

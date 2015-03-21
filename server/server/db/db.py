@@ -21,7 +21,10 @@ Imports
 =============================================
 """
 
-from dictalchemy import *
+import os
+import sys
+sys.path.append(".")
+
 from flask_sqlalchemy import SQLAlchemy
 
 """
@@ -30,7 +33,7 @@ Constant
 =============================================
 """
 
-DATABASE_ACCESS         = 'sqlite://db/data.db'
+DATABASE_ACCESS         = 'sqlite:///db/data.db'
 
 """
 =============================================
@@ -65,12 +68,14 @@ def init_db(db):
     :return:
     """
 
+    print(os.getcwd())
+
     # Import all models
-    import server.server.apps.task.models
-    import server.server.apps.config.models
-    import server.server.apps.engine.models
+    import apps.config.models
+    import apps.engine.models
+    import apps.login.models
+    import apps.task.models
 
     # Create all models
     db.create_all()
-    make_class_dictable(db)
     return

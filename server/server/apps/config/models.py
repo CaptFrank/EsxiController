@@ -23,6 +23,7 @@ Imports
 
 import uuid
 
+from server import app, db
 from sqlalchemy import *
 from sqlalchemy import sql
 from datetime import datetime
@@ -252,7 +253,8 @@ class Favorite(Model):
     id              = Column(Integer,       primary_key     = True)
     name            = Column(String,        unique          = True)
     uuid            = Column(String,        unique          = True)
-    date            = Column(DateTime,      default         = datetime.utcnow())
+    date            = Column(DateTime)
+    config_type     = Column(String)
 
     # Extended keys
     config_fav      = ForeignKey('configs.favorite')
@@ -263,28 +265,31 @@ class Favorite(Model):
                                 "Configuration",
                                 backref     = 'favorite_config',
                                 lazy        = 'dynamic',
-                                primaryjoin = sql.and_(id == Configuration.favorite_id,
+                                primaryjoin = sql.and_(config_type == Configuration.config_type,
                                                     Configuration.favorite == True))
     fav_session     = relationship(
                                 "Configuration",
                                 backref     = 'favorite_session',
                                 lazy        = 'dynamic',
-                                primaryjoin = sql.and_(id == Session.favorite_id,
+                                primaryjoin = sql.and_(config_type == Session.config_type,
                                                     Session.favorite == True))
 
     # ===================
     # Sources
     # ===================
 
-    def __init__(self, name = None):
+    def __init__(self, name = None, config_type = None):
         """
         This is the default constructor for the class.
 
         :param name:                the name of the favorite
+        :param config_type:         the config type
         :return:
         """
         self.name = name
-        self.uuid           = str(uuid.uuid4())
+        self.config_type = config_type
+        self.date = datetime.utcnow()
+        self.uuid = str(uuid.uuid4())
         return
 
     def __str__(self):

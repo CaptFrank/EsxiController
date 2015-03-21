@@ -22,10 +22,10 @@ Imports
 """
 
 from flask import *
-from server.server.apps.login.models import *
+from apps.login.models import *
 from flask_login import login_user, logout_user
-from server.server.utils.error.loginhandler import *
-from server.server.server import db, app, login_manager
+from utils.error.loginhandler import *
+from server import db, app, login_manager
 
 """
 =============================================
@@ -50,6 +50,8 @@ Source
 =============================================
 """
 
+print('[+] Adding route: ' + '/login/help')
+
 @app.route('/login/help',    methods = ['GET', 'POST'])
 def login_help():
     """
@@ -58,7 +60,9 @@ def login_help():
 
     :return:
     """
-    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.md')
+    return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.txt')
+
+print('[+] Adding route: ' + '/register/')
 
 @app.route('/register/',     methods = ['POST'])
 def register():
@@ -108,6 +112,8 @@ def register():
     else:
         raise LoginException("Message empty.")
 
+print('[+] Adding route: ' + '/unregister/')
+
 @app.route('/unregister/',   methods = ['DELETE'])
 def unregister():
     """
@@ -144,6 +150,8 @@ def unregister():
 
     else:
         raise LoginException("Message empty.")
+
+print('[+] Adding route: ' + '/login/')
 
 @app.route('/login/',        methods = ['POST'])
 def login():
@@ -203,6 +211,8 @@ def login():
 
         else:
             raise LoginException("Not a valid login credential.")
+
+print('[+] Adding route: ' + '/logout/')
 
 @app.route('/logout/',       methods = ['POST'])
 def logout():
