@@ -1,3 +1,4 @@
+
 """
 
     EsxiServer
@@ -25,17 +26,16 @@ Imports
 =============================================
 """
 
-import sys
-sys.path.append(".")
-
-from datetime import timedelta
 
 from flask import *
-from flask_login import LoginManager
 
-from db.db import *
-from utils.client.client import *
-from utils.logger.loggerengine import *
+from server.db.db import *
+from flask_sqlalchemy import *
+from datetime import timedelta
+from flask_login import LoginManager
+from server.utils.client.client import *
+from server.utils.logger.loggerengine import *
+
 
 """
 =============================================
@@ -65,10 +65,18 @@ APP_STATIC_DIRECTORY            = 'public/'
 # Server name
 SERVER_NAME                     = "EsxiServer"
 
+# Debugging
+DEBUG                           = True
+
+# Threads
+THREADS                         = 2
+
+# Secrets
+SECRET                          = 'haligonia123!'
+
 CLIENT_TITLE                    = 'CONTROLLER_CLIENT'
 LOCALHOST                       = ''
 DB_PATH                         = 'db/controllerClient.db'
-
 CLIENT_PORT                     = 9999
 
 
@@ -78,7 +86,19 @@ Source
 =============================================
 """
 
+# Print the banner
+print(APP_TITLE)
+print('Author:  \t\t' + __author__)
+print('Date:    \t\t' + __date__)
+print('Version: \t\t' + __version__)
+time.sleep(2)
 
+# ===================
+# Logging
+# ===================
+
+# Create the logging engine
+set_logger()
 
 # ===================
 # Application
@@ -87,13 +107,12 @@ Source
 # Flask app
 app = Flask(SERVER_NAME)
 
-# Set debug
-app.debug = True
-
 # Change the duration of how long the Remember Cookie is valid on the users
 # computer.  This can not really be trusted as a user can edit it.
 app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_ACCESS
+app.config['SECRET_KEY'] = SECRET
+app.config['DEBUG'] = DEBUG
 
 # ==================
 # Database
@@ -110,7 +129,7 @@ init_db(db)
 # ==================
 
 # The authentication interface
-login_manager                   = LoginManager()
+login_manager = LoginManager()
 
 # Tell the login manager where to redirect users to display the login page
 login_manager.login_view = "/login/"
@@ -129,51 +148,24 @@ client_th = client()
 client_th.setup(app)
 
 # Run the task
-#client_th.start()
+client_th.start()
 
+# Run the app
+app.run(debug = True)
 
-def main():
-    """
-    We create a flask app here and create necessary
-    objects to access the EsxiController (Vcenter)
+# Sample HTTP error handling
+@app.errorhandler(404)
+def not_found(error):
+    return 404
 
-    :return:
-    """
+# Import a module / component using its blueprint handler variable (mod_auth)
+from ..app.config.controllers import configs as config_module
+from ..app.listing.controllers import listings as list_module
 
-    # Apps imports
-    import apps.config.routes
-    import apps.engine.routes
-    import apps.listing.routes
-    import apps.login.routes
-    import apps.task.routes
+# Register blueprint(s)
+app.register_blueprint(config_module)
+app.register_blueprint(list_module)
 
-    # Print the banner
-    print(APP_TITLE)
-    print('Author:  \t\t' + __author__)
-    print('Date:    \t\t' + __date__)
-    print('Version: \t\t' + __version__)
-    time.sleep(2)
-
-    # Get global access
-    global login_manager
-    global storage
-    global server
-    global client_th
-    global app
-    global db
-
-    # ===================
-    # Logging
-    # ===================
-
-    # Create the logging engine
-    set_logger()
-
-    # Run the app
-    app.run()
-    return
-
-@app.route('/',                 methods = ['GET'])
 @app.route('/help',             methods = ['GET'])
 def index():
     """
@@ -183,7 +175,4 @@ def index():
     :return:
     """
     return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.txt')
-
-if __name__ == "__main__":
-    main()
 
