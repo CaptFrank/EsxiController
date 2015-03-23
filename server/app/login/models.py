@@ -22,9 +22,7 @@ Imports
 """
 
 from server.app import app, db
-from sqlalchemy import *
 from datetime import datetime
-from flask_sqlalchemy import *
 from itsdangerous import URLSafeTimedSerializer
 from passlib.apps import custom_app_context as pwd_context
 
@@ -46,7 +44,7 @@ Source
 # User
 # ===================
 
-class User(Model):
+class User(db.Model):
     """
     This user table is where we host all the usernames and
     their associated passwords hashed.
@@ -64,14 +62,14 @@ class User(Model):
     # Attributes
     # ===================
 
-    id              = Column(Integer,       primary_key         = True)
-    username        = Column(String,        index               = True)
-    password_hash   = Column(String)
-    last_login      = Column(DateTime)
-    login_count     = Column(Integer)
-    created         = Column(DateTime)
-    age             = Column(DateTime)
-    authenticated   = Column(Boolean,       default             = False)
+    id              = db.Column(db.Integer,       primary_key         = True)
+    username        = db.Column(db.String,        index               = True)
+    password_hash   = db.Column(db.String)
+    last_login      = db.Column(db.DateTime)
+    login_count     = db.Column(db.Integer)
+    created         = db.Column(db.DateTime)
+    age             = db.Column(db.DateTime)
+    authenticated   = db.Column(db.Boolean,       default             = False)
 
     # ===================
     # Sources

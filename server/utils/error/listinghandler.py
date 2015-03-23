@@ -1,6 +1,6 @@
 """
 
-    loginhandler.py
+    listing.py
     ==========
 
     This is the login handler for the error handler.
@@ -29,7 +29,7 @@ Source
 =============================================
 """
 
-class LoginException(BaseHandler):
+class ListingException(BaseHandler):
     """
     This class provides a base class to the error handlers that
     will later be implemented to tell the user that there
@@ -63,7 +63,7 @@ class LoginException(BaseHandler):
         self.payload = payload
         return
 
-@app.errorhandler(LoginException)
+@app.errorhandler(ListingException)
 def handle_login_exception(error):
     """
     The handler function to call from the context.

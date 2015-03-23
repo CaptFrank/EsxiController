@@ -20,7 +20,7 @@ Imports
 =============================================
 """
 
-from ..server.utils.error.basehandler import *
+from server.utils.error.basehandler import *
 from server import app
 
 """

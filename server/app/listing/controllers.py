@@ -23,12 +23,9 @@ Imports
 
 
 from flask import *
-from server.app import app
 from flask_login import login_required
-
 from server.app.config.models import *
-from server.utils.error.confighandler import *
-
+from server.utils.error.listinghandler import *
 
 
 """
@@ -112,7 +109,7 @@ def list_config():
 
         # We check if the session is valid
         if config is None:
-            raise ConfigException("Config name cannot be null.")
+            raise ListingException("Config name cannot be null.")
         else:
 
             # We have a non null config
@@ -132,7 +129,7 @@ def list_config():
                 }), \
                 SUCCESS_RESPONSE
     else:
-        raise ConfigException("Not a valid json packet.")
+        raise ListingException("Not a valid json packet.")
 
 @listings.route('/',                    methods = ['GET', 'PUT', 'POST'])
 @login_required
@@ -161,7 +158,7 @@ def list_attribute():
 
         # We check if the session is valid
         if filters is None:
-            raise ConfigException("Filters cannot be null.")
+            raise ListingException("Filters cannot be null.")
         else:
 
             # We have a non null config
@@ -183,7 +180,7 @@ def list_attribute():
                 }), \
                 SUCCESS_RESPONSE
     else:
-        raise ConfigException("Not a valid json packet.")
+        raise ListingException("Not a valid json packet.")
 
 @listings.route('/favorite/',           methods = ['GET', 'PUT', 'POST'])
 @login_required
@@ -201,7 +198,7 @@ def list_favorite():
 
         # We check if the session is valid
         if fav is None:
-            raise ConfigException("Favorite name cannot be null.")
+            raise ListingException("Favorite name cannot be null.")
         else:
 
             # We have a non null config
@@ -220,7 +217,7 @@ def list_favorite():
                 }), \
                 SUCCESS_RESPONSE
     else:
-        raise ConfigException("Not a valid json packet.")
+        raise ListingException("Not a valid json packet.")
 
 @listings.route('/favorites',           methods = ['GET', 'PUT', 'POST'])
 @login_required

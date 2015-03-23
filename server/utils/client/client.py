@@ -21,30 +21,16 @@ Imports
 """
 
 import time
-import snakemq
 import logging
 import threading
 
-import snakemq.link
-import snakemq.message
-import snakemq.messaging
-import snakemq.packeter
-from snakemq.message import FLAG_PERSISTENT
-
+from retask import *
 
 """
 =============================================
 Constants
 =============================================
 """
-
-CLIENT_TITLE                    = 'CONTROLLER_CLIENT'
-SERVER_TITLE                    = 'CONTROLLER_SERVER'
-
-LOCALHOST                       = ''
-DB_PATH                         = 'db/controllerClient.db'
-
-CLIENT_PORT                     = 9999
 
 
 class client(threading.Thread):
@@ -75,16 +61,7 @@ class client(threading.Thread):
     # External communication
 
     # Communication context
-    __snake                             = None
-
-    # Packeter
-    __packeter                          = None
-
-    # Link
-    __link                              = None
-
-    # Messenger
-    __messenger                         = None
+    __queue                              = None
 
     def __init__(self, log_level=logging.INFO):
         """
@@ -98,9 +75,6 @@ class client(threading.Thread):
         self.__logger = logging.getLogger("ESXiController - client")
         self.__logger.setLevel(log_level)
         self.__log_level = log_level
-
-        # Init the snake mq logger
-        snakemq.init_logging(self.__logger)
         return
 
     def setup(self, app):
@@ -109,16 +83,10 @@ class client(threading.Thread):
         """
 
         # Setup the sakemq engine
-        self.__logger.info("Creating a snakemq interface")
-        self.__link = snakemq.link.Link()
-        self.__packeter = snakemq.packeter.Packeter(self.__link)
-        self.__messenger = snakemq.messaging.Messaging(CLIENT_TITLE,
-                                                       LOCALHOST,
-                                                       self.__packeter)
+        self.__logger.info("Creating a task queue interface")
 
-        self.__logger.info("Adding connector")
-        self.__link.add_connector((LOCALHOST, CLIENT_PORT))
-        self.__logger.info("Created client port on localhost:" + str(CLIENT_PORT))
+        self.__queue = Queue('esxicontroller')
+        self.__queue.connect()
 
         app.client = self
         self.__logger.info("Setup complete")
@@ -146,15 +114,12 @@ class client(threading.Thread):
         """
 
         while self.__alive:
-            self.__link.loop()
             try:
                 time.sleep(1)
             except (KeyboardInterrupt, SystemExit):
                 self.__logger.info("Killing app based on user input...")
                 exit(0)
         return
-
-
 
     def send_config(self, configs):
         """
@@ -163,9 +128,6 @@ class client(threading.Thread):
         :param configs:
         :return:
         """
-
-        message = snakemq.message.Message(configs,
-                                          ttl = 600,
-                                          flags = FLAG_PERSISTENT)
-        self.__messenger.send_message(SERVER_TITLE, message)
+        self.__queue.enqueue(Task(configs))
+        self.__logger.info("Added a new task to the task queue.")
         return

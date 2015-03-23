@@ -106,13 +106,13 @@ set_logger()
 
 # Flask app
 app = Flask(SERVER_NAME)
+app.debug = True
 
 # Change the duration of how long the Remember Cookie is valid on the users
 # computer.  This can not really be trusted as a user can edit it.
 app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_ACCESS
 app.config['SECRET_KEY'] = SECRET
-app.config['DEBUG'] = DEBUG
 
 # ==================
 # Database
@@ -158,13 +158,15 @@ app.run(debug = True)
 def not_found(error):
     return 404
 
-# Import a module / component using its blueprint handler variable (mod_auth)
+# Import a module / component using its blueprint handler variable
 from ..app.config.controllers import configs as config_module
 from ..app.listing.controllers import listings as list_module
+from ..app.login.controllers import login as login_module
 
 # Register blueprint(s)
 app.register_blueprint(config_module)
 app.register_blueprint(list_module)
+app.register_blueprint(login_manager)
 
 @app.route('/help',             methods = ['GET'])
 def index():

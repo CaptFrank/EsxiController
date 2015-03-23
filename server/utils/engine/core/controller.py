@@ -8,27 +8,16 @@ import json
 import logging
 import threading
 
-import snakemq.link
-import snakemq.message
-import snakemq.messaging
-import snakemq.packeter
-from snakemq.storage.sqlite import SqliteQueuesStorage
-
+from retask import *
 from configparser import ConfigParser
 from server.utils.engine.core.connection import connection
 from server.utils.engine.core.networkstager import networkStager
-
-
 
 # =============================================================
 # Constants
 # =============================================================
 
-SERVER_TITLE                            = 'CONTROLLER_SERVER'
-LOCALHOST                               = ''
-DB_PATH                                 = 'db/controllerServer.db'
-
-CLIENT_PORT                             = 9999
+EMPTY                                   = 0
 
 # =============================================================
 # Source
@@ -85,19 +74,8 @@ class controller(threading.Thread):
     # External communication
 
     # Communication context
-    __snake                             = None
+    __queue                             = None
 
-    # Packeter
-    __packeter                          = None
-
-    # Link
-    __link                              = None
-
-    # Message Storage
-    __storage                           = None
-
-    # Messenger
-    __messenger                         = None
 
     def __init__(self, host_config, log_level=logging.INFO):
         """
@@ -119,8 +97,6 @@ class controller(threading.Thread):
         self.__logger.setLevel(log_level)
         self.__log_level = log_level
 
-        # Init the snake mq logger
-        snakemq.init_logging(self.__logger)
 
         # Configs
         self.__logger.info("Reading the host configurations.")
@@ -165,7 +141,8 @@ class controller(threading.Thread):
         """
 
         while self.__alive:
-            self.__link.loop()
+
+            self.__check_task_queue()
             try:
                 time.sleep(1)
             except (KeyboardInterrupt, SystemExit):
@@ -186,95 +163,34 @@ class controller(threading.Thread):
                                      self.__log_level)
 
         # Setup the sakemq engine
-        self.__logger.info("Creating a snakemq interface")
-        self.__link = snakemq.link.Link()
-        self.__packeter = snakemq.packeter.Packeter(self.__link)
-        self.__storage = SqliteQueuesStorage(DB_PATH)
-        self.__messenger = snakemq.messaging.Messaging(SERVER_TITLE,
-                                                       LOCALHOST,
-                                                       self.__packeter,
-                                                       self.__storage)
+        self.__logger.info("Creating a task queue interface")
+        self.__queue = Queue('esxicontroller')
 
-        self.__logger.info("Adding listener")
-        self.__link.add_listener((LOCALHOST, CLIENT_PORT))
-        self.__logger.info("Created server port on localhost:" + str(CLIENT_PORT))
+        # Connect to the server
+        self.__queue.connect()
+        self.__logger.info("Connected to the Redis Task Queue.")
 
-        self.__messenger.on_message_recv.add(self.on_receive)
-        self.__messenger.on_connect.add(self.on_connect)
-        self.__messenger.on_disconnect.add(self.on_disconnect)
-        self.__messenger.on_message_drop.add(self.on_message_drop)
-        self.__messenger.on_error.add(self.on_error)
         self.__logger.info("Setup complete")
         return
 
-    def on_receive(self, conn, ident, message):
+    def __check_task_queue(self):
         """
-        We receive a packet message
+        Checks the task queue and adds it to the
+        stager queue.
 
-        The message should be in the form of json dictionary
-
-        :param conn:                    The connection
-        :param ident:                   The identity
-        :param message:                 The message
         :return:
         """
 
-        # Get the config
-        config = json.loads(message)
+        if self.__queue.length != EMPTY:
+            task = self.__queue.dequeue()
+            if task:
+                # Get the config
+                config = json.loads(task)
 
-        # Check for nulity
-        if config is not None:
-            self.start_task(config)
-
-        return
-
-    def on_connect(self, conn, ident, message):
-        """
-        We receive a packet message
-
-        :param conn:                    The connection
-        :param ident:                   The identity
-        :param message:                 The message
-        :return:
-        """
-        self.__logger.info("Connected to: " + ident + " through: " + conn)
-        return
-
-    def on_disconnect(self, conn, ident, message):
-        """
-        We receive a packet message
-
-        :param conn:                    The connection
-        :param ident:                   The identity
-        :param message:                 The message
-        :return:
-        """
-        self.__logger.info("Disconnected from: " + ident + " through: " + conn)
-        self.__alive = False
-        return
-
-    def on_message_drop(self, conn, ident, message):
-        """
-        We receive a packet message
-
-        :param conn:                    The connection
-        :param ident:                   The identity
-        :param message:                 The message
-        :return:
-        """
-        self.__logger.error("Messaging engine reported a message drop")
-        return
-
-    def on_error(self, conn, ident, message):
-        """
-        We receive a packet message
-
-        :param conn:                    The connection
-        :param ident:                   The identity
-        :param message:                 The message
-        :return:
-        """
-        self.__logger.error("Messaging engine error!")
+                # Check for nulity
+                if config is not None:
+                    self.__logger.info("Adding a new task to work on.")
+                    self.start_task(Task(config))
         return
 
     def start_task(self, config):
@@ -302,4 +218,3 @@ class controller(threading.Thread):
         self.__logger.info("Stopping stage...")
         self.__stage.kill_task(config['attributes']['name'])
         return
-

@@ -22,11 +22,11 @@ Imports
 """
 
 from flask import *
-from flask_login import login_required
-
+from server.app import db
 from server.app.config.models import *
+from flask_login import login_required
 from server.utils.error.confighandler import *
-from server import db, app
+
 
 
 """
@@ -116,7 +116,7 @@ def config_add():
 
             # Check the db for the user
             if config_db is not None:
-                raise Configuration("Configurations already registered.")
+                raise ConfigException("Configurations already registered.")
 
             # Otherwise we create a new one
             config_db = Configuration(name = config,
@@ -188,7 +188,7 @@ def session_add():
 
             # Check the db for the user
             if session_db is not None:
-                raise Configuration("Session already registered.")
+                raise ConfigException("Session already registered.")
 
             # Otherwise we create a new one
             session_db = Session(
@@ -249,7 +249,7 @@ def favorite_add():
 
             # Check the db for the user
             if fav_db is not None:
-                raise Configuration("Session already registered.")
+                raise ConfigException("Session already registered.")
 
             # Otherwise we create a new one
             fav_db = Favorite(name = favorite)
@@ -491,7 +491,7 @@ def config_favorite_set():
 
             # Check the db for the user
             if fav_db is not None:
-                raise Configuration("Favorite already registered.")
+                raise ConfigException("Favorite already registered.")
 
             # Create a favorite to commit
             favorite_db = Favorite(name, favorite)
@@ -552,7 +552,7 @@ def config_favorite_get():
 
             # Check the db for the user
             if fav_db is None:
-                raise Configuration("Favorite not registered.")
+                raise ConfigException("Favorite not registered.")
 
 
             # Return the response

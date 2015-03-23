@@ -22,13 +22,8 @@ Imports
 """
 
 import uuid
-
-from server import app, db
-from sqlalchemy import *
-from sqlalchemy import sql
+from server.app import db
 from datetime import datetime
-from flask_sqlalchemy import *
-from sqlalchemy.orm import relationship
 
 """
 =============================================
@@ -46,7 +41,7 @@ Source
 # Configuration
 # ===================
 
-class Configuration(Model):
+class Configuration(db.Model):
     """
     This is the main table used in this application.
     It stores the configs in form of str(json).
@@ -64,22 +59,22 @@ class Configuration(Model):
     # Attributes
     # ===================
 
-    id              = Column(Integer,       primary_key     = True)
-    name            = Column(String,        unique          = True)
-    uuid            = Column(String,        unique          = True)
-    favorite        = Column(Boolean,       default         = False)
-    date            = Column(DateTime)
-    access          = Column(DateTime)
-    recent          = Column(Integer,       default         = 0)
-    user            = Column(String)
+    id              = db.Column(db.Integer,       primary_key     = True)
+    name            = db.Column(db.String,        unique          = True)
+    uuid            = db.Column(db.String,        unique          = True)
+    favorite        = db.Column(db.Boolean,       default         = False)
+    date            = db.Column(db.DateTime)
+    access          = db.Column(db.DateTime)
+    recent          = db.Column(db.Integer,       default         = 0)
+    user            = db.Column(db.String)
 
 
     # Favorite Relationship
-    favorite_id     = Column(Integer,       ForeignKey('favorites.id'))
+    favorite_id     = db.Column(db.Integer,       db.ForeignKey('favorites.id'))
 
     # Core attributes
-    config_type     = Column(String)
-    configs         = Column(String,        unique          = False)
+    config_type     = db.Column(db.String)
+    configs         = db.Column(db.String,        unique          = False)
 
     # ===================
     # Sources
@@ -112,8 +107,6 @@ class Configuration(Model):
         """
         We update the configs timestamps and counts
 
-        :param access:
-        :param recent:
         :param user:
         :return:
         """
@@ -147,7 +140,7 @@ class Configuration(Model):
 # Session
 # ===================
 
-class Session(Model):
+class Session(db.Model):
     """
     This is the main table used in this application.
     It stores the sessions in form of union of configs.
@@ -165,23 +158,23 @@ class Session(Model):
     # Attributes
     # ===================
 
-    id              = Column(Integer,       primary_key     = True)
-    name            = Column(String,        unique          = True)
-    uuid            = Column(String,        unique          = True)
-    favorite        = Column(Boolean,       default         = False)
-    date            = Column(DateTime)
-    config_type     = Column(String)
+    id              = db.Column(db.Integer,       primary_key     = True)
+    name            = db.Column(db.String,        unique          = True)
+    uuid            = db.Column(db.String,        unique          = True)
+    favorite        = db.Column(db.Boolean,       default         = False)
+    date            = db.Column(db.DateTime)
+    config_type     = db.Column(db.String)
 
     # Favorite Relationship
-    favorite_id     = Column(Integer,       ForeignKey('favorites.id'))
+    favorite_id     = db.Column(db.Integer,       db.ForeignKey('favorites.id'))
 
     # Core attributes
-    config_id       = Column(String,       ForeignKey('configs.config_type'))
-    config          = relationship(
+    config_id       = db.Column(db.String,        db.ForeignKey('configs.config_type'))
+    config          = db.relationship(
                         'Configuration',
                         backref     = 'session',
                         lazy        = 'dynamic',
-                        primaryjoin = sql.and_(config_type == Configuration.config_type)
+                        primaryjoin = db.sql.and_(config_type == Configuration.config_type)
                         )
 
     # ===================
@@ -232,7 +225,7 @@ class Session(Model):
 # Favorite
 # ===================
 
-class Favorite(Model):
+class Favorite(db.Model):
     """
     This is the favorite table. It hosts both the
     favorite used config and the favorite used session.
@@ -250,28 +243,28 @@ class Favorite(Model):
     # Attributes
     # ===================
 
-    id              = Column(Integer,       primary_key     = True)
-    name            = Column(String,        unique          = True)
-    uuid            = Column(String,        unique          = True)
-    date            = Column(DateTime)
-    config_type     = Column(String)
+    id              = db.Column(db.Integer,       primary_key     = True)
+    name            = db.Column(db.String,        unique          = True)
+    uuid            = db.Column(db.String,        unique          = True)
+    date            = db.Column(db.DateTime)
+    config_type     = db.Column(db.String)
 
     # Extended keys
-    config_fav      = ForeignKey('configs.favorite')
-    session_fav     = ForeignKey('sessions.favorite')
+    config_fav      = db.ForeignKey('configs.favorite')
+    session_fav     = db.ForeignKey('sessions.favorite')
 
     # Core attributes
-    fav_config      = relationship(
+    fav_config      = db.relationship(
                                 "Configuration",
                                 backref     = 'favorite_config',
                                 lazy        = 'dynamic',
-                                primaryjoin = sql.and_(config_type == Configuration.config_type,
+                                primaryjoin = db.sql.and_(config_type == Configuration.config_type,
                                                     Configuration.favorite == True))
-    fav_session     = relationship(
+    fav_session     = db.relationship(
                                 "Configuration",
                                 backref     = 'favorite_session',
                                 lazy        = 'dynamic',
-                                primaryjoin = sql.and_(config_type == Session.config_type,
+                                primaryjoin = db.sql.and_(config_type == Session.config_type,
                                                     Session.favorite == True))
 
     # ===================
