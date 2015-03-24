@@ -22,6 +22,7 @@ Imports
 """
 
 from flask_sqlalchemy import SQLAlchemy
+from server.app.engine.models import *
 
 """
 =============================================
@@ -72,4 +73,11 @@ def init_db(db):
 
     # Create all models
     db.create_all()
+
+    # Create base tables
+    db.session.add(EngineStatus())
+    db.session.add(WebStatus())
+    db.session.add(CommandStats(COMMAND_TYPE_WEB))
+    db.session.add(CommandStats(COMMAND_TYPE_CLI))
+    db.session.commit()
     return

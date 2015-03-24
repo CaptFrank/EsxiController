@@ -72,8 +72,6 @@ def set_logger(syslog_address=None, splunk_configs=None):
     logger_console = logging.StreamHandler()
     logger_console.setLevel(LOGGER_LEVEL)
 
-
-
     # Create a formatter
     logger_formatter = logging.Formatter('[%(asctime)s]: %(name)-50s: %(levelname)-20s %(message)s')
 

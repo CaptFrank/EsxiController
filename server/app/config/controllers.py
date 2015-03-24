@@ -500,7 +500,6 @@ def config_favorite_set():
             db.session.add(favorite_db)
             db.session.commit()
 
-
             # Return the response
             return jsonify({
                     'name'          : favorite_db.name,
@@ -553,7 +552,6 @@ def config_favorite_get():
             # Check the db for the user
             if fav_db is None:
                 raise ConfigException("Favorite not registered.")
-
 
             # Return the response
             return jsonify({

@@ -21,12 +21,10 @@ Imports
 =============================================
 """
 
-
 from flask import *
 from flask_login import login_required
 from server.app.config.models import *
 from server.utils.error.listinghandler import *
-
 
 """
 =============================================

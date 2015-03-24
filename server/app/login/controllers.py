@@ -23,7 +23,8 @@ Imports
 
 from flask import *
 from server.app.login.models import *
-from server.app import db, login_manager
+from server.app.engine.models import *
+from server.app import app, db, login_manager
 from server.utils.error.loginhandler import *
 from flask_login import login_user, logout_user
 
@@ -85,14 +86,18 @@ def register():
         user = User.query.filter_by(username = username).first()
 
         # Check the db for the user
-        if user is not None:
+        if (user is not None) or (user is not None):
             raise LoginException("Username already registered.")
 
         # Otherwise the user needs to be added
         user = User(username, password)
 
+        # We also create a user stat db record for that user
+        user_stats = UserStats(user = username)
+
         # Add the user
         db.session.add(user)
+        db.session.add(user_stats)
         db.session.commit()
 
         # Return the response
@@ -130,13 +135,15 @@ def unregister():
 
         # Get the db entry
         user = User.query.filter_by(username = username).first_or_404()
+        user_stats = UserStats.query.filter_by(user = username).firs_or_404()
 
         # Check the db for the user
-        if user is None:
+        if (user is None) and (user_stats is None):
             raise LoginException("Username not registered.")
 
         # Delete the user
         db.session.delete(user)
+        db.session.delete(user_stats)
         db.session.commit()
 
         # Return the response
@@ -159,6 +166,9 @@ def login():
     # global handle
     global current_users
 
+    # temp dict
+    temp = dict()
+
     # Check if the json is not none
     if request.json is not None:
 
@@ -175,9 +185,10 @@ def login():
 
         # Get the db entry
         hashed = User.query.filter_by(username = username).first_or_404()
+        hashed_stats = UserStats.filter_by(user = username).first_or_404()
 
         # Check for existence
-        if hashed is None:
+        if (hashed is None) and (hashed_stats is None):
             raise LoginException("Not a valid username.")
 
         # Check the hashes
@@ -185,8 +196,11 @@ def login():
 
             # Authenticate the user
             user.authenticated = True
-            current_users[username] = user
-            db.session.add(user)
+
+            temp['user'] = user
+            temp['stats'] = user
+
+            current_users[username] = temp
             db.session.commit()
 
             # We have a good match so we login
@@ -194,7 +208,7 @@ def login():
 
             # Update the login record
             hashed.update_login_record()
-            db.session.commit()
+            hashed_stats.push_update()
 
             return jsonify({
                 'username'     : hashed.username,
@@ -231,11 +245,10 @@ def logout():
         raise LoginException("Not a valid request.")
 
     # Get from the session
-    user = current_users['username']
+    user = current_users[username]['user']
 
     # Authenticate the user
     user.authenticated = False
-    db.session.add(user)
     db.session.commit()
 
     # Logout the cookie

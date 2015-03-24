@@ -114,6 +114,16 @@ app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days = 14)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_ACCESS
 app.config['SECRET_KEY'] = SECRET
 
+# Import a module / component using its blueprint handler variable
+from ..app.config.controllers import configs as config_module
+from ..app.listing.controllers import listings as list_module
+from ..app.login.controllers import login as login_module
+
+# Register blueprint(s)
+app.register_blueprint(config_module)
+app.register_blueprint(list_module)
+app.register_blueprint(login_module)
+
 # ==================
 # Database
 # ==================
@@ -158,15 +168,25 @@ app.run(debug = True)
 def not_found(error):
     return 404
 
-# Import a module / component using its blueprint handler variable
-from ..app.config.controllers import configs as config_module
-from ..app.listing.controllers import listings as list_module
-from ..app.login.controllers import login as login_module
+@app.before_request
+def register_command():
+    """
+    In here we get the request info to store in the
+    database.
 
-# Register blueprint(s)
-app.register_blueprint(config_module)
-app.register_blueprint(list_module)
-app.register_blueprint(login_manager)
+    :return:
+    """
+
+    # Import the command history table def
+    from server.app.engine.models import CommandHistory
+
+    # Add a record
+    db.session.add(CommandHistory(command = request.url_rule,
+                                  type = 'Web',
+                                  user = g.user))
+    # Commit the record
+    db.session.commit()
+    return
 
 @app.route('/help',             methods = ['GET'])
 def index():

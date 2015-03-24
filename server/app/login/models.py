@@ -112,6 +112,7 @@ class User(db.Model):
         self.login_count += 1
         self.last_login = datetime.utcnow()
         self.age = datetime.utcnow() - self.created
+        db.session.commit()
         return
 
     def get_auth_token(self):

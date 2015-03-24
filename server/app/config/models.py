@@ -115,6 +115,7 @@ class Configuration(db.Model):
         self.access = datetime.utcnow()
         self.recent += 1
         self.user = user
+        db.session.commit()
         return
 
     def __str__(self):
@@ -123,7 +124,7 @@ class Configuration(db.Model):
 
         :return:
         """
-        return '<Configuration %s - favorite: %s - configs: %s - type: %s' \
+        return '<Configuration %s - favorite: %s - configs: %s - type: %s>' \
                % (self.name, str(self.favorite), self.configs, self.config_type)
 
     def __repr__(self):
@@ -208,7 +209,7 @@ class Session(db.Model):
 
         :return:
         """
-        return '<Session %s - favorite: %s - config: %s' \
+        return '<Session %s - favorite: %s - config: %s>' \
                % (self.name, str(self.favorite), self.config_id)
 
     def __repr__(self):
@@ -291,7 +292,7 @@ class Favorite(db.Model):
 
         :return:
         """
-        return '<Favorite %s' % self.name
+        return '<Favorite %s>' % self.name
 
     def __repr__(self):
         """
@@ -299,4 +300,4 @@ class Favorite(db.Model):
 
         :return:
         """
-        return '<Favorite %s' % self.name
+        return '<Favorite %s>' % self.name

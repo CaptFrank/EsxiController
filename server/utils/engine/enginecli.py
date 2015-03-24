@@ -55,6 +55,11 @@ def build_arg_parser():
                         action='store',
                         help='Starts the engine.')
 
+    control.add_argument('-s', '--stop',
+                         required=False,
+                         action='store',
+                         help='Stops the engine')
+
     # =============================================================
     # Add the source group
     config = parser.add_argument_group(
@@ -88,20 +93,20 @@ def build_arg_parser():
     )
 
     console.add_argument('-v', '--verbose',
-                        required=True,
+                        required=False,
                         action='store',
                         default='info',
                         choices=['info', 'debug', 'warning', 'error', 'critical'],
                         help='Sets the level for the console logging.')
 
     console.add_argument('-l', '--syslog',
-                        required=True,
+                        required=False,
                         action='store',
                         default='enable',
                         choices=['enable', 'disable'],
                         help='Enables or disables the syslogger engine.')
     console.add_argument('-L', '--splunk',
-                        required=True,
+                        required=False,
                         action='store',
                         default='enable',
                         choices=['enable', 'disable'],
