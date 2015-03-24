@@ -21,7 +21,9 @@ Imports
 """
 
 from server.utils.error.basehandler import *
-from server import app
+from server.app.engine.models import *
+from server.app import app
+from flask import *
 
 """
 =============================================
@@ -73,4 +75,9 @@ def handle_login_exception(error):
     """
     response = jsonify(error.to_dict())
     response.status_code = error.status_code
+
+    statuses = db.session.query(WebStatus).all()
+    for item in statuses:
+        item.push_update()
+        item.push_status(WEB_STATUS_ERROR)
     return response

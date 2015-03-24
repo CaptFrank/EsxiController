@@ -77,7 +77,7 @@ def init_db(db):
     # Create base tables
     db.session.add(EngineStatus())
     db.session.add(WebStatus())
-    db.session.add(CommandStats(COMMAND_TYPE_WEB))
-    db.session.add(CommandStats(COMMAND_TYPE_CLI))
+    db.session.add(CommandStats(COMMAND_SOURCE_WEB))
+    db.session.add(CommandStats(COMMAND_SOURCE_ENGINE))
     db.session.commit()
     return

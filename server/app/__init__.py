@@ -178,14 +178,18 @@ def register_command():
     """
 
     # Import the command history table def
-    from server.app.engine.models import CommandHistory
+    from server.app.engine.models import CommandHistory, CommandStats
 
     # Add a record
     db.session.add(CommandHistory(command = request.url_rule,
-                                  type = 'Web',
+                                  type = COMMAND_SOURCE_WEB,
                                   user = g.user))
     # Commit the record
     db.session.commit()
+
+    # Update the queries
+    temp = CommandStats.query.filter_by(command_type = COMMAND_SOURCE_WEB).first()
+    temp.push_update(command = request.url_rule)
     return
 
 @app.route('/help',             methods = ['GET'])

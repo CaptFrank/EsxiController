@@ -32,9 +32,6 @@ Constant
 =============================================
 """
 
-COMMAND_TYPE_WEB            = "WEB"
-COMMAND_TYPE_CLI            = "CLI"
-
 # Indexes
 ENGINE_STATUS_CREATED       = 0
 ENGINE_STATUS_UPDATED       = 1

@@ -75,13 +75,6 @@ def run():
         name = request.json.get('name')
         favorite = request.json.get('favorite')
 
-        if name is None:
-            raise ConfigException("Favorite name is null.")
-        elif favorite is None:
-            raise ConfigException("Favorite config type is null.")
-        else:
-
-
     start()
     return
 
