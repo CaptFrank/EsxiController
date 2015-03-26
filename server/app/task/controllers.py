@@ -23,7 +23,7 @@ Imports
 from server.app import client_th
 from flask_login import login_required
 from server.app.config.models import *
-from server.utils.error.confighandler import *
+from server.utils.error.taskhandler import *
 
 """
 =============================================
@@ -77,7 +77,7 @@ def add_task(config = None):
             config = request.json.get('name')
 
             if config is None:
-                raise ConfigException('Config name cannot be null.')
+                raise TaskException('Config name cannot be null.')
 
     elif config is not None:
 
@@ -86,7 +86,7 @@ def add_task(config = None):
 
         # Check the config
         if config_db is None:
-            raise ConfigException('Config name not registered.')
+            raise TaskException('Config name not registered.')
 
         # We then take the config and get its configs string
         config_dict = dict(config_db)
@@ -103,7 +103,7 @@ def add_task(config = None):
         return
 
     else:
-        raise ConfigException("Message empty.")
+        raise TaskException("Message empty.")
 
 @tasks.route('/add/favorite',                  methods = ['PUT', 'POST'])
 @login_required
@@ -122,7 +122,7 @@ def add_favorite_task():
         config = request.json.get('command_type')
 
         if config is None:
-            raise ConfigException('Config name cannot be null.')
+            raise TaskException('Config name cannot be null.')
 
         # Query the fav
         favorite = Favorite.query.filter_by(config_type = config).first_or_404()
@@ -147,7 +147,7 @@ def delete_task(config = None):
             config = request.json.get('name')
 
             if config is None:
-                raise ConfigException('Config name cannot be null.')
+                raise TaskException('Config name cannot be null.')
 
     elif config is not None:
 
@@ -156,7 +156,7 @@ def delete_task(config = None):
 
         # Check the config
         if config_db is None:
-            raise ConfigException('Config name not registered.')
+            raise TaskException('Config name not registered.')
 
         # We then take the config and get its configs string
         config_dict = dict(config_db)
@@ -171,7 +171,7 @@ def delete_task(config = None):
         return
 
     else:
-        raise ConfigException("Message empty.")
+        raise TaskException("Message empty.")
 
 @tasks.route('/delete/favorite',               methods = ['PUT', 'POST'])
 @login_required
@@ -190,7 +190,7 @@ def delete_favorite_task():
         config = request.json.get('command_type')
 
         if config is None:
-            raise ConfigException('Config name cannot be null.')
+            raise TaskException('Config name cannot be null.')
 
         # Query the fav
         favorite = Favorite.query.filter_by(config_type = config).first_or_404()
@@ -214,7 +214,7 @@ def status_task():
         config = request.json.get('name')
 
         if config is None:
-            raise ConfigException('Config name cannot be null.')
+            raise TaskException('Config name cannot be null.')
 
         # Update a task record
         task_db = TaskStatus.query.filter_by(name = config).first_or_404()
@@ -225,4 +225,4 @@ def status_task():
         }), \
         SUCCESS_RESPONSE
     else:
-        raise ConfigException("Message empty.")
+        raise TaskException("Message empty.")
