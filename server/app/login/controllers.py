@@ -23,7 +23,6 @@ Imports
 
 from flask import *
 from server.app.login.models import *
-from server.app.engine.models import *
 from server.app import app, db, login_manager
 from server.utils.error.loginhandler import *
 from flask_login import login_user, logout_user

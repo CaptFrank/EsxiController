@@ -1,9 +1,9 @@
 """
 
-    confighandler.py
+    engine.py
     ==========
 
-    This is the config handler for the error handler.
+    This is the engine handler for the error handler.
 
     :copyright: (c) 2015 by GammaRay.
     :license: BSD, see LICENSE for more details.
@@ -22,7 +22,7 @@ Imports
 
 from server.utils.error.basehandler import *
 from server.app.engine.models import *
-from server.app import app, db
+from server.app import app
 from flask import *
 
 """
@@ -31,7 +31,7 @@ Source
 =============================================
 """
 
-class ConfigException(BaseHandler):
+class EngineException(BaseHandler):
     """
     This class provides a base class to the error handlers that
     will later be implemented to tell the user that there
@@ -65,20 +65,19 @@ class ConfigException(BaseHandler):
         self.payload = payload
         return
 
-@app.errorhandler(ConfigException)
-def handle_config_exception(error):
+@app.errorhandler(EngineException)
+def handle_engine_exception(error):
     """
     The handler function to call from the context.
 
     :param error:                       the error to send
     :return:
     """
-
     response = jsonify(error.to_dict())
     response.status_code = error.status_code
 
-    statuses = db.session.query(WebStatus).all()
+    statuses = db.session.query(EngineStatus).all()
     for item in statuses:
         item.push_update()
-        item.push_status(WEB_STATUS_ERROR)
+        item.push_status(ENGINE_STATUS_ERROR)
     return response

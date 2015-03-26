@@ -172,11 +172,11 @@ def session_add():
 
         # We check if the session is valid
         if session is None:
-            raise ConfigException("Session name cannot be null when adding.")
+            raise ConfigException("SessionGroup name cannot be null when adding.")
         elif session_type is None:
-            raise ConfigException("Session type cannot be null when adding.")
+            raise ConfigException("SessionGroup type cannot be null when adding.")
         elif session_favorite is None:
-            raise ConfigException("Session favorite should not be null.")
+            raise ConfigException("SessionGroup favorite should not be null.")
         else:
 
             # We add the session and create
@@ -184,14 +184,14 @@ def session_add():
 
             # We add the config file only
             # Get the db entry
-            session_db = Session.query.filter_by(name = session).first()
+            session_db = SessionGroup.query.filter_by(name = session).first()
 
             # Check the db for the user
             if session_db is not None:
-                raise ConfigException("Session already registered.")
+                raise ConfigException("SessionGroup already registered.")
 
             # Otherwise we create a new one
-            session_db = Session(
+            session_db = SessionGroup(
                                 name = session,
                                 favorite = session_favorite,
                                 config_type = session_type)
@@ -249,7 +249,7 @@ def favorite_add():
 
             # Check the db for the user
             if fav_db is not None:
-                raise ConfigException("Session already registered.")
+                raise ConfigException("SessionGroup already registered.")
 
             # Otherwise we create a new one
             fav_db = Favorite(name = favorite)
@@ -336,7 +336,7 @@ def session_delete():
             raise ConfigException("Null name.")
 
         # Get the db entry
-        session = Session.query.filter_by(name = name).first_or_404()
+        session = SessionGroup.query.filter_by(name = name).first_or_404()
 
         # Check the db for the user
         if session is None:

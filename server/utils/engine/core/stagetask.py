@@ -5,10 +5,9 @@
 import time
 import threading
 
+from server.app.engine.models import *
 from __init__ import DictDiffer as diff
 from server.utils.notification.notificationdispatch import *
-
-
 
 # =============================================================
 # Source
@@ -87,6 +86,13 @@ class stageTask(threading.Thread):
                                           self.__config['configurations']
                                           )
 
+            # We update the task status
+            task = TaskStatus.query.filter_by(name = self.__config['name'])
+            if task:
+                task.push_status(STATUS[ENGINE_STATUS_ERROR])
+            else:
+                self.__logger.error("Task not registered.")
+
         # Send a notification that the stage is done
         self.__dispatch.send_notification(self.__config['destinations'],
                                           'complete',
@@ -119,6 +125,13 @@ class stageTask(threading.Thread):
         # We kill the stage
         self.__stop_stage()
         self.join()
+
+        # Update the task
+        task = TaskStatus.query.filter_by(name = self.__config['name'])
+        if task:
+            task.push_status(STATUS[ENGINE_STATUS_COMPLETED])
+        else:
+            self.__logger.error("Task not registered.")
 
         # Successfully killed the task
         self.__logger.info("Successfully killed the task thread.")

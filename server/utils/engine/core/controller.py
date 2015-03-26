@@ -190,7 +190,7 @@ class controller(threading.Thread):
                 # Check for nulity
                 if config is not None:
                     self.__logger.info("Adding a new task to work on.")
-                    self.start_task(Task(config))
+                    self.start_task(config)
         return
 
     def start_task(self, config):

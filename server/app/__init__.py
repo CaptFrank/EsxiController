@@ -30,7 +30,6 @@ Imports
 from flask import *
 
 from server.db.db import *
-from flask_sqlalchemy import *
 from datetime import timedelta
 from flask_login import LoginManager
 from server.utils.client.client import *
@@ -163,10 +162,10 @@ client_th.start()
 # Run the app
 app.run(debug = True)
 
-# Sample HTTP error handling
-@app.errorhandler(404)
+# HTTP error handling
+@app.errorhandler
 def not_found(error):
-    return 404
+    return make_response(jsonify({'message': 'Unauthorized access'}), 404)
 
 @app.before_request
 def register_command():
@@ -181,14 +180,22 @@ def register_command():
     from server.app.engine.models import CommandHistory, CommandStats
 
     # Add a record
-    db.session.add(CommandHistory(command = request.url_rule,
-                                  type = COMMAND_SOURCE_WEB,
-                                  user = g.user))
+    db.session.add(
+        CommandHistory(
+            command = request.url_rule,
+            type = COMMAND_SOURCE_WEB,
+            user = g.user
+        )
+    )
+
     # Commit the record
     db.session.commit()
 
     # Update the queries
-    temp = CommandStats.query.filter_by(command_type = COMMAND_SOURCE_WEB).first()
+    temp = CommandStats.query.filter_by(
+        command_type = COMMAND_SOURCE_WEB
+    ).first()
+
     temp.push_update(command = request.url_rule)
     return
 

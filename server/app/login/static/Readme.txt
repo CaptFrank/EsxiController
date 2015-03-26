@@ -1,12 +1,13 @@
-        ================================
-        ** Login Operations
+        =================================
+        ** General Operations
+        **
+        ** - Root directory listing:
+        **    - /                                                   
+        **    - /help                                               
         **
         ** - Login
-        **    - /register       {username:username,
-        **                        password:password}              // Create a user
-        **    - /unregister     {username: username}              // Deletes a user
-        **    - /login          {username:username}               // Login
-        **    - /login/help
-        **
-        **    - /logout         {username:username}               // Logout
+        **    - app/register                                        
+        **    - app/unregister                                   
+        **    - app/login                                        
+        **    - app/logout                                           
         **

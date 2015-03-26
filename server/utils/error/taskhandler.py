@@ -1,9 +1,9 @@
 """
 
-    confighandler.py
+    task.py
     ==========
 
-    This is the config handler for the error handler.
+    This is the task handler for the error handler.
 
     :copyright: (c) 2015 by GammaRay.
     :license: BSD, see LICENSE for more details.
@@ -22,7 +22,7 @@ Imports
 
 from server.utils.error.basehandler import *
 from server.app.engine.models import *
-from server.app import app, db
+from server.app import app
 from flask import *
 
 """
@@ -31,7 +31,7 @@ Source
 =============================================
 """
 
-class ConfigException(BaseHandler):
+class TaskException(BaseHandler):
     """
     This class provides a base class to the error handlers that
     will later be implemented to tell the user that there
@@ -65,15 +65,14 @@ class ConfigException(BaseHandler):
         self.payload = payload
         return
 
-@app.errorhandler(ConfigException)
-def handle_config_exception(error):
+@app.errorhandler(TaskException)
+def handle_task_exception(error, name):
     """
     The handler function to call from the context.
 
     :param error:                       the error to send
     :return:
     """
-
     response = jsonify(error.to_dict())
     response.status_code = error.status_code
 
@@ -81,4 +80,7 @@ def handle_config_exception(error):
     for item in statuses:
         item.push_update()
         item.push_status(WEB_STATUS_ERROR)
+
+    task_status = TaskStatus.query.filter_by(name = name).first_or_404()
+    task_status.push_status(ENGINE_STATUS_ERROR)
     return response

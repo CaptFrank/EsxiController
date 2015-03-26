@@ -66,7 +66,7 @@ class ListingException(BaseHandler):
         return
 
 @app.errorhandler(ListingException)
-def handle_login_exception(error):
+def handle_listing_exception(error):
     """
     The handler function to call from the context.
 

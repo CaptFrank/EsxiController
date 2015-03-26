@@ -131,3 +131,16 @@ class client(threading.Thread):
         self.__queue.enqueue(Task(configs))
         self.__logger.info("Added a new task to the task queue.")
         return
+
+    def delete_config(self, configs):
+        """
+        Deletes the configs from the server.
+
+        :param configs:
+        :return:
+        """
+        if self.__queue.delete(Task(configs)):
+            self.__logger.info("Deleted task to the task queue.")
+        else:
+            self.__logger.error("Could not delete the object.")
+        return

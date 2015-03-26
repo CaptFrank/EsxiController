@@ -138,10 +138,10 @@ class Configuration(db.Model):
                % (self.name, self.favorite)
 
 # ===================
-# Session
+# SessionGroup
 # ===================
 
-class Session(db.Model):
+class SessionGroup(db.Model):
     """
     This is the main table used in this application.
     It stores the sessions in form of union of configs.
@@ -209,7 +209,7 @@ class Session(db.Model):
 
         :return:
         """
-        return '<Session %s - favorite: %s - config: %s>' \
+        return '<SessionGroup %s - favorite: %s - config: %s>' \
                % (self.name, str(self.favorite), self.config_id)
 
     def __repr__(self):
@@ -265,8 +265,8 @@ class Favorite(db.Model):
                                 "Configuration",
                                 backref     = 'favorite_session',
                                 lazy        = 'dynamic',
-                                primaryjoin = db.sql.and_(config_type == Session.config_type,
-                                                    Session.favorite == True))
+                                primaryjoin = db.sql.and_(config_type == SessionGroup.config_type,
+                                                    SessionGroup.favorite == True))
 
     # ===================
     # Sources

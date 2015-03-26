@@ -217,6 +217,9 @@ class esxiControllerDaemon(object):
 
 if __name__ == '__main__':
 
+    # Get the args
+    args = get_args()
+
     # Start the engine
     engine = esxiControllerDaemon(args)
     daemon = runner.DaemonRunner(engine)

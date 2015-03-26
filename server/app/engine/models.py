@@ -40,6 +40,8 @@ ENGINE_STATUS_ERROR         = 3
 ENGINE_STATUS_RUNNING       = 4
 ENGINE_STATUS_STOPPED       = 5
 ENGINE_STATUS_SUSPENDED     = 6
+ENGINE_STATUS_COMPLETED     = 7
+ENGINE_STATUS_DELETED       = 8
 
 # Indexes
 WEB_STATUS_CREATED          = 0
@@ -58,7 +60,9 @@ STATUS                      = [
                                 'ERROR',
                                 'RUNNING',
                                 'STOPPED',
-                                'SUSPENDED'
+                                'SUSPENDED',
+                                'COMPLETED',
+                                'DELETED'
                                 ]
 
 # Command sources
@@ -99,7 +103,7 @@ class EngineStatus(db.Model):
     created         = db.Column(db.DateTime)
     updated         = db.Column(db.DateTime)
     uptime          = db.Column(db.DateTime)
-    status          = db.Column(db.DateTime)
+    status          = db.Column(db.String)
 
     # Application attributes
     splunk_enable   = db.Column(db.Boolean,       default          = False)
@@ -108,7 +112,7 @@ class EngineStatus(db.Model):
     syslog_enable   = db.Column(db.Boolean,       default          = False)
     syslog_settings = db.Column(db.String)
 
-    log_level       = db.Column(db.Boolean,       default          = True)
+    log_level       = db.Column(db.String,        default          = 'Info')
 
     # Tasks stats
     task_stats      = db.Column(db.Integer,       db.ForeignKey('task_stats.id'))
@@ -171,7 +175,7 @@ class EngineStatus(db.Model):
         db.session.commit()
         return
 
-    def push_engine_attributes(self, log, syslog, splunk):
+    def push_engine_attributes(self, log, syslog = None, splunk = None):
         """
         This pushed the engine startup attributes to the DB.
 
@@ -206,11 +210,14 @@ class EngineStatus(db.Model):
 
         # Set internal attributes
         self.log_level = log
-        self.syslog_enable = syslog['enable']
-        self.splunk_enable = splunk['enable']
 
-        self.syslog_settings = json.dumps(syslog['settings'])
-        self.splunk_settings = json.dumps(splunk['settings'])
+        if syslog is not None:
+            self.syslog_enable = syslog['enable']
+            self.splunk_enable = splunk['enable']
+
+        if splunk is not None:
+            self.syslog_settings = json.dumps(syslog['settings'])
+            self.splunk_settings = json.dumps(splunk['settings'])
         db.session.commit()
         return
 
@@ -227,6 +234,90 @@ class EngineStatus(db.Model):
         """
         return "<EngineStatus - date: %s - running: %s>" \
                % (str(datetime.utcnow()), self.status)
+
+# ===================
+# Tasks
+# ===================
+
+class TaskStatus(db.Model):
+    """
+    This is the table that houses the backend engine task status.
+
+    extends: db.Model
+    """
+
+    # ===================
+    # Table name
+    # ===================
+
+    __tablename__   = 'task_stats'
+
+    # ===================
+    # Attributes
+    # ===================
+
+    # Generic
+    id              = db.Column(db.Integer,       primary_key     = True)
+    uuid            = db.Column(db.String,        unique          = True)
+    name            = db.Column(db.String)
+    created         = db.Column(db.DateTime)
+    updated         = db.Column(db.DateTime)
+    uptime          = db.Column(db.DateTime)
+    status          = db.Column(db.String)
+
+    # ===================
+    # Sources
+    # ===================
+
+    def __init__(self, name):
+        """
+        Creates a table entry
+        """
+
+        # Set creation attributes
+        self.uuid = str(uuid.uuid4())
+        self.created = datetime.utcnow()
+        self.status = STATUS[ENGINE_STATUS_CREATED]
+        return
+
+    def push_update(self):
+        """
+        This updates the table contents.
+        """
+
+        # Set updates
+        self.updated = datetime.utcnow()
+        self.uptime = self.created - datetime.utcnow()
+        self.status = STATUS[ENGINE_STATUS_UPDATED]
+        db.session.commit()
+        return
+
+    def push_status(self, status):
+        """
+        This method updates the status of the record
+        """
+
+        # Update the record
+        self.status = STATUS[status]
+        self.updated = datetime.utcnow()
+        self.uptime = self.created - datetime.utcnow()
+        db.session.commit()
+        return
+
+    def __str__(self):
+        """
+        Override the internal string output.
+        """
+        return "<TaskStatus %s - date: %s - running: %s>" \
+               % (self.name,str(datetime.utcnow()), self.status)
+
+    def __repr__(self):
+        """
+        Override the internal repr output.
+        """
+        return "<TaskStatus %s - date: %s - running: %s>" \
+               % (self.name,str(datetime.utcnow()), self.status)
+
 
 # ===================
 # Web

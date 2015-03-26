@@ -21,10 +21,10 @@ Imports
 """
 
 from flask import *
-from server.app import app
 from flask_login import login_required
 from server.app.engine.models import *
 from server.utils.engine import *
+from server.utils.error.enignehandler import *
 
 """
 =============================================
@@ -64,7 +64,23 @@ def login_help():
 @login_required
 def run():
     """
-    This runs the backend engine
+    This runs the backend engine.
+
+    The args passed to the REST API are as follows:
+
+    args    = {
+
+        'log_level'     :   <level>,
+        'splunk'        :   {
+                            'enable'    :   False,
+                            'settings'  :   <settings>
+                            },
+        'syslog'        :   {
+                            'enable'    :   False,
+                            'settings'  :   <settings>
+                            },
+            }
+    }
 
     """
 
@@ -72,9 +88,21 @@ def run():
     if request.json is not None:
 
         # We get the user attributes
-        name = request.json.get('name')
-        favorite = request.json.get('favorite')
+        logger = request.json.get('log_level')
+        splunk = request.json.get('splunk')
+        syslog = request.json.get('syslog')
 
+        # Get the engine object
+        engine_db = EngineStatus.query.all().first_or_404()
+        engine_db.push_engine_attributes(logger, syslog, splunk)
+
+        # Push a running status
+        engine_db.push_status(ENGINE_STATUS_RUNNING)
+
+    else:
+        raise EngineException("Not a valid json packet.")
+
+    # Start the engine
     start()
     return
 
@@ -85,6 +113,9 @@ def kill():
     This kills the backend engine
     :return:
     """
+    engine_db = EngineStatus.query.all().first_or_404()
+    # Push a running status
+    engine_db.push_status(ENGINE_STATUS_STOPPED)
     stop()
     return
 
@@ -95,6 +126,9 @@ def reset():
     This resets the backend engine.
     :return:
     """
+    engine_db = EngineStatus.query.all().first_or_404()
+    # Push a running status
+    engine_db.push_status(ENGINE_STATUS_RUNNING)
     reset()
     return
 
