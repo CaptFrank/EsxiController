@@ -52,12 +52,12 @@ def build_arg_parser():
 
     control.add_argument('-S', '--start',
                         required=False,
-                        action='store',
+                        action='store_true',
                         help='Starts the engine.')
 
     control.add_argument('-s', '--stop',
                          required=False,
-                         action='store',
+                         action='store_true',
                          help='Stops the engine')
 
     # =============================================================
@@ -74,7 +74,7 @@ def build_arg_parser():
                         help='Prints the specified config.')
 
     config.add_argument('-c', '--config',
-                        required=True,
+                        required=False,
                         action='store',
                         default='engine.conf',
                         help='Sets the configs.')

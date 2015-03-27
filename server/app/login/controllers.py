@@ -25,6 +25,7 @@ from flask import *
 from server.app.login.models import *
 from server.app import app, db, login_manager
 from server.utils.error.loginhandler import *
+from server.app.engine.models import *
 from flask_login import login_user, logout_user
 
 """
@@ -34,7 +35,7 @@ Constant
 """
 
 SUCCESS_RESPONSE            = 201
-APP_STATIC_DIRECTORY        = 'app/login/static/'
+APP_STATIC_DIRECTORY        = 'login/static/'
 
 """
 =============================================
@@ -45,7 +46,7 @@ Variables
 current_users               = {}
 
 # Login object
-login = Blueprint('login', __name__, url_prefix='/app')
+login_engine = Blueprint('login', __name__, url_prefix='/app')
 
 """
 =============================================
@@ -53,7 +54,8 @@ Source
 =============================================
 """
 
-@login.route('/help',    methods = ['GET', 'POST'])
+@login_engine.route('/',        methods = ['GET', 'POST'])
+@login_engine.route('/help',    methods = ['GET', 'POST'])
 def login_help():
     """
     This method returns a jasonified help dict for
@@ -63,7 +65,7 @@ def login_help():
     """
     return send_from_directory(APP_STATIC_DIRECTORY, 'Readme.txt')
 
-@login.route('/register/',     methods = ['POST'])
+@login_engine.route('/register/',     methods = ['POST', 'PUT'])
 def register():
     """
     Register a new user
@@ -82,7 +84,7 @@ def register():
             raise LoginException("Null username or password.")
 
         # Get the db entry
-        user = User.query.filter_by(username = username).first()
+        user = db.session.query(User).filter_by(username = username).first()
 
         # Check the db for the user
         if (user is not None) or (user is not None):
@@ -115,7 +117,7 @@ def register():
     else:
         raise LoginException("Message empty.")
 
-@login.route('/unregister/',   methods = ['DELETE'])
+@login_engine.route('/unregister/',   methods = ['DELETE'])
 def unregister():
     """
     Unregister a user
@@ -154,7 +156,7 @@ def unregister():
     else:
         raise LoginException("Message empty.")
 
-@login.route('/login/',        methods = ['POST'])
+@login_engine.route('/login/',        methods = ['POST'])
 def login():
     """
     Login the user.
@@ -220,7 +222,7 @@ def login():
         else:
             raise LoginException("Not a valid login credential.")
 
-@login.route('/logout/',       methods = ['POST'])
+@login_engine.route('/logout/',       methods = ['POST'])
 def logout():
     """
     This logs out the user.

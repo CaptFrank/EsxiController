@@ -21,9 +21,6 @@ Imports
 """
 
 from server.utils.error.basehandler import *
-from server.app.engine.models import *
-from server.app import app
-from flask import *
 
 """
 =============================================
@@ -65,19 +62,3 @@ class EngineException(BaseHandler):
         self.payload = payload
         return
 
-@app.errorhandler(EngineException)
-def handle_engine_exception(error):
-    """
-    The handler function to call from the context.
-
-    :param error:                       the error to send
-    :return:
-    """
-    response = jsonify(error.to_dict())
-    response.status_code = error.status_code
-
-    statuses = db.session.query(EngineStatus).all()
-    for item in statuses:
-        item.push_update()
-        item.push_status(ENGINE_STATUS_ERROR)
-    return response

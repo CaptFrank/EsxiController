@@ -24,7 +24,7 @@ from flask import *
 from flask_login import login_required
 from server.app.engine.models import *
 from server.utils.engine import *
-from server.utils.error.enignehandler import *
+from server.utils.error.enginehandler import *
 
 """
 =============================================
@@ -33,7 +33,7 @@ Constant
 """
 
 SUCCESS_RESPONSE            = 201
-APP_STATIC_DIRECTORY        = 'app/engine/static/'
+APP_STATIC_DIRECTORY        = 'engine/static/'
 
 """
 =============================================
@@ -50,6 +50,7 @@ Source
 =============================================
 """
 
+@engine.route('/',                              methods = ['GET', 'POST'])
 @engine.route('/help',                          methods = ['GET', 'POST'])
 def login_help():
     """

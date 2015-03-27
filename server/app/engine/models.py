@@ -114,25 +114,18 @@ class EngineStatus(db.Model):
 
     log_level       = db.Column(db.String,        default          = 'Info')
 
-    # Tasks stats
-    task_stats      = db.Column(db.Integer,       db.ForeignKey('task_stats.id'))
-
-    # Command stats
-    command_stats   = db.Column(db.Integer,       db.ForeignKey('command_stats.id'))
-    command_history = db.Column(db.Integer,       db.ForeignKey('command_history.id'))
+    status_type     = db.Column(db.String,        default          = COMMAND_SOURCE_ENGINE)
 
     command_engine_stat  = db.relationship(
                         'CommandStats',
-                        backref     = 'engine_commands_stats',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(CommandStats.command_type == COMMAND_SOURCE_ENGINE)
+                        primaryjoin = "CommandStats.command_type == 'Engine'"
                         )
 
     command_engine_hist  = db.relationship(
                         'CommandHistory',
-                        backref     = 'engine_commands_history',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(CommandHistory.command_type == COMMAND_SOURCE_ENGINE)
+                        primaryjoin = "CommandHistory.command_type == 'Engine'"
                         )
 
     # ===================
@@ -349,26 +342,18 @@ class WebStatus(db.Model):
     uptime          = db.Column(db.DateTime)
     status          = db.Column(db.DateTime)
 
-    # Users stats
-    user_stats      = db.Column(db.Integer,       db.ForeignKey('user_stats.id'))
+    status_type     = db.Column(db.String,        default         = COMMAND_SOURCE_WEB)
 
-    # Command stats
-    command_stats   = db.Column(db.Integer,       db.ForeignKey('command_stats.id'))
-    command_history = db.Column(db.Integer,       db.ForeignKey('command_history.id'))
-
-
-    command_engine_stat  = db.relationship(
+    command_web_stat  = db.relationship(
                         'CommandStats',
-                        backref     = 'web_commands_stats',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(CommandStats.command_type == COMMAND_SOURCE_WEB)
+                        primaryjoin = "CommandStats.command_type == 'Web'"
                         )
 
     command_engine_hist  = db.relationship(
                         'CommandHistory',
-                        backref     = 'web_commands_history',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(CommandHistory.command_type == COMMAND_SOURCE_WEB)
+                        primaryjoin = "CommandHistory.command_type == 'Web'"
                         )
 
     # ===================
@@ -460,9 +445,8 @@ class CommandStats(db.Model):
     command_type    = db.Column(db.String)
     command_history = db.relationship(
                         'CommandHistory',
-                        backref     = 'command_history',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(CommandHistory.command_type == command_type)
+                        primaryjoin = "CommandHistory.command_type == CommandStats.command_type"
                         )
 
     # ===================
@@ -540,7 +524,10 @@ class CommandHistory(db.Model):
     command         = db.Column(db.String)
     command_user    = db.Column(db.String)
     command_type    = db.Column(db.String)
-    command_time    = db.Column(db.Datetime)
+    command_time    = db.Column(db.DateTime)
+
+    user_stat       = db.Column(db.String,      db.ForeignKey('user_stats.user'))
+    command_stat    = db.Column(db.String,      db.ForeignKey('command_stats.command_type'))
 
     def __init__(self, command, type, user):
         """
@@ -622,9 +609,8 @@ class UserStats(db.Model):
 
     user_history = db.relationship(
                         'CommandHistory',
-                        backref     = 'command_history',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(CommandHistory.user == user)
+                        primaryjoin = "CommandHistory.command_user == UserStats.user"
                         )
 
     # ===================
@@ -671,3 +657,12 @@ class UserStats(db.Model):
         """
         return "<UserStats - date: %s - user: %s>" \
                % (str(datetime.utcnow(), self.user))
+
+def init_engine_db():
+    # Create base tables
+    db.session.add(EngineStatus())
+    db.session.add(WebStatus())
+    db.session.add(CommandStats(COMMAND_SOURCE_WEB))
+    db.session.add(CommandStats(COMMAND_SOURCE_ENGINE))
+    db.session.commit()
+    return

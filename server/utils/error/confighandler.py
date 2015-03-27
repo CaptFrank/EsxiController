@@ -21,9 +21,6 @@ Imports
 """
 
 from server.utils.error.basehandler import *
-from server.app.engine.models import *
-from server.app import app, db
-from flask import *
 
 """
 =============================================
@@ -65,20 +62,3 @@ class ConfigException(BaseHandler):
         self.payload = payload
         return
 
-@app.errorhandler(ConfigException)
-def handle_config_exception(error):
-    """
-    The handler function to call from the context.
-
-    :param error:                       the error to send
-    :return:
-    """
-
-    response = jsonify(error.to_dict())
-    response.status_code = error.status_code
-
-    statuses = db.session.query(WebStatus).all()
-    for item in statuses:
-        item.push_update()
-        item.push_status(WEB_STATUS_ERROR)
-    return response

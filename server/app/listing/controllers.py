@@ -33,7 +33,7 @@ Constant
 """
 
 SUCCESS_RESPONSE            = 201
-APP_STATIC_DIRECTORY        = 'app/listing/static/'
+APP_STATIC_DIRECTORY        = 'listing/static/'
 
 """
 =============================================
@@ -54,6 +54,7 @@ Source
 # Help
 # ===========
 
+@listings.route('/',                     methods = ['GET', 'PUT', 'POST'])
 @listings.route('/help',                 methods = ['GET', 'PUT', 'POST'])
 def list_help():
     """

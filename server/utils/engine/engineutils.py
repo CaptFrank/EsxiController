@@ -134,7 +134,7 @@ def main():
     # ===========================
 
     # We print the configs
-    if args.printConfigs:
+    if args.printConfig:
         call('more %s' % args.printConfigs)
         return
 
@@ -153,12 +153,12 @@ def main():
     # Start Option
     if args.start:
         # Call the app
-        call('python %s/engine.py start' % os.getcwd())
+        call('python ./engine.py start')
 
     # Stop Option
     elif args.stop:
         # Stop daemon
-        call('python %s/engine.py stop' % os.getcwd())
+        call('python ./engine.py stop')
 
     return
 

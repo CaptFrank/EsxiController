@@ -21,9 +21,6 @@ Imports
 """
 
 from server.utils.error.basehandler import *
-from server.app.engine.models import *
-from server.app import app
-from flask import *
 
 """
 =============================================
@@ -64,23 +61,3 @@ class TaskException(BaseHandler):
         # Set the payload
         self.payload = payload
         return
-
-@app.errorhandler(TaskException)
-def handle_task_exception(error, name):
-    """
-    The handler function to call from the context.
-
-    :param error:                       the error to send
-    :return:
-    """
-    response = jsonify(error.to_dict())
-    response.status_code = error.status_code
-
-    statuses = db.session.query(WebStatus).all()
-    for item in statuses:
-        item.push_update()
-        item.push_status(WEB_STATUS_ERROR)
-
-    task_status = TaskStatus.query.filter_by(name = name).first_or_404()
-    task_status.push_status(ENGINE_STATUS_ERROR)
-    return response

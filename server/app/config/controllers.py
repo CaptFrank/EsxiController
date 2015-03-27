@@ -36,7 +36,7 @@ Constant
 """
 
 SUCCESS_RESPONSE            = 201
-APP_STATIC_DIRECTORY        = 'app/config/static/'
+APP_STATIC_DIRECTORY        = 'config/static/'
 
 """
 =============================================
@@ -57,6 +57,7 @@ Source
 # Help
 # ===========
 
+@configs.route('/',                     methods = ['GET', 'PUT', 'POST'])
 @configs.route('/help',                 methods = ['GET', 'PUT', 'POST'])
 def config_help():
     """

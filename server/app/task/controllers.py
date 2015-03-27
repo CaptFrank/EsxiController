@@ -20,6 +20,7 @@ Imports
 =============================================
 """
 
+from flask import *
 from server.app import client_th
 from flask_login import login_required
 from server.app.config.models import *
@@ -32,7 +33,7 @@ Constant
 """
 
 SUCCESS_RESPONSE            = 201
-APP_STATIC_DIRECTORY        = 'app/task/static/'
+APP_STATIC_DIRECTORY        = 'task/static/'
 
 """
 =============================================
@@ -49,6 +50,7 @@ Source
 =============================================
 """
 
+@tasks.route('/',                              methods = ['GET', 'POST'])
 @tasks.route('/help',                          methods = ['GET', 'POST'])
 def login_help():
     """

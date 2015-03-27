@@ -9,7 +9,7 @@ import logging
 import threading
 
 from retask import *
-from configparser import ConfigParser
+from ConfigParser import ConfigParser
 from server.utils.engine.core.connection import connection
 from server.utils.engine.core.networkstager import networkStager
 

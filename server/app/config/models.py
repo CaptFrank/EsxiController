@@ -70,7 +70,10 @@ class Configuration(db.Model):
 
 
     # Favorite Relationship
-    favorite_id     = db.Column(db.Integer,       db.ForeignKey('favorites.id'))
+    favorite_id     = db.Column(db.Integer,       db.ForeignKey('favorites.config_type'))
+
+    # Core attributes
+    session_type    = db.Column(db.String,        db.ForeignKey('sessions.config_type'))
 
     # Core attributes
     config_type     = db.Column(db.String)
@@ -167,15 +170,11 @@ class SessionGroup(db.Model):
     config_type     = db.Column(db.String)
 
     # Favorite Relationship
-    favorite_id     = db.Column(db.Integer,       db.ForeignKey('favorites.id'))
-
-    # Core attributes
-    config_id       = db.Column(db.String,        db.ForeignKey('configs.config_type'))
+    favorite_id     = db.Column(db.Integer,       db.ForeignKey('favorites.config_type'))
     config          = db.relationship(
                         'Configuration',
-                        backref     = 'session',
                         lazy        = 'dynamic',
-                        primaryjoin = db.sql.and_(config_type == Configuration.config_type)
+                        primaryjoin = "SessionGroup.config_type == Configuration.config_type"
                         )
 
     # ===================
@@ -250,23 +249,17 @@ class Favorite(db.Model):
     date            = db.Column(db.DateTime)
     config_type     = db.Column(db.String)
 
-    # Extended keys
-    config_fav      = db.ForeignKey('configs.favorite')
-    session_fav     = db.ForeignKey('sessions.favorite')
-
     # Core attributes
     fav_config      = db.relationship(
                                 "Configuration",
-                                backref     = 'favorite_config',
                                 lazy        = 'dynamic',
-                                primaryjoin = db.sql.and_(config_type == Configuration.config_type,
-                                                    Configuration.favorite == True))
+                                primaryjoin = "and_(Favorite.config_type == Configuration.config_type,"
+                                                     + "Configuration.favorite == 1)")
     fav_session     = db.relationship(
-                                "Configuration",
-                                backref     = 'favorite_session',
+                                "SessionGroup",
                                 lazy        = 'dynamic',
-                                primaryjoin = db.sql.and_(config_type == SessionGroup.config_type,
-                                                    SessionGroup.favorite == True))
+                                primaryjoin = "and_(Favorite.config_type == SessionGroup.config_type,"
+                                                    + "SessionGroup.favorite == 1)")
 
     # ===================
     # Sources
